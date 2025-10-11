@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Josephus Problem</title>
+    <style>
+        body {
+            margin: 0;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        canvas {
+            display: block;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- Canvas for rendering the game -->
+    <canvas id="canvas" tabindex="0"></canvas>
+
+    <script>
+        // Configure the canvas
+        var Module = {
+            canvas: (function() {
+                var canvas = document.getElementById('canvas');
+                canvas.width = window.innerWidth;   // Match canvas size to window size
+                canvas.height = window.innerHeight;
+                return canvas;
+            })()
+        };
+    </script>
+
+    {{{ SCRIPT }}}
+</body>
+</html>
+

@@ -1,0 +1,53 @@
+#include "raylib.h"
+#include "level/level.h"
+#include "player/player.h"
+
+int main() {
+    InitWindow(1280, 720, "SpellForge");
+    SetTargetFPS(60);
+
+    Grid g;
+    grid_init(&g, 80, 45);
+
+    LevelGenParams params = {
+        .attempts = 18,
+        .roomMinW = 6, .roomMinH = 6,
+        .roomMaxW = 12, .roomMaxH = 10,
+        .corridorMinW = 2,
+        .corridorMaxW = 4,
+        .seed = 0       
+    };
+
+   gen_level(&g, &params); 
+
+    Player player;
+    Player_Init(&player, &g);
+
+    while (!WindowShouldClose()) {
+        float dt = GetFrameTime();
+
+        Player_Update(&player, &g, dt);
+
+        BeginDrawing();
+        ClearBackground((Color){30,30,40,255});
+        
+        BeginMode2D(player.cam);
+
+            // Draw grid
+            for (int y=0; y<g.h; ++y)
+            for (int x=0; x<g.w; ++x) {
+                Tile* t = grid_at(&g,x,y);
+                Color c = (t->id == TILE_WALL)? (Color){60,60,70,255} : (Color){200,200,200,255};
+                DrawRectangle(x*TILE_SIZE, y*TILE_SIZE, TILE_SIZE, TILE_SIZE, c);
+            }
+
+        Player_Draw(&player);
+
+        EndMode2D();
+
+        EndDrawing();
+    }
+
+    grid_free(&g);
+    CloseWindow();
+}
