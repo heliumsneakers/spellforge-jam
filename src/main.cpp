@@ -2,6 +2,8 @@
 #include "level/level.h"
 #include "entity/entity.hpp"
 #include "player/player.h"
+#include "physics/physics.h"
+#include "../lib/box2d/include/box2d/box2d.h"
 
 int main() {
     InitWindow(1280, 720, "SpellForge");
@@ -26,13 +28,35 @@ int main() {
 
     int made = Entities_SpawnBoxesInLevel(&ents, &g, 10, 20, {10.f, 10.f}, 0);
 
+    // INIT PHYSICS
+    b2WorldId world = InitWorld();
+    
+    BuildStaticsFromGrid(world, &g);
+
     Player player;
     Player_Init(&player, &g);
+
+    Vector2 spawnpx = player.pos;
+    b2BodyId playerBody = CreatePlayer(world, spawnpx, 12.0f, 12.0f);
 
     while (!WindowShouldClose()) {
         float dt = GetFrameTime();
 
-        Player_Update(&player, &g, dt);
+        Vector2 dir = {0,0};
+        if (IsKeyDown(KEY_W)) dir.y -= 1;
+        if (IsKeyDown(KEY_S)) dir.y += 1;
+        if (IsKeyDown(KEY_A)) dir.x -= 1;
+        if (IsKeyDown(KEY_D)) dir.x += 1;
+
+        UpdatePlayer(playerBody, tick, dir, 200.0f);
+        b2World_Step(world, tick, subSteps);
+
+        Vector2 playerPosPx = GetPlayerPixels(playerBody);
+        player.pos = playerPosPx;
+        player.cam.target = playerPosPx;
+
+        // Player_Update(&player, &g, dt);
+        
         Entities_Update(&ents, dt);
 
         BeginDrawing();
@@ -47,6 +71,7 @@ int main() {
                 Color c = (t->id == TILE_WALL)? (Color){60,60,70,255} : (Color){200,200,200,255};
                 DrawRectangle(x*TILE_SIZE, y*TILE_SIZE, TILE_SIZE, TILE_SIZE, c);
             }
+
         Entities_Draw(&ents);
         Player_Draw(&player);
 

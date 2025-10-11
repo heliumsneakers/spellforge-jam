@@ -1,7 +1,39 @@
 #pragma once
 #include "../../lib/box2d/include/box2d/box2d.h"
+#include "raylib.h"
+#include "../level/level.h"
 
 const float tick 	= 1.0f / 20.0f;
 const int subSteps 	= 4; 
 
-b2WorldId init_physics_system();
+// collision categories (adjust as needed)
+enum CollisionBits : uint64_t {
+    StaticBit  = 0x0001,
+    PlayerBit  = 0x0002,
+    PropBit    = 0x0004,
+    AllBits    = ~0ull
+};
+
+// pixels <-> meters (default: 1 tile == 1 meter)
+inline float PxToM(float px) { return px / (float)TILE_SIZE; }
+inline float MToPx(float m)  { return m  * (float)TILE_SIZE; }
+inline Vector2 PxToM(Vector2 p){ return { PxToM(p.x), PxToM(p.y) }; }
+inline Vector2 MToPx(b2Vec2   p){ return { MToPx(p.x), MToPx(p.y) }; }
+
+// world lifecycle
+b2WorldId InitWorld();
+void DestroyWorld(b2WorldId worldId);
+
+// build static colliders from your tile grid (one box per wall tile)
+void BuildStaticsFromGrid(b2WorldId worldId, const Grid* g);
+
+// create a dynamic player body (top-down). returns the Box2D id.
+b2BodyId CreatePlayer(b2WorldId worldId, Vector2 spawnPixels,
+                           float halfWidthPx, float halfHeightPx,
+                           float linearDamping = 10.0f);
+
+// drive the player by input (normalized WASD) and a speed in pixels/sec
+void UpdatePlayer(b2BodyId playerId, float dt, Vector2 inputDir, float speedPixelsPerSec);
+
+// fetch player world position in pixels (center)
+Vector2 GetPlayerPixels(b2BodyId playerId);
