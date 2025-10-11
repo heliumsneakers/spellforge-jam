@@ -1,5 +1,6 @@
 #include "raylib.h"
 #include "level/level.h"
+#include "entity/entity.hpp"
 #include "player/player.h"
 
 int main() {
@@ -18,7 +19,12 @@ int main() {
         .seed = 0       
     };
 
-   gen_level(&g, &params); 
+    gen_level(&g, &params);
+
+    EntitySystem ents;
+    Entities_Init(&ents, 0);
+
+    int made = Entities_SpawnBoxesInLevel(&ents, &g, 10, 20, {10.f, 10.f}, 0);
 
     Player player;
     Player_Init(&player, &g);
@@ -27,6 +33,7 @@ int main() {
         float dt = GetFrameTime();
 
         Player_Update(&player, &g, dt);
+        Entities_Update(&ents, dt);
 
         BeginDrawing();
         ClearBackground((Color){30,30,40,255});
@@ -40,7 +47,7 @@ int main() {
                 Color c = (t->id == TILE_WALL)? (Color){60,60,70,255} : (Color){200,200,200,255};
                 DrawRectangle(x*TILE_SIZE, y*TILE_SIZE, TILE_SIZE, TILE_SIZE, c);
             }
-
+        Entities_Draw(&ents);
         Player_Draw(&player);
 
         EndMode2D();
@@ -49,5 +56,6 @@ int main() {
     }
 
     grid_free(&g);
+    Entities_Clear(&ents);
     CloseWindow();
 }
