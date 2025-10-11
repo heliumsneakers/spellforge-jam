@@ -1,1 +1,0 @@
-/usr/bin/clang++ -O2 -g -DNDEBUG -stdlib=libc++ -fsanitize=address -Xlinker --dependency-file=CMakeFiles/SpellForge.dir/link.d CMakeFiles/SpellForge.dir/src/main.cpp.o -o bin/SpellForge  lib/libraylib.a -lGL -lpthread -ldl -lm -lc++ -lc++abi /usr/lib/libOpenGL.so /usr/lib/libGLX.so /usr/lib/libGLU.so /usr/lib/librt.a -lm -ldl
