@@ -1,6 +1,7 @@
 #include "physics.h"
+#include "../entity/entity.hpp"
 #include "../../lib/box2d/include/box2d/box2d.h"
-
+#include <vector>
 
 // --- world -------------------------------------------------------------
 b2WorldId InitWorld() {
@@ -42,34 +43,34 @@ void BuildStaticsFromGrid(b2WorldId worldId, const Grid* g) {
 
     // Build the directed edge graph along the wall perimeter
     for (int y = 0; y < H; ++y)
-    for (int x = 0; x < W; ++x) {
-        if (!is_wall(x,y)) continue;
+        for (int x = 0; x < W; ++x) {
+            if (!is_wall(x,y)) continue;
 
-        // TOP side
-        if (!is_wall(x, y-1)) {
-            int a = vid(x,   y);
-            int b = vid(x+1, y);
-            out[a*4 + 0] = b; // Right
+            // TOP side
+            if (!is_wall(x, y-1)) {
+                int a = vid(x,   y);
+                int b = vid(x+1, y);
+                out[a*4 + 0] = b; // Right
+            }
+            // RIGHT side
+            if (!is_wall(x+1, y)) {
+                int a = vid(x+1, y);
+                int b = vid(x+1, y+1);
+                out[a*4 + 1] = b; // Down
+            }
+            // BOTTOM side
+            if (!is_wall(x, y+1)) {
+                int a = vid(x+1, y+1);
+                int b = vid(x,   y+1);
+                out[a*4 + 2] = b; // Left
+            }
+            // LEFT side
+            if (!is_wall(x-1, y)) {
+                int a = vid(x,   y+1);
+                int b = vid(x,   y);
+                out[a*4 + 3] = b; // Up
+            }
         }
-        // RIGHT side
-        if (!is_wall(x+1, y)) {
-            int a = vid(x+1, y);
-            int b = vid(x+1, y+1);
-            out[a*4 + 1] = b; // Down
-        }
-        // BOTTOM side
-        if (!is_wall(x, y+1)) {
-            int a = vid(x+1, y+1);
-            int b = vid(x,   y+1);
-            out[a*4 + 2] = b; // Left
-        }
-        // LEFT side
-        if (!is_wall(x-1, y)) {
-            int a = vid(x,   y+1);
-            int b = vid(x,   y);
-            out[a*4 + 3] = b; // Up
-        }
-    }
 
     // Track used directed edges
     uint8_t* used = (uint8_t*)calloc(VERT_COUNT * 4, 1);
@@ -91,107 +92,158 @@ void BuildStaticsFromGrid(b2WorldId worldId, const Grid* g) {
 
     // Trace all loops
     for (int v0 = 0; v0 < VERT_COUNT; ++v0)
-    for (int d0 = 0; d0 < 4; ++d0) {
-        int to = out[v0*4 + d0];
-        if (to == -1 || used[v0*4 + d0]) continue;
+        for (int d0 = 0; d0 < 4; ++d0) {
+            int to = out[v0*4 + d0];
+            if (to == -1 || used[v0*4 + d0]) continue;
 
-        const int startV = v0;
-        const int startD = d0;
-        int v = v0;
-        int d = d0;
+            const int startV = v0;
+            const int startD = d0;
+            int v = v0;
+            int d = d0;
 
-        int cap = 64, n = 0;
-        int* verts = (int*)malloc(sizeof(int) * cap);
-        if (!verts) { free(used); free(out); return; }
+            int cap = 64, n = 0;
+            int* verts = (int*)malloc(sizeof(int) * cap);
+            if (!verts) { free(used); free(out); return; }
 
-        auto push_vid = [&](int vv){
-            if (n == cap) { cap *= 2; verts = (int*)realloc(verts, sizeof(int)*cap); }
-            verts[n++] = vv;
-        };
+            auto push_vid = [&](int vv){
+                if (n == cap) { cap *= 2; verts = (int*)realloc(verts, sizeof(int)*cap); }
+                verts[n++] = vv;
+            };
 
-        push_vid(v);
+            push_vid(v);
 
-        // Guard to avoid infinite loops in pathological cases
-        int safety = VERT_COUNT * 8;
+            // Guard to avoid infinite loops in pathological cases
+            int safety = VERT_COUNT * 8;
 
-        while (safety-- > 0) {
-            used[v*4 + d] = 1;
+            while (safety-- > 0) {
+                used[v*4 + d] = 1;
 
-            int vNext = out[v*4 + d];
-            if (vNext == -1) break; // graph error
+                int vNext = out[v*4 + d];
+                if (vNext == -1) break; // graph error
 
-            push_vid(vNext);
+                push_vid(vNext);
 
-            // Choose next direction at vNext with right/straight/left priority
-            int right = (d + 1) & 3;
-            int straight = d;
-            int left = (d + 3) & 3;
+                // Choose next direction at vNext with right/straight/left priority
+                int right = (d + 1) & 3;
+                int straight = d;
+                int left = (d + 3) & 3;
 
-            int nd = -1;
-            if (out[vNext*4 + right]   != -1 && !used[vNext*4 + right])   nd = right;
-            else if (out[vNext*4 + straight]!= -1 && !used[vNext*4 + straight]) nd = straight;
-            else if (out[vNext*4 + left]    != -1 && !used[vNext*4 + left])    nd = left;
+                int nd = -1;
+                if (out[vNext*4 + right]   != -1 && !used[vNext*4 + right])   nd = right;
+                else if (out[vNext*4 + straight]!= -1 && !used[vNext*4 + straight]) nd = straight;
+                else if (out[vNext*4 + left]    != -1 && !used[vNext*4 + left])    nd = left;
 
-            // If we’ve returned to the start and the next dir would be the start dir, close the loop
-            if (vNext == startV && nd == startD) {
-                break;
+                // If we’ve returned to the start and the next dir would be the start dir, close the loop
+                if (vNext == startV && nd == startD) {
+                    break;
+                }
+
+                // Dead end or no unused continuation — stop this contour
+                if (nd == -1) break;
+
+                v = vNext;
+                d = nd;
             }
 
-            // Dead end or no unused continuation — stop this contour
-            if (nd == -1) break;
+            // Convert to meters and simplify collinear points; build chain if enough points
+            if (n >= 4) {
+                b2Vec2* pts = (b2Vec2*)malloc(sizeof(b2Vec2) * n);
+                int m = 0;
 
-            v = vNext;
-            d = nd;
-        }
-
-        // Convert to meters and simplify collinear points; build chain if enough points
-        if (n >= 4) {
-            b2Vec2* pts = (b2Vec2*)malloc(sizeof(b2Vec2) * n);
-            int m = 0;
-
-            for (int i = 0; i < n; ++i) {
-                b2Vec2 p = v_to_m(verts[i]);
-                if (m < 2) {
-                    pts[m++] = p;
-                } else {
-                    if (collinear(pts[m-2], pts[m-1], p)) {
-                        pts[m-1] = p;
-                    } else {
+                for (int i = 0; i < n; ++i) {
+                    b2Vec2 p = v_to_m(verts[i]);
+                    if (m < 2) {
                         pts[m++] = p;
+                    } else {
+                        if (collinear(pts[m-2], pts[m-1], p)) {
+                            pts[m-1] = p;
+                        } else {
+                            pts[m++] = p;
+                        }
                     }
                 }
-            }
-            if (m >= 3 && collinear(pts[m-2], pts[m-1], pts[0])) m -= 1;
-            if (m >= 3 && collinear(pts[m-1], pts[0], pts[1])) {
-                for (int i = 0; i < m-1; ++i) pts[i] = pts[i+1];
-                m -= 1;
+                if (m >= 3 && collinear(pts[m-2], pts[m-1], pts[0])) m -= 1;
+                if (m >= 3 && collinear(pts[m-1], pts[0], pts[1])) {
+                    for (int i = 0; i < m-1; ++i) pts[i] = pts[i+1];
+                    m -= 1;
+                }
+
+                if (m >= 3) {
+                    b2ChainDef cd = b2DefaultChainDef();
+                    cd.points = pts;
+                    cd.count = m;
+                    cd.isLoop = true;
+                    // Optional: set filter (depends on your Box2D version)
+                    // cd.filter = (b2Filter){ StaticBit, AllBits, 0 };
+
+                    b2CreateChain(ground, &cd);
+                }
+                free(pts);
             }
 
-            if (m >= 3) {
-                b2ChainDef cd = b2DefaultChainDef();
-                cd.points = pts;
-                cd.count = m;
-                cd.isLoop = true;
-                // Optional: set filter (depends on your Box2D version)
-                // cd.filter = (b2Filter){ StaticBit, AllBits, 0 };
-
-                b2CreateChain(ground, &cd);
-            }
-            free(pts);
+            free(verts);
         }
-
-        free(verts);
-    }
 
     free(used);
     free(out);
 }
 
+std::vector<b2BodyId> Create_Entity_Bodies(EntitySystem* es, b2WorldId worldId) {
+    g_entityBodies.clear();
+    if (!es) return g_entityBodies;
+
+    const size_t n = es->pool.size();
+    g_entityBodies.resize(n, b2_nullBodyId);
+
+    for (size_t i = 0; i < n; ++i) {
+        Entity& E = es->pool[i];
+        if (!E.active) continue;
+
+        // Body
+        b2BodyDef bd = b2DefaultBodyDef();
+        bd.type = b2_dynamicBody;
+        bd.linearDamping  = 6.0f;       
+        bd.angularDamping = 6.0f;
+        bd.position = { PxToM(E.pos.x), PxToM(E.pos.y) };
+
+        b2BodyId body = b2CreateBody(worldId, &bd);
+
+        // Shape/fixture
+        b2ShapeDef sd = b2DefaultShapeDef();
+        sd.density     = 0.5f;
+        sd.filter      = {DynamicBit, AllBits, 0};
+
+        b2Polygon box = b2MakeBox(PxToM(E.half.x), PxToM(E.half.y));
+        b2CreatePolygonShape(body, &sd, &box);
+
+        g_entityBodies[i] = body;
+    }
+
+    return g_entityBodies; 
+}
+
+void Entities_Update(EntitySystem* es, float dt) {
+    if (!es) return;
+
+    const size_t n = es->pool.size();
+    if (g_entityBodies.size() != n) return; // if you add/remove entities, rebuild bodies
+
+    for (size_t i = 0; i < n; ++i) {
+        Entity& E = es->pool[i];
+        if (!E.active) continue;
+
+        b2BodyId body = g_entityBodies[i];
+        if (body.index1 == 0) continue; // null/invalid
+
+        b2Vec2 p = b2Body_GetPosition(body);
+        E.pos.x = MToPx(p.x);
+        E.pos.y = MToPx(p.y);
+        // rotation? add here 
+    }
+}
+
 // --- player ------------------------------------------------------------
-b2BodyId CreatePlayer(b2WorldId worldId, Vector2 spawnPixels,
-                           float halfWidthPx, float halfHeightPx,
-                           float linearDamping)
-{
+b2BodyId CreatePlayer(b2WorldId worldId, Vector2 spawnPixels, float halfWidthPx, float halfHeightPx, float linearDamping) {
     b2BodyDef bd = b2DefaultBodyDef();
     bd.type = b2_dynamicBody;
     bd.position = { PxToM(spawnPixels.x), PxToM(spawnPixels.y) };
@@ -209,8 +261,6 @@ b2BodyId CreatePlayer(b2WorldId worldId, Vector2 spawnPixels,
 }
 
 void UpdatePlayer(b2BodyId playerId, float dt, Vector2 inputDir, float speedPixelsPerSec) {
-    (void)dt; // we set velocity directly; Box2D integrates it
-
     // normalize input (WASD) so diagonals aren’t faster
     float len = sqrt(inputDir.x*inputDir.x + inputDir.y*inputDir.y);
     if (len > 0.0001f) {

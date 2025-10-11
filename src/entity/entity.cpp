@@ -75,9 +75,6 @@ void Entities_Destroy(EntitySystem* es, int id){
 Entity* Entities_Get(EntitySystem* es, int id){ return find_by_id(es, id); }
 const Entity* Entities_Get(const EntitySystem* es, int id){ return find_by_id(es, id); }
 
-void Entities_Update(EntitySystem* /*es*/, float /*dt*/){
-    // no-op for now (behavior scripting can go here later)
-}
 
 void Entities_Draw(const EntitySystem* es){
     for (const auto& e : es->pool){

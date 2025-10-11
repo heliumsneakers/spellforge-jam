@@ -2,15 +2,18 @@
 #include "../../lib/box2d/include/box2d/box2d.h"
 #include "raylib.h"
 #include "../level/level.h"
+#include "../entity/entity.hpp"
 
 const float tick 	= 1.0f / 20.0f;
-const int subSteps 	= 4; 
+const int subSteps 	= 4;
+
+static std::vector<b2BodyId> g_entityBodies;
 
 // collision categories (adjust as needed)
 enum CollisionBits : uint64_t {
     StaticBit  = 0x0001,
     PlayerBit  = 0x0002,
-    PropBit    = 0x0004,
+    DynamicBit    = 0x0004,
     AllBits    = ~0ull
 };
 
@@ -26,6 +29,9 @@ void DestroyWorld(b2WorldId worldId);
 
 // build static colliders from your tile grid (one box per wall tile)
 void BuildStaticsFromGrid(b2WorldId worldId, const Grid* g);
+
+std::vector<b2BodyId> Create_Entity_Bodies(EntitySystem* es, b2WorldId worldId); 
+void Entities_Update(EntitySystem *es, float dt);
 
 // create a dynamic player body (top-down). returns the Box2D id.
 b2BodyId CreatePlayer(b2WorldId worldId, Vector2 spawnPixels,

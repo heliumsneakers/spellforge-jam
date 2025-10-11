@@ -40,8 +40,6 @@ void        Entities_Destroy(EntitySystem* es, int id);
 Entity*     Entities_Get(EntitySystem* es, int id);
 const Entity*Entities_Get(const EntitySystem* es, int id);
 
-// Update / draw (update is currently a no-op; kept for future logic)
-void Entities_Update(EntitySystem* es, float dt);
 void Entities_Draw(const EntitySystem* es);
 
 // Spawner: add randomized black rectangles (“props”) on FLOOR tiles

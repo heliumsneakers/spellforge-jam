@@ -4,6 +4,7 @@
 #include "player/player.h"
 #include "physics/physics.h"
 #include "../lib/box2d/include/box2d/box2d.h"
+#include <numeric>
 
 int main() {
     InitWindow(1280, 720, "SpellForge");
@@ -39,6 +40,8 @@ int main() {
     Vector2 spawnpx = player.pos;
     b2BodyId playerBody = CreatePlayer(world, spawnpx, 12.0f, 12.0f);
 
+    g_entityBodies = Create_Entity_Bodies(&ents, world);
+
     while (!WindowShouldClose()) {
         float dt = GetFrameTime();
 
@@ -49,15 +52,13 @@ int main() {
         if (IsKeyDown(KEY_D)) dir.x += 1;
 
         UpdatePlayer(playerBody, tick, dir, 200.0f);
+        Entities_Update(&ents, tick);
+
         b2World_Step(world, tick, subSteps);
 
         Vector2 playerPosPx = GetPlayerPixels(playerBody);
         player.pos = playerPosPx;
         player.cam.target = playerPosPx;
-
-        // Player_Update(&player, &g, dt);
-        
-        Entities_Update(&ents, dt);
 
         BeginDrawing();
         ClearBackground((Color){30,30,40,255});
