@@ -7,7 +7,7 @@
 const float tick 	= 1.0f / 20.0f;
 const int subSteps 	= 4;
 
-static std::vector<b2BodyId> g_entityBodies;
+extern std::vector<b2BodyId> g_entityBodies;
 
 // collision categories (adjust as needed)
 enum CollisionBits : uint64_t {

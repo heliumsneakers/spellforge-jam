@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/SpellForge.dir/link.d"
   "CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o"
   "CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o.d"
   "CMakeFiles/SpellForge.dir/src/level/level.cpp.o"

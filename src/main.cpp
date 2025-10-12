@@ -4,7 +4,8 @@
 #include "player/player.h"
 #include "physics/physics.h"
 #include "../lib/box2d/include/box2d/box2d.h"
-#include <numeric>
+
+Vector2 teleForce = { 50.0f, 25.0f };
 
 int main() {
     InitWindow(1280, 720, "SpellForge");
@@ -42,15 +43,25 @@ int main() {
 
     g_entityBodies = Create_Entity_Bodies(&ents, world);
 
+    TraceLog(LOG_INFO, "WORLD BUILT SETUP COMPLETE");
+
     while (!WindowShouldClose()) {
         float dt = GetFrameTime();
 
         Vector2 dir = Build_Input();
+        Vector2 mouseWorld = GetScreenToWorld2D(GetMousePosition(), player.cam);
 
         UpdatePlayer(playerBody, tick, dir, 200.0f);
-        Entities_Update(&ents, tick);
+
+        if(IsKeyDown(KEY_SPACE)) {
+            Telekinesis_Hold(player.pos, 50.0f, teleForce, &ents);
+        } else if(IsKeyReleased(KEY_SPACE)) {
+            Telekinesis_Fire(player.pos, 50.0f, 500.0f, &ents);
+        }
 
         b2World_Step(world, tick, subSteps);
+
+        Entities_Update(&ents, tick);
 
         Vector2 playerPosPx = GetPlayerPixels(playerBody);
         player.pos = playerPosPx;

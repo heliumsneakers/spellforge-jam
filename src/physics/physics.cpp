@@ -3,6 +3,8 @@
 #include "../../lib/box2d/include/box2d/box2d.h"
 #include <vector>
 
+std::vector<b2BodyId> g_entityBodies;
+
 // --- world -------------------------------------------------------------
 b2WorldId InitWorld() {
     b2WorldDef def = b2DefaultWorldDef();
@@ -218,7 +220,7 @@ std::vector<b2BodyId> Create_Entity_Bodies(EntitySystem* es, b2WorldId worldId) 
 
         g_entityBodies[i] = body;
     }
-
+    TraceLog(LOG_INFO, "Created %zu entity bodies", g_entityBodies.size());
     return g_entityBodies; 
 }
 

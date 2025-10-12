@@ -1,6 +1,7 @@
 #pragma once
 #include "raylib.h"
 #include "../level/level.h"
+#include "../entity/entity.hpp"
 #include "../../lib/box2d/include/box2d/box2d.h"
 
 typedef struct {
@@ -16,6 +17,8 @@ typedef struct {
     float    camZoom;   // 1.0 = 1:1 pixels
 } Player;
 
+void Telekinesis_Hold(Vector2 pos, float radius, Vector2 force, EntitySystem* es);
+void Telekinesis_Fire(Vector2 playerPos, float orbitRadius, float launchForce, EntitySystem* es);
 void Player_Init(Player* p, const Grid* level);
 Vector2 Build_Input();
 void UpdatePlayer(b2BodyId playerId, float dt, Vector2 inputDir, float speedPxPerSec);
