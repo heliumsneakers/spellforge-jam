@@ -3,10 +3,6 @@ set -euo pipefail
 
 # --- locate project root & emsdk ----------------------------------------
 ROOT="$(cd "$(dirname "$0")" && pwd)"
-EMSDK_PATH="$ROOT/../../../SDKS/emsdk"
-
-# --- load Emscripten ----------------------------------------------------
-source "$EMSDK_PATH/emsdk_env.sh"
 
 # --- prepare output dir ------------------------------------------------
 mkdir -p "$ROOT/web_build"
