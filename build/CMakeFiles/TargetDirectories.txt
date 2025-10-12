@@ -1,0 +1,3 @@
+/Users/klo/projects/jams/spellforge-jam/build/CMakeFiles/SpellForge.dir
+/Users/klo/projects/jams/spellforge-jam/build/CMakeFiles/edit_cache.dir
+/Users/klo/projects/jams/spellforge-jam/build/CMakeFiles/rebuild_cache.dir

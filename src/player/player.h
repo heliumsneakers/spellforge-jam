@@ -1,6 +1,7 @@
 #pragma once
 #include "raylib.h"
 #include "../level/level.h"
+#include "../../lib/box2d/include/box2d/box2d.h"
 
 typedef struct {
     Vector2 pos;      // center position in pixels
@@ -16,5 +17,6 @@ typedef struct {
 } Player;
 
 void Player_Init(Player* p, const Grid* level);
-void Player_Update(Player* p, const Grid* level, float dt);
+Vector2 Build_Input();
+void UpdatePlayer(b2BodyId playerId, float dt, Vector2 inputDir, float speedPxPerSec);
 void Player_Draw(const Player* p);

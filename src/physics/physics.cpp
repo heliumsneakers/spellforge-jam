@@ -260,22 +260,6 @@ b2BodyId CreatePlayer(b2WorldId worldId, Vector2 spawnPixels, float halfWidthPx,
     return body;
 }
 
-void UpdatePlayer(b2BodyId playerId, float dt, Vector2 inputDir, float speedPixelsPerSec) {
-    // normalize input (WASD) so diagonals aren’t faster
-    float len = sqrt(inputDir.x*inputDir.x + inputDir.y*inputDir.y);
-    if (len > 0.0001f) {
-        inputDir.x /= len;
-        inputDir.y /= len;
-    } else {
-        inputDir = {0,0};
-    }
-
-    b2Vec2 vel = { PxToM(inputDir.x * speedPixelsPerSec),
-                   PxToM(inputDir.y * speedPixelsPerSec) };
-
-    b2Body_SetLinearVelocity(playerId, vel);
-}
-
 Vector2 GetPlayerPixels(b2BodyId playerId) {
     b2Transform xf = b2Body_GetTransform(playerId);
     return MToPx(xf.p);

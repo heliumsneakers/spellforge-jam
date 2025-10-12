@@ -45,11 +45,7 @@ int main() {
     while (!WindowShouldClose()) {
         float dt = GetFrameTime();
 
-        Vector2 dir = {0,0};
-        if (IsKeyDown(KEY_W)) dir.y -= 1;
-        if (IsKeyDown(KEY_S)) dir.y += 1;
-        if (IsKeyDown(KEY_A)) dir.x -= 1;
-        if (IsKeyDown(KEY_D)) dir.x += 1;
+        Vector2 dir = Build_Input();
 
         UpdatePlayer(playerBody, tick, dir, 200.0f);
         Entities_Update(&ents, tick);

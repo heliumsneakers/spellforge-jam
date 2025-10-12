@@ -3,7 +3,7 @@ set -euo pipefail
 
 # --- locate project root & emsdk ----------------------------------------
 ROOT="$(cd "$(dirname "$0")" && pwd)"
-EMSDK_PATH="$ROOT/../../../../environments/emsdk"
+EMSDK_PATH="$ROOT/../../../SDKS/emsdk"
 
 # --- load Emscripten ----------------------------------------------------
 source "$EMSDK_PATH/emsdk_env.sh"

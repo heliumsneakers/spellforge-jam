@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/Users/klo/projects/jams/spellforge-jam/build",
+  "command": "/usr/bin/c++  -I/Users/klo/projects/jams/spellforge-jam/src/include -I/Users/klo/projects/jams/spellforge-jam/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks -isystem /opt/homebrew/Cellar/raylib/5.5/include -O2 -g -DNDEBUG -std=gnu++17 -arch arm64 -stdlib=libc++ -fsanitize=address -fno-omit-frame-pointer -I/opt/homebrew/Cellar/raylib/5.5/include -o CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o -c /Users/klo/projects/jams/spellforge-jam/src/entity/entity.cpp",
+  "file": "/Users/klo/projects/jams/spellforge-jam/src/entity/entity.cpp",
+  "output": "CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o"
+},
+{
+  "directory": "/Users/klo/projects/jams/spellforge-jam/build",
+  "command": "/usr/bin/c++  -I/Users/klo/projects/jams/spellforge-jam/src/include -I/Users/klo/projects/jams/spellforge-jam/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks -isystem /opt/homebrew/Cellar/raylib/5.5/include -O2 -g -DNDEBUG -std=gnu++17 -arch arm64 -stdlib=libc++ -fsanitize=address -fno-omit-frame-pointer -I/opt/homebrew/Cellar/raylib/5.5/include -o CMakeFiles/SpellForge.dir/src/level/level.cpp.o -c /Users/klo/projects/jams/spellforge-jam/src/level/level.cpp",
+  "file": "/Users/klo/projects/jams/spellforge-jam/src/level/level.cpp",
+  "output": "CMakeFiles/SpellForge.dir/src/level/level.cpp.o"
+},
+{
+  "directory": "/Users/klo/projects/jams/spellforge-jam/build",
+  "command": "/usr/bin/c++  -I/Users/klo/projects/jams/spellforge-jam/src/include -I/Users/klo/projects/jams/spellforge-jam/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks -isystem /opt/homebrew/Cellar/raylib/5.5/include -O2 -g -DNDEBUG -std=gnu++17 -arch arm64 -stdlib=libc++ -fsanitize=address -fno-omit-frame-pointer -I/opt/homebrew/Cellar/raylib/5.5/include -o CMakeFiles/SpellForge.dir/src/main.cpp.o -c /Users/klo/projects/jams/spellforge-jam/src/main.cpp",
+  "file": "/Users/klo/projects/jams/spellforge-jam/src/main.cpp",
+  "output": "CMakeFiles/SpellForge.dir/src/main.cpp.o"
+},
+{
+  "directory": "/Users/klo/projects/jams/spellforge-jam/build",
+  "command": "/usr/bin/c++  -I/Users/klo/projects/jams/spellforge-jam/src/include -I/Users/klo/projects/jams/spellforge-jam/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks -isystem /opt/homebrew/Cellar/raylib/5.5/include -O2 -g -DNDEBUG -std=gnu++17 -arch arm64 -stdlib=libc++ -fsanitize=address -fno-omit-frame-pointer -I/opt/homebrew/Cellar/raylib/5.5/include -o CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o -c /Users/klo/projects/jams/spellforge-jam/src/physics/physics.cpp",
+  "file": "/Users/klo/projects/jams/spellforge-jam/src/physics/physics.cpp",
+  "output": "CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o"
+},
+{
+  "directory": "/Users/klo/projects/jams/spellforge-jam/build",
+  "command": "/usr/bin/c++  -I/Users/klo/projects/jams/spellforge-jam/src/include -I/Users/klo/projects/jams/spellforge-jam/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks -isystem /opt/homebrew/Cellar/raylib/5.5/include -O2 -g -DNDEBUG -std=gnu++17 -arch arm64 -stdlib=libc++ -fsanitize=address -fno-omit-frame-pointer -I/opt/homebrew/Cellar/raylib/5.5/include -o CMakeFiles/SpellForge.dir/src/player/player.cpp.o -c /Users/klo/projects/jams/spellforge-jam/src/player/player.cpp",
+  "file": "/Users/klo/projects/jams/spellforge-jam/src/player/player.cpp",
+  "output": "CMakeFiles/SpellForge.dir/src/player/player.cpp.o"
+}
+]

@@ -38,8 +38,5 @@ b2BodyId CreatePlayer(b2WorldId worldId, Vector2 spawnPixels,
                            float halfWidthPx, float halfHeightPx,
                            float linearDamping = 10.0f);
 
-// drive the player by input (normalized WASD) and a speed in pixels/sec
-void UpdatePlayer(b2BodyId playerId, float dt, Vector2 inputDir, float speedPixelsPerSec);
-
 // fetch player world position in pixels (center)
 Vector2 GetPlayerPixels(b2BodyId playerId);

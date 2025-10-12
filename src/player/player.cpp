@@ -1,7 +1,11 @@
 #include "player.h"
 #include "../level/level.h"
+#include "../physics/physics.h"
 #include <math.h>
+#include <raylib.h>
+#include "raymath.h"
 #include <time.h>
+#include <vector>
 
 static bool HasSpaceAround(const Grid* g, int x, int y, int radius) {
     for (int dy = -radius; dy <= radius; ++dy) {
@@ -79,50 +83,65 @@ void Player_Init(Player* p, const Grid* level) {
     p->cam.zoom     = p->camZoom;
 }
 
-void Player_Update(Player* p, const Grid* level, float dt) {
-    // Input
-    Vector2 dir = {0};
-    if (IsKeyDown(KEY_W)) dir.y -= 1;
-    if (IsKeyDown(KEY_S)) dir.y += 1;
-    if (IsKeyDown(KEY_A)) dir.x -= 1;
-    if (IsKeyDown(KEY_D)) dir.x += 1;
-
-    float len = sqrtf(dir.x*dir.x + dir.y*dir.y);
-    if (len > 0.001f) { dir.x /= len; dir.y /= len; }
-
-    p->vel.x = dir.x * p->speed * dt;
-    p->vel.y = dir.y * p->speed * dt;
-
-    // Grid collision (axis-separated)
-    float nx = p->pos.x, ny = p->pos.y;
-    collide_aabb_vs_walls(level, &nx, &ny, p->halfw, p->halfh, p->vel.x, p->vel.y);
-    p->pos.x = nx; p->pos.y = ny;
-
-    // --- Camera follow (smooth) ---
-    // Smoothly move camera target toward player
-    p->cam.target.x = damp(p->cam.target.x, p->pos.x, p->camSmooth, dt);
-    p->cam.target.y = damp(p->cam.target.y, p->pos.y, p->camSmooth, dt);
-
-    // Keep offset centered on current window size (handles resizes)
-    p->cam.offset.x = GetScreenWidth()  * 0.5f;
-    p->cam.offset.y = GetScreenHeight() * 0.5f;
-
-    // clamp camera to level bounds
-    const float worldW = (float)(level->w * TILE_SIZE);
-    const float worldH = (float)(level->h * TILE_SIZE);
-    const float halfViewW = p->cam.offset.x / p->cam.zoom;
-    const float halfViewH = p->cam.offset.y / p->cam.zoom;
-
-    float minX = halfViewW;
-    float minY = halfViewH;
-    float maxX = (worldW > halfViewW) ? (worldW - halfViewW) : halfViewW;
-    float maxY = (worldH > halfViewH) ? (worldH - halfViewH) : halfViewH;
-
-    if (p->cam.target.x < minX) p->cam.target.x = minX;
-    if (p->cam.target.y < minY) p->cam.target.y = minY;
-    if (p->cam.target.x > maxX) p->cam.target.x = maxX;
-    if (p->cam.target.y > maxY) p->cam.target.y = maxY;
+Vector2 Build_Input() {
+    Vector2 dir = { 0, 0 };
+        if (IsKeyDown(KEY_W)) dir.y -= 1;
+        if (IsKeyDown(KEY_S)) dir.y += 1;
+        if (IsKeyDown(KEY_A)) dir.x -= 1;
+        if (IsKeyDown(KEY_D)) dir.x += 1;
+    return dir;
 }
+
+void apply_ent_force(EntitySystem* es, Vector2 force) {
+    const size_t n = es->pool.size();
+    for(size_t i = 0; i < n; ++i) {
+        b2BodyId body;
+        g_entityBodies[i] = body;
+        b2Body_ApplyForce(body, b2Vec2 {PxToM(force.x), PxToM(force.y)}, b2Vec2 {10, 10}, true);
+    }
+}
+
+void Telekenesis_Hold(Vector2 pos, float radius, Vector2 force, EntitySystem* ents) {
+    if(IsKeyDown(MOUSE_BUTTON_LEFT)) {
+       for(auto entities : ents->pool) {
+            Vector2 delta = Vector2Subtract(entities.pos, pos);
+            float distance = Vector2Length(delta);
+            if (distance < radius) {
+                Vector2 normalized = Vector2Scale(delta, 1.0f / distance);
+            }
+        } 
+    }
+}
+
+// INSPO FROM VERLET ENGINE
+// void PickUpParticles(Vector2 position, float radius, Vector2 force) {
+//     for (auto& particle : particles) {
+//         Vector2 delta = Vector2Subtract(particle.position, position);
+//         float distance = Vector2Length(delta);
+//         if (distance < radius) {
+//             Vector2 normalized = Vector2Scale(delta, 1.0f / distance);
+//             ApplyForce(particle, Vector2Scale(normalized, force.x));
+//             ApplyForce(particle, {0, force.y}); // Separate the x and y components of the force
+//         }
+//     }
+// }
+
+void UpdatePlayer(b2BodyId playerId, float dt, Vector2 inputDir, float speedPixelsPerSec) {
+    // normalize input (WASD) so diagonals aren’t faster
+    float len = sqrt(inputDir.x*inputDir.x + inputDir.y*inputDir.y);
+    if (len > 0.0001f) {
+        inputDir.x /= len;
+        inputDir.y /= len;
+    } else {
+        inputDir = {0,0};
+    }
+
+    b2Vec2 vel = { PxToM(inputDir.x * speedPixelsPerSec),
+                   PxToM(inputDir.y * speedPixelsPerSec) };
+
+    b2Body_SetLinearVelocity(playerId, vel);
+}
+
 
 void Player_Draw(const Player* p) {
     DrawRectangleV(

@@ -65,6 +65,8 @@ if (NOT raylib_FOUND)
   endif()
 endif()
 
+find_package(box2d)
+
 # ----------------------------
 # Sources
 # ----------------------------
