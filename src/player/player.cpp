@@ -194,19 +194,6 @@ void Telekinesis_Fire(Vector2 playerPos, float orbitRadius, float launchForce, E
     }
 }
 
-// INSPO FROM VERLET ENGINE
-// void PickUpParticles(Vector2 position, float radius, Vector2 force) {
-//     for (auto& particle : particles) {
-//         Vector2 delta = Vector2Subtract(particle.position, position);
-//         float distance = Vector2Length(delta);
-//         if (distance < radius) {
-//             Vector2 normalized = Vector2Scale(delta, 1.0f / distance);
-//             ApplyForce(particle, Vector2Scale(normalized, force.x));
-//             ApplyForce(particle, {0, force.y}); // Separate the x and y components of the force
-//         }
-//     }
-// }
-
 void UpdatePlayer(b2BodyId playerId, float dt, Vector2 inputDir, float speedPixelsPerSec) {
     // normalize input (WASD) so diagonals aren’t faster
     float len = sqrt(inputDir.x*inputDir.x + inputDir.y*inputDir.y);

@@ -11,10 +11,12 @@ extern std::vector<b2BodyId> g_entityBodies;
 
 // collision categories (adjust as needed)
 enum CollisionBits : uint64_t {
-    StaticBit  = 0x0001,
-    PlayerBit  = 0x0002,
-    DynamicBit    = 0x0004,
-    AllBits    = ~0ull
+    StaticBit       = 0x0001,
+    PlayerBit       = 0x0002,
+    DynamicBit      = 0x0004,
+    EnemyBit        = 0x0008,
+    ProjectileBit   = 0x0016,
+    AllBits         = ~0ull
 };
 
 // pixels <-> meters (default: 1 tile == 1 meter)
@@ -35,8 +37,8 @@ void Entities_Update(EntitySystem *es, float dt);
 
 // create a dynamic player body (top-down). returns the Box2D id.
 b2BodyId CreatePlayer(b2WorldId worldId, Vector2 spawnPixels,
-                           float halfWidthPx, float halfHeightPx,
-                           float linearDamping = 10.0f);
+                      float halfWidthPx, float halfHeightPx,
+                      float linearDamping = 10.0f);
 
 // fetch player world position in pixels (center)
 Vector2 GetPlayerPixels(b2BodyId playerId);

@@ -27,6 +27,8 @@ void BuildStaticsFromGrid(b2WorldId worldId, const Grid* g) {
     b2BodyDef bd = b2DefaultBodyDef();
     b2BodyId ground = b2CreateBody(worldId, &bd);
 
+    b2Body_EnableContactEvents(ground, true);
+
     const int W = g->w, H = g->h;
     const int VX = W + 1, VY = H + 1;
     const int VERT_COUNT = VX * VY;
@@ -209,6 +211,7 @@ std::vector<b2BodyId> Create_Entity_Bodies(EntitySystem* es, b2WorldId worldId) 
         bd.position = { PxToM(E.pos.x), PxToM(E.pos.y) };
 
         b2BodyId body = b2CreateBody(worldId, &bd);
+        b2Body_EnableContactEvents(body, true);
 
         // Shape/fixture
         b2ShapeDef sd = b2DefaultShapeDef();
@@ -258,6 +261,8 @@ b2BodyId CreatePlayer(b2WorldId worldId, Vector2 spawnPixels, float halfWidthPx,
 
     b2Polygon box = b2MakeBox(PxToM(halfWidthPx), PxToM(halfHeightPx));
     b2CreatePolygonShape(body, &sd, &box);
+    
+    b2Body_EnableContactEvents(body, true);
 
     return body;
 }

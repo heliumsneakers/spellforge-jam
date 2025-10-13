@@ -10,16 +10,16 @@ static int rrange(uint32_t* s, int a, int b){ if (b < a){int t=a;a=b;b=t;} retur
 static inline Vector2 v2(float x,float y){ return {x,y}; }
 static inline bool aabb_overlap(Vector2 aPos, Vector2 aHalf, Vector2 bPos, Vector2 bHalf){
     return std::fabs(aPos.x - bPos.x) <= (aHalf.x + bHalf.x) &&
-           std::fabs(aPos.y - bPos.y) <= (aHalf.y + bHalf.y);
+    std::fabs(aPos.y - bPos.y) <= (aHalf.y + bHalf.y);
 }
 
 // 3x3 all-floor clearance around tile (keeps props off walls/corridor edges)
 static bool has_clearance_1(const Grid* g, int tx, int ty){
     for (int dy=-1; dy<=1; ++dy)
-    for (int dx=-1; dx<=1; ++dx){
-        Tile* t = grid_at((Grid*)g, tx+dx, ty+dy);
-        if (!t || t->id != TILE_FLOOR) return false;
-    }
+        for (int dx=-1; dx<=1; ++dx){
+            Tile* t = grid_at((Grid*)g, tx+dx, ty+dy);
+            if (!t || t->id != TILE_FLOOR) return false;
+        }
     return true;
 }
 
@@ -68,8 +68,8 @@ void Entities_Destroy(EntitySystem* es, int id){
         }
     }
     es->pool.erase(std::remove_if(es->pool.begin(), es->pool.end(),
-                  [](const Entity& E){ return !E.active; }),
-                  es->pool.end());
+                                  [](const Entity& E){ return !E.active; }),
+                   es->pool.end());
 }
 
 Entity* Entities_Get(EntitySystem* es, int id){ return find_by_id(es, id); }
@@ -103,12 +103,12 @@ int Entities_SpawnBoxesInLevel(EntitySystem* es,
     std::vector<int> candidates;
     candidates.reserve(g->w * g->h);
     for (int y=0; y<g->h; ++y)
-    for (int x=0; x<g->w; ++x){
-        Tile* t = grid_at((Grid*)g, x, y);
-        if (t && t->id == TILE_FLOOR && has_clearance_1(g,x,y)){
-            candidates.push_back(y*g->w + x);
+        for (int x=0; x<g->w; ++x){
+            Tile* t = grid_at((Grid*)g, x, y);
+            if (t && t->id == TILE_FLOOR && has_clearance_1(g,x,y)){
+                candidates.push_back(y*g->w + x);
+            }
         }
-    }
     if (candidates.empty()) return 0;
 
     // Choose target count

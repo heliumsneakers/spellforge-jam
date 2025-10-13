@@ -2,7 +2,9 @@
 #include "level/level.h"
 #include "entity/entity.hpp"
 #include "player/player.h"
+#include "player/projectile.h"
 #include "physics/physics.h"
+#include "entity/enemies.hpp"
 #include "../lib/box2d/include/box2d/box2d.h"
 
 Vector2 teleForce = { 50.0f, 25.0f };
@@ -43,13 +45,15 @@ int main() {
 
     g_entityBodies = Create_Entity_Bodies(&ents, world);
 
+    Enemies_Spawn(&ents, &g, player.pos, 10, 300.0f);
+    Enemies_CreateBodies(&ents, world);
+
     TraceLog(LOG_INFO, "WORLD BUILT SETUP COMPLETE");
 
     while (!WindowShouldClose()) {
         float dt = GetFrameTime();
 
         Vector2 dir = Build_Input();
-        Vector2 mouseWorld = GetScreenToWorld2D(GetMousePosition(), player.cam);
 
         UpdatePlayer(playerBody, tick, dir, 200.0f);
 
@@ -59,8 +63,14 @@ int main() {
             Telekinesis_Fire(player.pos, 50.0f, 500.0f, &ents);
         }
 
+        Projectile_HandleSwitch();
+        Projectile_Shoot(world, player.pos, player.cam);
+
+        Enemies_Update(&ents, &g, playerBody, tick);
+
         b2World_Step(world, tick, subSteps);
 
+        Projectile_Update(world, tick);
         Entities_Update(&ents, tick);
 
         Vector2 playerPosPx = GetPlayerPixels(playerBody);
@@ -81,6 +91,7 @@ int main() {
             }
 
         Entities_Draw(&ents);
+        Projectile_Draw();
         Player_Draw(&player);
 
         EndMode2D();

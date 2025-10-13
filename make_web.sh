@@ -17,7 +17,7 @@ em++ $SRC_FILES \
     -Os -Wall \
     -I"$ROOT" \
     -I"$ROOT/lib/raylib/src" \
-    -I"$ROOT/lib/box2d/include" \
+    -I"$ROOT/lib/box2d/include/box2d" \
     -L"$ROOT/lib/box2d/build/src" -lbox2d \
     -L"$ROOT/lib/raylib/src" -lraylib.web \
     -s USE_GLFW=3 \
