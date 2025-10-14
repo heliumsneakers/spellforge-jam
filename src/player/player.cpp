@@ -1,6 +1,7 @@
 #include "player.h"
 #include "../level/level.h"
 #include "../physics/physics.h"
+#include "projectile.h"
 #include <math.h>
 #include <raylib.h>
 #include "raymath.h"
@@ -93,54 +94,52 @@ Vector2 Build_Input() {
 }
 
 // Apply a force at the center of each entity within a radius of `pos`
+
 void Telekinesis_Hold(Vector2 pos, float orbitRadius, Vector2 force, EntitySystem* es)
 {
     if (!es) return;
+    if (g_entityBodies.size() != es->pool.size()) return;
 
-    const size_t n = es->pool.size();
-    if (g_entityBodies.size() != n) {
-        TraceLog(LOG_INFO, "Entity/body mismatch: %zu vs %zu", g_entityBodies.size(), n);
-        return;
-    }
-
-    for (size_t i = 0; i < n; ++i)
+    for (size_t i = 0; i < es->pool.size(); ++i)
     {
         Entity& e = es->pool[i];
         if (!e.active) continue;
+        if (e.kind == EntityKind::Enemy) continue;
 
         b2BodyId body = g_entityBodies[i];
         if (body.index1 == 0) continue;
 
-        // --- Get body position ---
         b2Vec2 bpos = b2Body_GetPosition(body);
         Vector2 bodyPosPx = { MToPx(bpos.x), MToPx(bpos.y) };
 
-        // --- Vector from player to body ---
         Vector2 delta = Vector2Subtract(bodyPosPx, pos);
         float dist = Vector2Length(delta);
-        if (dist < 2.0f || dist > orbitRadius * 2.0f) continue; // too close or too far
+        if (dist < 2.0f || dist > orbitRadius * 2.0f) continue;
 
-        // --- Direction from player to body ---
-        Vector2 dir = Vector2Scale(delta, 1.0f / dist);
+        // --- Assign element + color when grabbed ---
+        if (!e.telekinetic)
+        {
+            e.telekinetic = true;
+            if (g_currentProjectile == ProjectileType::FIRE) {
+                e.element = ElementType::FIRE;
+                e.color = (Color){255, 80, 20, 255};
+            } else {
+                e.element = ElementType::ICE;
+                e.color = (Color){100, 180, 255, 255};
+            }
+        }
 
-        // --- Tangential direction (perpendicular to dir) ---
-        Vector2 tangent = { -dir.y, dir.x }; // rotate 90 degrees CCW for orbit
-
-        // --- Compute radial (in/out) force to keep it on ring ---
+        // Orbital physics (unchanged)
+        Vector2 dir = Vector2Normalize(delta);
+        Vector2 tangent = { -dir.y, dir.x };
         float radialError = dist - orbitRadius;
-        Vector2 radialForce = Vector2Scale(dir, -radialError * force.x * 0.02f); // pulls toward orbit ring
 
-        // --- Compute tangential (spin) force ---
-        Vector2 tangentialForce = Vector2Scale(tangent, force.y * 0.015f); // adjusts spin speed
-
-        // --- Combine ---
+        Vector2 radialForce = Vector2Scale(dir, -radialError * force.x * 0.02f);
+        Vector2 tangentialForce = Vector2Scale(tangent, force.y * 0.015f);
         Vector2 totalForcePx = Vector2Add(radialForce, tangentialForce);
         b2Vec2 totalForceM = { PxToM(totalForcePx.x), PxToM(totalForcePx.y) };
-
-        // --- Apply as impulse for responsiveness ---
         b2Body_ApplyLinearImpulseToCenter(body, totalForceM, true);
 
-        // --- Optional damping for stability ---
         b2Vec2 vel = b2Body_GetLinearVelocity(body);
         vel.x *= 0.97f;
         vel.y *= 0.97f;
@@ -148,49 +147,42 @@ void Telekinesis_Hold(Vector2 pos, float orbitRadius, Vector2 force, EntitySyste
     }
 }
 
-void Telekinesis_Fire(Vector2 playerPos, float orbitRadius, float launchForce, EntitySystem* es) {
+void Telekinesis_Fire(Vector2 playerPos, float orbitRadius, float launchForce, EntitySystem* es)
+{
     if (!es) return;
+    if (g_entityBodies.size() != es->pool.size()) return;
 
-    const size_t n = es->pool.size();
-    if (g_entityBodies.size() != n) {
-        TraceLog(LOG_INFO, "Entity/body mismatch: %zu vs %zu", g_entityBodies.size(), n);
-        return;
-    }
-
-    for (size_t i = 0; i < n; ++i)
+    for (size_t i = 0; i < es->pool.size(); ++i)
     {
         Entity& e = es->pool[i];
         if (!e.active) continue;
+        if (e.kind == EntityKind::Enemy) continue;
+        if (!e.telekinetic) continue; // only fire held props
 
         b2BodyId body = g_entityBodies[i];
         if (body.index1 == 0) continue;
 
-        // Get body position
         b2Vec2 bpos = b2Body_GetPosition(body);
         Vector2 bodyPosPx = { MToPx(bpos.x), MToPx(bpos.y) };
 
-        // Vector from player to entity
         Vector2 delta = Vector2Subtract(bodyPosPx, playerPos);
         float dist = Vector2Length(delta);
-
-        // Only fire entities close enough to the orbit radius
         if (dist < orbitRadius * 0.5f || dist > orbitRadius * 1.5f)
             continue;
 
-        // Normalize the outward direction (away from player)
-        Vector2 dir = Vector2Scale(delta, 1.0f / dist);
-
-        // Apply impulse outward
+        Vector2 dir = Vector2Normalize(delta);
         Vector2 impulsePx = Vector2Scale(dir, launchForce);
         b2Vec2 impulseM = { PxToM(impulsePx.x), PxToM(impulsePx.y) };
-
         b2Body_ApplyLinearImpulseToCenter(body, impulseM, true);
 
-        // Add a bit of random spin for visual effect
         float torque = ((float)GetRandomValue(-100, 100)) * 0.0001f;
         b2Body_ApplyTorque(body, torque, true);
 
-        TraceLog(LOG_INFO, "Telekinesis fired entity %zu impulse=(%.3f, %.3f)", i, impulseM.x, impulseM.y);
+        TraceLog(LOG_INFO, "Telekinesis fired prop %zu [%s]", 
+                 i, (e.element == ElementType::FIRE ? "FIRE" : "ICE"));
+
+        // mark it released
+        e.telekinetic = false;
     }
 }
 

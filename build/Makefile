@@ -65,26 +65,6 @@ CMAKE_BINARY_DIR = /home/klo/Work/Jams/MiniJam-Forge/spellforge/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target package
-package: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool..."
-	/usr/bin/cpack --config ./CPackConfig.cmake
-.PHONY : package
-
-# Special rule for the target package
-package/fast: package
-.PHONY : package/fast
-
-# Special rule for the target package_source
-package_source:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool for source..."
-	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CPackSourceConfig.cmake
-.PHONY : package_source
-
-# Special rule for the target package_source
-package_source/fast: package_source
-.PHONY : package_source/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
@@ -104,51 +84,6 @@ rebuild_cache:
 # Special rule for the target rebuild_cache
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-.PHONY : list_install_components/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -194,57 +129,29 @@ SpellForge/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpellForge.dir/build.make CMakeFiles/SpellForge.dir/build
 .PHONY : SpellForge/fast
 
-#=============================================================================
-# Target rules for targets named uninstall
+src/entity/enemies.o: src/entity/enemies.cpp.o
+.PHONY : src/entity/enemies.o
 
-# Build rule for target.
-uninstall: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 uninstall
-.PHONY : uninstall
+# target to build an object file
+src/entity/enemies.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpellForge.dir/build.make CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o
+.PHONY : src/entity/enemies.cpp.o
 
-# fast build rule for target.
-uninstall/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/raylib-build/CMakeFiles/uninstall.dir/build.make _deps/raylib-build/CMakeFiles/uninstall.dir/build
-.PHONY : uninstall/fast
+src/entity/enemies.i: src/entity/enemies.cpp.i
+.PHONY : src/entity/enemies.i
 
-#=============================================================================
-# Target rules for targets named raylib
+# target to preprocess a source file
+src/entity/enemies.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpellForge.dir/build.make CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.i
+.PHONY : src/entity/enemies.cpp.i
 
-# Build rule for target.
-raylib: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 raylib
-.PHONY : raylib
+src/entity/enemies.s: src/entity/enemies.cpp.s
+.PHONY : src/entity/enemies.s
 
-# fast build rule for target.
-raylib/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/raylib-build/raylib/CMakeFiles/raylib.dir/build.make _deps/raylib-build/raylib/CMakeFiles/raylib.dir/build
-.PHONY : raylib/fast
-
-#=============================================================================
-# Target rules for targets named glfw
-
-# Build rule for target.
-glfw: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glfw
-.PHONY : glfw
-
-# fast build rule for target.
-glfw/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/build.make _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/build
-.PHONY : glfw/fast
-
-#=============================================================================
-# Target rules for targets named update_mappings
-
-# Build rule for target.
-update_mappings: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 update_mappings
-.PHONY : update_mappings
-
-# fast build rule for target.
-update_mappings/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/build.make _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/build
-.PHONY : update_mappings/fast
+# target to generate assembly for a file
+src/entity/enemies.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpellForge.dir/build.make CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.s
+.PHONY : src/entity/enemies.cpp.s
 
 src/entity/entity.o: src/entity/entity.cpp.o
 .PHONY : src/entity/entity.o
@@ -366,6 +273,30 @@ src/player/player.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpellForge.dir/build.make CMakeFiles/SpellForge.dir/src/player/player.cpp.s
 .PHONY : src/player/player.cpp.s
 
+src/player/projectile.o: src/player/projectile.cpp.o
+.PHONY : src/player/projectile.o
+
+# target to build an object file
+src/player/projectile.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpellForge.dir/build.make CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o
+.PHONY : src/player/projectile.cpp.o
+
+src/player/projectile.i: src/player/projectile.cpp.i
+.PHONY : src/player/projectile.i
+
+# target to preprocess a source file
+src/player/projectile.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpellForge.dir/build.make CMakeFiles/SpellForge.dir/src/player/projectile.cpp.i
+.PHONY : src/player/projectile.cpp.i
+
+src/player/projectile.s: src/player/projectile.cpp.s
+.PHONY : src/player/projectile.s
+
+# target to generate assembly for a file
+src/player/projectile.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpellForge.dir/build.make CMakeFiles/SpellForge.dir/src/player/projectile.cpp.s
+.PHONY : src/player/projectile.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -373,18 +304,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... install"
-	@echo "... install/local"
-	@echo "... install/strip"
-	@echo "... list_install_components"
-	@echo "... package"
-	@echo "... package_source"
 	@echo "... rebuild_cache"
-	@echo "... uninstall"
-	@echo "... update_mappings"
 	@echo "... SpellForge"
-	@echo "... glfw"
-	@echo "... raylib"
+	@echo "... src/entity/enemies.o"
+	@echo "... src/entity/enemies.i"
+	@echo "... src/entity/enemies.s"
 	@echo "... src/entity/entity.o"
 	@echo "... src/entity/entity.i"
 	@echo "... src/entity/entity.s"
@@ -400,6 +324,9 @@ help:
 	@echo "... src/player/player.o"
 	@echo "... src/player/player.i"
 	@echo "... src/player/player.s"
+	@echo "... src/player/projectile.o"
+	@echo "... src/player/projectile.i"
+	@echo "... src/player/projectile.s"
 .PHONY : help
 
 

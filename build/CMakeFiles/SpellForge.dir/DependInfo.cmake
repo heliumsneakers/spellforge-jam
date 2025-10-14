@@ -8,11 +8,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/klo/Work/Jams/MiniJam-Forge/spellforge/src/entity/enemies.cpp" "CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o" "gcc" "CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o.d"
   "/home/klo/Work/Jams/MiniJam-Forge/spellforge/src/entity/entity.cpp" "CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o" "gcc" "CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o.d"
   "/home/klo/Work/Jams/MiniJam-Forge/spellforge/src/level/level.cpp" "CMakeFiles/SpellForge.dir/src/level/level.cpp.o" "gcc" "CMakeFiles/SpellForge.dir/src/level/level.cpp.o.d"
   "/home/klo/Work/Jams/MiniJam-Forge/spellforge/src/main.cpp" "CMakeFiles/SpellForge.dir/src/main.cpp.o" "gcc" "CMakeFiles/SpellForge.dir/src/main.cpp.o.d"
   "/home/klo/Work/Jams/MiniJam-Forge/spellforge/src/physics/physics.cpp" "CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o" "gcc" "CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o.d"
   "/home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/player.cpp" "CMakeFiles/SpellForge.dir/src/player/player.cpp.o" "gcc" "CMakeFiles/SpellForge.dir/src/player/player.cpp.o.d"
+  "/home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/projectile.cpp" "CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o" "gcc" "CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o.d"
   "" "bin/SpellForge" "gcc" "CMakeFiles/SpellForge.dir/link.d"
   )
 

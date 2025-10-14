@@ -1,7 +1,7 @@
 CMakeFiles/SpellForge.dir/src/main.cpp.o: \
   /usr/lib/clang/20/share/asan_ignorelist.txt \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/main.cpp \
-  /home/klo/Work/Jams/MiniJam-Forge/spellforge/build/_deps/raylib-src/src/raylib.h \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/raylib/src/raylib.h \
   /usr/lib/clang/20/include/stdarg.h \
   /usr/lib/clang/20/include/__stdarg_header_macro.h \
   /usr/lib/clang/20/include/__stdarg___gnuc_va_list.h \
@@ -637,6 +637,7 @@ CMakeFiles/SpellForge.dir/src/main.cpp.o: \
   /usr/bin/../include/c++/v1/cstdarg \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/player.h \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../level/level.h \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../entity/entity.hpp \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../../lib/box2d/include/box2d/box2d.h \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../../lib/box2d/include/box2d/base.h \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../../lib/box2d/include/box2d/collision.h \
@@ -644,47 +645,14 @@ CMakeFiles/SpellForge.dir/src/main.cpp.o: \
   /usr/bin/../include/c++/v1/float.h /usr/lib/clang/20/include/float.h \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../../lib/box2d/include/box2d/id.h \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../../lib/box2d/include/box2d/types.h \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/projectile.h \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/physics/physics.h \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/physics/../../lib/box2d/include/box2d/box2d.h \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/physics/../level/level.h \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/physics/../entity/entity.hpp \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/entity/enemies.hpp \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/entity/../entity/entity.hpp \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/entity/../physics/physics.h \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/entity/../../lib/box2d/include/box2d/box2d.h \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/../lib/box2d/include/box2d/box2d.h \
-  /usr/bin/../include/c++/v1/numeric \
-  /usr/bin/../include/c++/v1/__numeric/accumulate.h \
-  /usr/bin/../include/c++/v1/__numeric/adjacent_difference.h \
-  /usr/bin/../include/c++/v1/__numeric/inner_product.h \
-  /usr/bin/../include/c++/v1/__numeric/iota.h \
-  /usr/bin/../include/c++/v1/__numeric/exclusive_scan.h \
-  /usr/bin/../include/c++/v1/__numeric/gcd_lcm.h \
-  /usr/bin/../include/c++/v1/__numeric/inclusive_scan.h \
-  /usr/bin/../include/c++/v1/__numeric/pstl.h \
-  /usr/bin/../include/c++/v1/__numeric/reduce.h \
-  /usr/bin/../include/c++/v1/__numeric/transform_exclusive_scan.h \
-  /usr/bin/../include/c++/v1/__numeric/transform_inclusive_scan.h \
-  /usr/bin/../include/c++/v1/__numeric/transform_reduce.h \
-  /usr/bin/../include/c++/v1/execution \
-  /usr/bin/../include/c++/v1/__type_traits/is_execution_policy.h \
-  /usr/bin/../include/c++/v1/functional \
-  /usr/bin/../include/c++/v1/__functional/binary_negate.h \
-  /usr/bin/../include/c++/v1/__functional/bind.h \
-  /usr/bin/../include/c++/v1/__functional/binder1st.h \
-  /usr/bin/../include/c++/v1/__functional/binder2nd.h \
-  /usr/bin/../include/c++/v1/__functional/mem_fn.h \
-  /usr/bin/../include/c++/v1/__functional/mem_fun_ref.h \
-  /usr/bin/../include/c++/v1/__functional/pointer_to_binary_function.h \
-  /usr/bin/../include/c++/v1/__functional/pointer_to_unary_function.h \
-  /usr/bin/../include/c++/v1/__functional/unary_negate.h \
-  /usr/bin/../include/c++/v1/__functional/function.h \
-  /usr/bin/../include/c++/v1/__type_traits/strip_signature.h \
-  /usr/bin/../include/c++/v1/__functional/boyer_moore_searcher.h \
-  /usr/bin/../include/c++/v1/unordered_map \
-  /usr/bin/../include/c++/v1/__functional/is_transparent.h \
-  /usr/bin/../include/c++/v1/__hash_table \
-  /usr/bin/../include/c++/v1/__type_traits/can_extract_key.h \
-  /usr/bin/../include/c++/v1/__type_traits/remove_const_ref.h \
-  /usr/bin/../include/c++/v1/__iterator/erase_if_container.h \
-  /usr/bin/../include/c++/v1/__iterator/ranges_iterator_traits.h \
-  /usr/bin/../include/c++/v1/__node_handle \
-  /usr/bin/../include/c++/v1/__functional/default_searcher.h \
-  /usr/bin/../include/c++/v1/__functional/not_fn.h \
-  /usr/bin/../include/c++/v1/__functional/perfect_forward.h
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/state.h

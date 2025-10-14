@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/SpellForge.dir/link.d"
+  "CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o"
+  "CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o.d"
   "CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o"
   "CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o.d"
   "CMakeFiles/SpellForge.dir/src/level/level.cpp.o"
@@ -10,6 +12,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o.d"
   "CMakeFiles/SpellForge.dir/src/player/player.cpp.o"
   "CMakeFiles/SpellForge.dir/src/player/player.cpp.o.d"
+  "CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o"
+  "CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o.d"
   "bin/SpellForge"
   "bin/SpellForge.pdb"
 )

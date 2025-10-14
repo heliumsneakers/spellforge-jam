@@ -1,9 +1,12 @@
 #pragma once
 #include "raylib.h"
 #include "../../lib/box2d/include/box2d/box2d.h"
+#include "../entity/entity.hpp"
 #include <vector>
 
 enum class ProjectileType { FIRE, ICE };
+
+extern ProjectileType g_currentProjectile;
 
 struct Projectile {
     ProjectileType type;
@@ -18,5 +21,5 @@ extern ProjectileType g_currentProjectile;
 
 void Projectile_HandleSwitch();
 void Projectile_Shoot(b2WorldId world, Vector2 playerPos, Camera2D cam);
-void Projectile_Update(b2WorldId world, float dt);
+void Projectile_Update(b2WorldId world, EntitySystem *es, float dt);
 void Projectile_Draw();

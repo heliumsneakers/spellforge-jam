@@ -174,7 +174,7 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o: \
   /usr/lib/clang/20/include/stdbool.h \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/physics/../../lib/box2d/include/box2d/id.h \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/physics/../../lib/box2d/include/box2d/types.h \
-  /home/klo/Work/Jams/MiniJam-Forge/spellforge/build/_deps/raylib-src/src/raylib.h \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/raylib/src/raylib.h \
   /usr/lib/clang/20/include/stdarg.h \
   /usr/lib/clang/20/include/__stdarg_header_macro.h \
   /usr/lib/clang/20/include/__stdarg___gnuc_va_list.h \
@@ -644,4 +644,9 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o: \
   /usr/bin/../include/c++/v1/__thread/id.h \
   /usr/bin/../include/c++/v1/system_error \
   /usr/bin/../include/c++/v1/streambuf /usr/include/nl_types.h \
-  /usr/bin/../include/c++/v1/cstdarg
+  /usr/bin/../include/c++/v1/cstdarg \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/physics/../state.h \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/physics/../entity/enemies.hpp \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/physics/../entity/../entity/entity.hpp \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/physics/../entity/../physics/physics.h \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/physics/../entity/../../lib/box2d/include/box2d/box2d.h

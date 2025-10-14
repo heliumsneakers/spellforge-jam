@@ -72,10 +72,24 @@ include CMakeFiles/SpellForge.dir/flags.make
 CMakeFiles/SpellForge.dir/codegen:
 .PHONY : CMakeFiles/SpellForge.dir/codegen
 
+CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o: CMakeFiles/SpellForge.dir/flags.make
+CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/entity/enemies.cpp
+CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o: CMakeFiles/SpellForge.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o -MF CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o.d -o CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o -c /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/entity/enemies.cpp
+
+CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/entity/enemies.cpp > CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.i
+
+CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/entity/enemies.cpp -o CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.s
+
 CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o: CMakeFiles/SpellForge.dir/flags.make
 CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/entity/entity.cpp
 CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o: CMakeFiles/SpellForge.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o -MF CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o.d -o CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o -c /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/entity/entity.cpp
 
 CMakeFiles/SpellForge.dir/src/entity/entity.cpp.i: cmake_force
@@ -89,7 +103,7 @@ CMakeFiles/SpellForge.dir/src/entity/entity.cpp.s: cmake_force
 CMakeFiles/SpellForge.dir/src/level/level.cpp.o: CMakeFiles/SpellForge.dir/flags.make
 CMakeFiles/SpellForge.dir/src/level/level.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/level/level.cpp
 CMakeFiles/SpellForge.dir/src/level/level.cpp.o: CMakeFiles/SpellForge.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SpellForge.dir/src/level/level.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SpellForge.dir/src/level/level.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SpellForge.dir/src/level/level.cpp.o -MF CMakeFiles/SpellForge.dir/src/level/level.cpp.o.d -o CMakeFiles/SpellForge.dir/src/level/level.cpp.o -c /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/level/level.cpp
 
 CMakeFiles/SpellForge.dir/src/level/level.cpp.i: cmake_force
@@ -103,7 +117,7 @@ CMakeFiles/SpellForge.dir/src/level/level.cpp.s: cmake_force
 CMakeFiles/SpellForge.dir/src/main.cpp.o: CMakeFiles/SpellForge.dir/flags.make
 CMakeFiles/SpellForge.dir/src/main.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/main.cpp
 CMakeFiles/SpellForge.dir/src/main.cpp.o: CMakeFiles/SpellForge.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SpellForge.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SpellForge.dir/src/main.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SpellForge.dir/src/main.cpp.o -MF CMakeFiles/SpellForge.dir/src/main.cpp.o.d -o CMakeFiles/SpellForge.dir/src/main.cpp.o -c /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/main.cpp
 
 CMakeFiles/SpellForge.dir/src/main.cpp.i: cmake_force
@@ -117,7 +131,7 @@ CMakeFiles/SpellForge.dir/src/main.cpp.s: cmake_force
 CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o: CMakeFiles/SpellForge.dir/flags.make
 CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/physics/physics.cpp
 CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o: CMakeFiles/SpellForge.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o -MF CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o.d -o CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o -c /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/physics/physics.cpp
 
 CMakeFiles/SpellForge.dir/src/physics/physics.cpp.i: cmake_force
@@ -131,7 +145,7 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.s: cmake_force
 CMakeFiles/SpellForge.dir/src/player/player.cpp.o: CMakeFiles/SpellForge.dir/flags.make
 CMakeFiles/SpellForge.dir/src/player/player.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/player.cpp
 CMakeFiles/SpellForge.dir/src/player/player.cpp.o: CMakeFiles/SpellForge.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SpellForge.dir/src/player/player.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SpellForge.dir/src/player/player.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SpellForge.dir/src/player/player.cpp.o -MF CMakeFiles/SpellForge.dir/src/player/player.cpp.o.d -o CMakeFiles/SpellForge.dir/src/player/player.cpp.o -c /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/player.cpp
 
 CMakeFiles/SpellForge.dir/src/player/player.cpp.i: cmake_force
@@ -142,32 +156,48 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SpellForge.dir/src/player/player.cpp.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/player.cpp -o CMakeFiles/SpellForge.dir/src/player/player.cpp.s
 
+CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o: CMakeFiles/SpellForge.dir/flags.make
+CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/projectile.cpp
+CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o: CMakeFiles/SpellForge.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o -MF CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o.d -o CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o -c /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/projectile.cpp
+
+CMakeFiles/SpellForge.dir/src/player/projectile.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SpellForge.dir/src/player/projectile.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/projectile.cpp > CMakeFiles/SpellForge.dir/src/player/projectile.cpp.i
+
+CMakeFiles/SpellForge.dir/src/player/projectile.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SpellForge.dir/src/player/projectile.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/projectile.cpp -o CMakeFiles/SpellForge.dir/src/player/projectile.cpp.s
+
 # Object files for target SpellForge
 SpellForge_OBJECTS = \
+"CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o" \
 "CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o" \
 "CMakeFiles/SpellForge.dir/src/level/level.cpp.o" \
 "CMakeFiles/SpellForge.dir/src/main.cpp.o" \
 "CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o" \
-"CMakeFiles/SpellForge.dir/src/player/player.cpp.o"
+"CMakeFiles/SpellForge.dir/src/player/player.cpp.o" \
+"CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o"
 
 # External object files for target SpellForge
 SpellForge_EXTERNAL_OBJECTS =
 
+bin/SpellForge: CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o
 bin/SpellForge: CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o
 bin/SpellForge: CMakeFiles/SpellForge.dir/src/level/level.cpp.o
 bin/SpellForge: CMakeFiles/SpellForge.dir/src/main.cpp.o
 bin/SpellForge: CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o
 bin/SpellForge: CMakeFiles/SpellForge.dir/src/player/player.cpp.o
+bin/SpellForge: CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o
 bin/SpellForge: CMakeFiles/SpellForge.dir/build.make
 bin/SpellForge: CMakeFiles/SpellForge.dir/compiler_depend.ts
-bin/SpellForge: lib/libraylib.a
-bin/SpellForge: /usr/lib/libOpenGL.so
-bin/SpellForge: /usr/lib/libGLX.so
-bin/SpellForge: /usr/lib/libGLU.so
-bin/SpellForge: /usr/lib/librt.a
-bin/SpellForge: /usr/lib/libm.so
+bin/SpellForge: /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/raylib/build/raylib/libraylib.a
+bin/SpellForge: /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/box2d/build/src/libbox2d.a
+bin/SpellForge: /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/raylib/build/raylib/libraylib.a
+bin/SpellForge: /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/box2d/build/src/libbox2d.a
 bin/SpellForge: CMakeFiles/SpellForge.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable bin/SpellForge"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable bin/SpellForge"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SpellForge.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

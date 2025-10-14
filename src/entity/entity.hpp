@@ -12,13 +12,27 @@ enum class EntityKind : uint8_t {
     Ability = 3,
 };
 
+enum class ElementType {
+    NONE,
+    FIRE,
+    ICE
+};
+
 struct Entity {
-    int        id{-1};         // stable id
-    EntityKind kind{EntityKind::Prop};
-    Vector2    pos{0,0};       // center in pixels
-    Vector2    half{8,8};      // half extents in pixels
-    Color      color{0,0,0,255};
-    bool       active{true};
+    int id;
+    EntityKind kind;
+    Vector2 pos;
+    Vector2 half;
+    Color color;
+    bool active;
+
+    float health = 0.0f;
+    float maxHealth = 0.0f;
+    float slowTimer = 0.0f;
+
+    // --- NEW ---
+    ElementType element = ElementType::NONE;   // what element it carries
+    bool telekinetic = false;                  // whether currently held
 };
 
 // Simple container

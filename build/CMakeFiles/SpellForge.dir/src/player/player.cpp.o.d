@@ -2,7 +2,7 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o: \
   /usr/lib/clang/20/share/asan_ignorelist.txt \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/player.cpp \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/player.h \
-  /home/klo/Work/Jams/MiniJam-Forge/spellforge/build/_deps/raylib-src/src/raylib.h \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/raylib/src/raylib.h \
   /usr/lib/clang/20/include/stdarg.h \
   /usr/lib/clang/20/include/__stdarg_header_macro.h \
   /usr/lib/clang/20/include/__stdarg___gnuc_va_list.h \
@@ -29,192 +29,78 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o: \
   /usr/bin/../include/c++/v1/__configuration/availability.h \
   /usr/bin/../include/c++/v1/__configuration/language.h \
   /usr/lib/clang/20/include/stdbool.h \
-  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../../lib/box2d/include/box2d/box2d.h \
-  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../../lib/box2d/include/box2d/base.h \
-  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../../lib/box2d/include/box2d/collision.h \
-  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../../lib/box2d/include/box2d/math_functions.h \
-  /usr/bin/../include/c++/v1/float.h /usr/lib/clang/20/include/float.h \
-  /usr/bin/../include/c++/v1/math.h /usr/include/math.h \
-  /usr/include/bits/math-vector.h \
-  /usr/include/bits/libm-simd-decl-stubs.h /usr/include/bits/floatn.h \
-  /usr/include/bits/floatn-common.h /usr/include/bits/flt-eval-method.h \
-  /usr/include/bits/fp-logb.h /usr/include/bits/fp-fast.h \
-  /usr/include/bits/mathcalls-macros.h \
-  /usr/include/bits/mathcalls-helper-functions.h \
-  /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
-  /usr/include/bits/iscanonical.h \
-  /usr/bin/../include/c++/v1/__math/abs.h \
-  /usr/bin/../include/c++/v1/__type_traits/enable_if.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_integral.h \
-  /usr/bin/../include/c++/v1/__type_traits/integral_constant.h \
-  /usr/bin/../include/c++/v1/__type_traits/remove_cv.h \
-  /usr/bin/../include/c++/v1/__math/copysign.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_arithmetic.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_floating_point.h \
-  /usr/bin/../include/c++/v1/__type_traits/promote.h \
-  /usr/bin/../include/c++/v1/__math/error_functions.h \
-  /usr/bin/../include/c++/v1/__math/exponential_functions.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_same.h \
-  /usr/bin/../include/c++/v1/__math/fdim.h \
-  /usr/bin/../include/c++/v1/__math/fma.h \
-  /usr/bin/../include/c++/v1/__math/gamma.h \
-  /usr/bin/../include/c++/v1/__math/hyperbolic_functions.h \
-  /usr/bin/../include/c++/v1/__math/hypot.h \
-  /usr/bin/../include/c++/v1/__math/min_max.h \
-  /usr/bin/../include/c++/v1/__math/roots.h \
-  /usr/bin/../include/c++/v1/limits \
-  /usr/bin/../include/c++/v1/__type_traits/is_signed.h \
-  /usr/bin/../include/c++/v1/__undef_macros \
-  /usr/bin/../include/c++/v1/version \
-  /usr/bin/../include/c++/v1/type_traits \
-  /usr/bin/../include/c++/v1/__type_traits/add_cv_quals.h \
-  /usr/bin/../include/c++/v1/__type_traits/add_lvalue_reference.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_referenceable.h \
-  /usr/bin/../include/c++/v1/__type_traits/add_pointer.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_void.h \
-  /usr/bin/../include/c++/v1/__type_traits/remove_reference.h \
-  /usr/bin/../include/c++/v1/__type_traits/add_rvalue_reference.h \
-  /usr/bin/../include/c++/v1/__type_traits/aligned_storage.h \
-  /usr/bin/../include/c++/v1/__cstddef/size_t.h \
-  /usr/bin/../include/c++/v1/__type_traits/type_list.h \
-  /usr/bin/../include/c++/v1/__type_traits/aligned_union.h \
-  /usr/bin/../include/c++/v1/__type_traits/alignment_of.h \
-  /usr/bin/../include/c++/v1/__type_traits/common_type.h \
-  /usr/bin/../include/c++/v1/__type_traits/conditional.h \
-  /usr/bin/../include/c++/v1/__type_traits/decay.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_array.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_function.h \
-  /usr/bin/../include/c++/v1/__type_traits/remove_extent.h \
-  /usr/bin/../include/c++/v1/__type_traits/remove_cvref.h \
-  /usr/bin/../include/c++/v1/__type_traits/type_identity.h \
-  /usr/bin/../include/c++/v1/__type_traits/void_t.h \
-  /usr/bin/../include/c++/v1/__utility/declval.h \
-  /usr/bin/../include/c++/v1/__utility/empty.h \
-  /usr/bin/../include/c++/v1/__type_traits/extent.h \
-  /usr/bin/../include/c++/v1/__type_traits/has_virtual_destructor.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_abstract.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_assignable.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_base_of.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_class.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_compound.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_fundamental.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_null_pointer.h \
-  /usr/bin/../include/c++/v1/__cstddef/nullptr_t.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_const.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_constructible.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_convertible.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_destructible.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_reference.h \
-  /usr/bin/../include/c++/v1/__type_traits/remove_all_extents.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_empty.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_enum.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_literal_type.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_member_pointer.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_nothrow_assignable.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_nothrow_constructible.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_nothrow_destructible.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_object.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_pod.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_pointer.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_polymorphic.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_scalar.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_standard_layout.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_trivial.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_trivially_assignable.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_trivially_constructible.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_trivially_copyable.h \
-  /usr/bin/../include/c++/v1/cstdint \
-  /usr/bin/../include/c++/v1/__type_traits/is_trivially_destructible.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_union.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_unsigned.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_volatile.h \
-  /usr/bin/../include/c++/v1/__type_traits/make_signed.h \
-  /usr/bin/../include/c++/v1/__type_traits/copy_cv.h \
-  /usr/bin/../include/c++/v1/__type_traits/make_unsigned.h \
-  /usr/bin/../include/c++/v1/__type_traits/rank.h \
-  /usr/bin/../include/c++/v1/__type_traits/remove_const.h \
-  /usr/bin/../include/c++/v1/__type_traits/remove_pointer.h \
-  /usr/bin/../include/c++/v1/__type_traits/remove_volatile.h \
-  /usr/bin/../include/c++/v1/__type_traits/result_of.h \
-  /usr/bin/../include/c++/v1/__type_traits/invoke.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_core_convertible.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_reference_wrapper.h \
-  /usr/bin/../include/c++/v1/__fwd/functional.h \
-  /usr/bin/../include/c++/v1/__type_traits/nat.h \
-  /usr/bin/../include/c++/v1/__utility/forward.h \
-  /usr/bin/../include/c++/v1/__type_traits/underlying_type.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_final.h \
-  /usr/bin/../include/c++/v1/__type_traits/conjunction.h \
-  /usr/bin/../include/c++/v1/__type_traits/disjunction.h \
-  /usr/bin/../include/c++/v1/__type_traits/has_unique_object_representation.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_aggregate.h \
-  /usr/bin/../include/c++/v1/__type_traits/is_swappable.h \
-  /usr/bin/../include/c++/v1/__type_traits/negation.h \
-  /usr/bin/../include/c++/v1/__math/inverse_hyperbolic_functions.h \
-  /usr/bin/../include/c++/v1/__math/inverse_trigonometric_functions.h \
-  /usr/bin/../include/c++/v1/__math/logarithms.h \
-  /usr/bin/../include/c++/v1/__math/modulo.h \
-  /usr/bin/../include/c++/v1/__math/remainder.h \
-  /usr/bin/../include/c++/v1/__math/rounding_functions.h \
-  /usr/bin/../include/c++/v1/__math/traits.h \
-  /usr/bin/../include/c++/v1/__math/trigonometric_functions.h \
-  /usr/bin/../include/c++/v1/stdlib.h /usr/include/stdlib.h \
-  /usr/bin/../include/c++/v1/stddef.h /usr/lib/clang/20/include/stddef.h \
-  /usr/lib/clang/20/include/__stddef_size_t.h \
-  /usr/lib/clang/20/include/__stddef_wchar_t.h \
-  /usr/lib/clang/20/include/__stddef_null.h \
-  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
-  /usr/include/bits/types/locale_t.h \
-  /usr/include/bits/types/__locale_t.h /usr/include/sys/types.h \
-  /usr/include/bits/types/clock_t.h /usr/include/bits/types/clockid_t.h \
-  /usr/include/bits/types/time_t.h /usr/include/bits/types/timer_t.h \
-  /usr/include/endian.h /usr/include/bits/endian.h \
-  /usr/include/bits/endianness.h /usr/include/bits/byteswap.h \
-  /usr/include/bits/uintn-identity.h /usr/include/sys/select.h \
-  /usr/include/bits/select.h /usr/include/bits/types/sigset_t.h \
-  /usr/include/bits/types/__sigset_t.h \
-  /usr/include/bits/types/struct_timeval.h \
-  /usr/include/bits/types/struct_timespec.h \
-  /usr/include/bits/pthreadtypes.h \
-  /usr/include/bits/thread-shared-types.h \
-  /usr/include/bits/pthreadtypes-arch.h \
-  /usr/include/bits/atomic_wide_counter.h \
-  /usr/include/bits/struct_mutex.h /usr/include/bits/struct_rwlock.h \
-  /usr/include/alloca.h /usr/include/bits/stdlib-bsearch.h \
-  /usr/include/bits/stdlib-float.h \
-  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../../lib/box2d/include/box2d/id.h \
-  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../../lib/box2d/include/box2d/types.h \
-  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../physics/physics.h \
-  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../physics/../../lib/box2d/include/box2d/box2d.h \
-  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../physics/../level/level.h \
-  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../physics/../entity/entity.hpp \
-  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../physics/../entity/../level/level.h \
-  /usr/bin/../include/c++/v1/vector \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../entity/entity.hpp \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../entity/../level/level.h \
+  /usr/bin/../include/c++/v1/cstdint /usr/bin/../include/c++/v1/vector \
   /usr/bin/../include/c++/v1/__vector/comparison.h \
   /usr/bin/../include/c++/v1/__algorithm/equal.h \
   /usr/bin/../include/c++/v1/__algorithm/comp.h \
   /usr/bin/../include/c++/v1/__type_traits/desugars_to.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_integral.h \
+  /usr/bin/../include/c++/v1/__type_traits/integral_constant.h \
+  /usr/bin/../include/c++/v1/__type_traits/remove_cv.h \
   /usr/bin/../include/c++/v1/__algorithm/unwrap_iter.h \
   /usr/bin/../include/c++/v1/__iterator/iterator_traits.h \
   /usr/bin/../include/c++/v1/__concepts/arithmetic.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_floating_point.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_signed.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_arithmetic.h \
   /usr/bin/../include/c++/v1/__type_traits/is_signed_integer.h \
   /usr/bin/../include/c++/v1/__type_traits/is_unsigned_integer.h \
   /usr/bin/../include/c++/v1/__concepts/constructible.h \
   /usr/bin/../include/c++/v1/__concepts/convertible_to.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_convertible.h \
+  /usr/bin/../include/c++/v1/__utility/declval.h \
   /usr/bin/../include/c++/v1/__concepts/destructible.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_nothrow_destructible.h \
+  /usr/bin/../include/c++/v1/__cstddef/size_t.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_destructible.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_function.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_reference.h \
+  /usr/bin/../include/c++/v1/__type_traits/remove_all_extents.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_constructible.h \
+  /usr/bin/../include/c++/v1/__type_traits/add_lvalue_reference.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_referenceable.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_same.h \
+  /usr/bin/../include/c++/v1/__type_traits/add_rvalue_reference.h \
   /usr/bin/../include/c++/v1/__concepts/copyable.h \
   /usr/bin/../include/c++/v1/__concepts/assignable.h \
   /usr/bin/../include/c++/v1/__concepts/common_reference_with.h \
   /usr/bin/../include/c++/v1/__concepts/same_as.h \
   /usr/bin/../include/c++/v1/__type_traits/common_reference.h \
+  /usr/bin/../include/c++/v1/__type_traits/common_type.h \
+  /usr/bin/../include/c++/v1/__type_traits/conditional.h \
+  /usr/bin/../include/c++/v1/__type_traits/decay.h \
+  /usr/bin/../include/c++/v1/__type_traits/add_pointer.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_void.h \
+  /usr/bin/../include/c++/v1/__type_traits/remove_reference.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_array.h \
+  /usr/bin/../include/c++/v1/__type_traits/remove_extent.h \
+  /usr/bin/../include/c++/v1/__type_traits/remove_cvref.h \
+  /usr/bin/../include/c++/v1/__type_traits/type_identity.h \
+  /usr/bin/../include/c++/v1/__type_traits/void_t.h \
+  /usr/bin/../include/c++/v1/__utility/empty.h \
+  /usr/bin/../include/c++/v1/__type_traits/copy_cv.h \
   /usr/bin/../include/c++/v1/__type_traits/copy_cvref.h \
   /usr/bin/../include/c++/v1/__type_traits/make_const_lvalue_ref.h \
+  /usr/bin/../include/c++/v1/__utility/forward.h \
   /usr/bin/../include/c++/v1/__concepts/movable.h \
   /usr/bin/../include/c++/v1/__concepts/swappable.h \
   /usr/bin/../include/c++/v1/__concepts/class_or_enum.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_class.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_enum.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_union.h \
+  /usr/bin/../include/c++/v1/__type_traits/extent.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_nothrow_assignable.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_nothrow_constructible.h \
   /usr/bin/../include/c++/v1/__utility/exchange.h \
   /usr/bin/../include/c++/v1/__utility/move.h \
+  /usr/bin/../include/c++/v1/__undef_macros \
   /usr/bin/../include/c++/v1/__utility/swap.h \
+  /usr/bin/../include/c++/v1/__type_traits/enable_if.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_assignable.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_swappable.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_object.h \
   /usr/bin/../include/c++/v1/__concepts/equality_comparable.h \
   /usr/bin/../include/c++/v1/__concepts/boolean_testable.h \
   /usr/bin/../include/c++/v1/__concepts/totally_ordered.h \
@@ -224,37 +110,58 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o: \
   /usr/bin/../include/c++/v1/__iterator/incrementable_traits.h \
   /usr/bin/../include/c++/v1/__type_traits/is_primary_template.h \
   /usr/bin/../include/c++/v1/__type_traits/is_valid_expansion.h \
+  /usr/bin/../include/c++/v1/__type_traits/make_signed.h \
+  /usr/bin/../include/c++/v1/__type_traits/type_list.h \
   /usr/bin/../include/c++/v1/__iterator/readable_traits.h \
+  /usr/bin/../include/c++/v1/__type_traits/disjunction.h \
+  /usr/bin/../include/c++/v1/__type_traits/remove_const.h \
   /usr/bin/../include/c++/v1/__memory/pointer_traits.h \
   /usr/bin/../include/c++/v1/__memory/addressof.h \
+  /usr/bin/../include/c++/v1/__type_traits/conjunction.h \
   /usr/bin/../include/c++/v1/__functional/identity.h \
+  /usr/bin/../include/c++/v1/__fwd/functional.h \
   /usr/bin/../include/c++/v1/__iterator/distance.h \
   /usr/bin/../include/c++/v1/__iterator/concepts.h \
   /usr/bin/../include/c++/v1/__concepts/derived_from.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_base_of.h \
   /usr/bin/../include/c++/v1/__concepts/invocable.h \
   /usr/bin/../include/c++/v1/__functional/invoke.h \
+  /usr/bin/../include/c++/v1/__type_traits/invoke.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_core_convertible.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_member_pointer.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_reference_wrapper.h \
+  /usr/bin/../include/c++/v1/__type_traits/nat.h \
   /usr/bin/../include/c++/v1/__concepts/predicate.h \
   /usr/bin/../include/c++/v1/__concepts/regular.h \
   /usr/bin/../include/c++/v1/__concepts/semiregular.h \
   /usr/bin/../include/c++/v1/__concepts/relation.h \
   /usr/bin/../include/c++/v1/__iterator/iter_move.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_pointer.h \
   /usr/bin/../include/c++/v1/__ranges/access.h \
   /usr/bin/../include/c++/v1/__ranges/enable_borrowed_range.h \
   /usr/bin/../include/c++/v1/__utility/auto_cast.h \
   /usr/bin/../include/c++/v1/__ranges/concepts.h \
   /usr/bin/../include/c++/v1/__ranges/data.h \
+  /usr/bin/../include/c++/v1/__type_traits/remove_pointer.h \
   /usr/bin/../include/c++/v1/__ranges/enable_view.h \
   /usr/bin/../include/c++/v1/__ranges/size.h \
+  /usr/bin/../include/c++/v1/__type_traits/make_unsigned.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_unsigned.h \
   /usr/bin/../include/c++/v1/initializer_list \
-  /usr/bin/../include/c++/v1/cstddef \
+  /usr/bin/../include/c++/v1/version /usr/bin/../include/c++/v1/cstddef \
+  /usr/bin/../include/c++/v1/stddef.h /usr/lib/clang/20/include/stddef.h \
   /usr/lib/clang/20/include/__stddef_header_macro.h \
   /usr/lib/clang/20/include/__stddef_ptrdiff_t.h \
+  /usr/lib/clang/20/include/__stddef_size_t.h \
+  /usr/lib/clang/20/include/__stddef_wchar_t.h \
+  /usr/lib/clang/20/include/__stddef_null.h \
   /usr/lib/clang/20/include/__stddef_nullptr_t.h \
   /usr/lib/clang/20/include/__stddef_max_align_t.h \
   /usr/lib/clang/20/include/__stddef_offsetof.h \
   /usr/bin/../include/c++/v1/__cstddef/byte.h \
   /usr/bin/../include/c++/v1/__fwd/byte.h \
   /usr/bin/../include/c++/v1/__cstddef/max_align_t.h \
+  /usr/bin/../include/c++/v1/__cstddef/nullptr_t.h \
   /usr/bin/../include/c++/v1/__string/constexpr_c_functions.h \
   /usr/bin/../include/c++/v1/__memory/construct_at.h \
   /usr/bin/../include/c++/v1/__assert \
@@ -264,12 +171,14 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o: \
   /usr/bin/../include/c++/v1/__new/placement_new_delete.h \
   /usr/bin/../include/c++/v1/__type_traits/datasizeof.h \
   /usr/bin/../include/c++/v1/__type_traits/is_always_bitcastable.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_trivially_copyable.h \
   /usr/bin/../include/c++/v1/__type_traits/is_constant_evaluated.h \
   /usr/bin/../include/c++/v1/__type_traits/is_equality_comparable.h \
   /usr/bin/../include/c++/v1/__type_traits/is_trivially_lexicographically_comparable.h \
   /usr/bin/../include/c++/v1/__utility/element_count.h \
   /usr/bin/../include/c++/v1/__utility/is_pointer_in_range.h \
   /usr/bin/../include/c++/v1/__utility/is_valid_range.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_volatile.h \
   /usr/bin/../include/c++/v1/__algorithm/lexicographical_compare.h \
   /usr/bin/../include/c++/v1/__algorithm/min.h \
   /usr/bin/../include/c++/v1/__algorithm/comp_ref_type.h \
@@ -280,6 +189,36 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o: \
   /usr/bin/../include/c++/v1/__bit/bit_cast.h \
   /usr/bin/../include/c++/v1/__bit/countl.h \
   /usr/bin/../include/c++/v1/__bit/rotate.h \
+  /usr/bin/../include/c++/v1/limits \
+  /usr/bin/../include/c++/v1/type_traits \
+  /usr/bin/../include/c++/v1/__type_traits/add_cv_quals.h \
+  /usr/bin/../include/c++/v1/__type_traits/aligned_storage.h \
+  /usr/bin/../include/c++/v1/__type_traits/aligned_union.h \
+  /usr/bin/../include/c++/v1/__type_traits/alignment_of.h \
+  /usr/bin/../include/c++/v1/__type_traits/has_virtual_destructor.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_abstract.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_compound.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_fundamental.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_null_pointer.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_const.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_empty.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_literal_type.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_pod.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_polymorphic.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_scalar.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_standard_layout.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_trivial.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_trivially_assignable.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_trivially_constructible.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_trivially_destructible.h \
+  /usr/bin/../include/c++/v1/__type_traits/rank.h \
+  /usr/bin/../include/c++/v1/__type_traits/remove_volatile.h \
+  /usr/bin/../include/c++/v1/__type_traits/result_of.h \
+  /usr/bin/../include/c++/v1/__type_traits/underlying_type.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_final.h \
+  /usr/bin/../include/c++/v1/__type_traits/has_unique_object_representation.h \
+  /usr/bin/../include/c++/v1/__type_traits/is_aggregate.h \
+  /usr/bin/../include/c++/v1/__type_traits/negation.h \
   /usr/bin/../include/c++/v1/__bit/countr.h \
   /usr/bin/../include/c++/v1/__utility/integer_sequence.h \
   /usr/bin/../include/c++/v1/__iterator/aliasing_iterator.h \
@@ -301,10 +240,14 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o: \
   /usr/bin/../include/c++/v1/__utility/piecewise_construct.h \
   /usr/bin/../include/c++/v1/cwchar /usr/bin/../include/c++/v1/cwctype \
   /usr/bin/../include/c++/v1/cctype /usr/bin/../include/c++/v1/ctype.h \
-  /usr/include/ctype.h /usr/bin/../include/c++/v1/wctype.h \
-  /usr/include/wctype.h /usr/include/bits/types/wint_t.h \
-  /usr/include/bits/wctype-wchar.h /usr/bin/../include/c++/v1/wchar.h \
-  /usr/include/wchar.h /usr/include/bits/types/mbstate_t.h \
+  /usr/include/ctype.h /usr/include/bits/endian.h \
+  /usr/include/bits/endianness.h /usr/include/bits/types/locale_t.h \
+  /usr/include/bits/types/__locale_t.h \
+  /usr/bin/../include/c++/v1/wctype.h /usr/include/wctype.h \
+  /usr/include/bits/types/wint_t.h /usr/include/bits/wctype-wchar.h \
+  /usr/bin/../include/c++/v1/wchar.h /usr/include/wchar.h \
+  /usr/include/bits/floatn.h /usr/include/bits/floatn-common.h \
+  /usr/include/bits/types/mbstate_t.h \
   /usr/include/bits/types/__mbstate_t.h /usr/include/bits/types/__FILE.h \
   /usr/include/bits/types/FILE.h \
   /usr/bin/../include/c++/v1/__mbstate_t.h \
@@ -381,8 +324,24 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o: \
   /usr/bin/../include/c++/v1/stdexcept \
   /usr/bin/../include/c++/v1/__fwd/string.h \
   /usr/bin/../include/c++/v1/__fwd/memory_resource.h \
-  /usr/bin/../include/c++/v1/cstdlib \
-  /usr/bin/../include/c++/v1/exception \
+  /usr/bin/../include/c++/v1/cstdlib /usr/bin/../include/c++/v1/stdlib.h \
+  /usr/include/stdlib.h /usr/include/bits/waitflags.h \
+  /usr/include/bits/waitstatus.h /usr/include/sys/types.h \
+  /usr/include/bits/types/clock_t.h /usr/include/bits/types/clockid_t.h \
+  /usr/include/bits/types/time_t.h /usr/include/bits/types/timer_t.h \
+  /usr/include/endian.h /usr/include/bits/byteswap.h \
+  /usr/include/bits/uintn-identity.h /usr/include/sys/select.h \
+  /usr/include/bits/select.h /usr/include/bits/types/sigset_t.h \
+  /usr/include/bits/types/__sigset_t.h \
+  /usr/include/bits/types/struct_timeval.h \
+  /usr/include/bits/types/struct_timespec.h \
+  /usr/include/bits/pthreadtypes.h \
+  /usr/include/bits/thread-shared-types.h \
+  /usr/include/bits/pthreadtypes-arch.h \
+  /usr/include/bits/atomic_wide_counter.h \
+  /usr/include/bits/struct_mutex.h /usr/include/bits/struct_rwlock.h \
+  /usr/include/alloca.h /usr/include/bits/stdlib-bsearch.h \
+  /usr/include/bits/stdlib-float.h /usr/bin/../include/c++/v1/exception \
   /usr/bin/../include/c++/v1/__exception/exception_ptr.h \
   /usr/bin/../include/c++/v1/__exception/operations.h \
   /usr/bin/../include/c++/v1/typeinfo \
@@ -424,7 +383,35 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o: \
   /usr/bin/../include/c++/v1/__type_traits/lazy.h \
   /usr/bin/../include/c++/v1/__type_traits/maybe_const.h \
   /usr/bin/../include/c++/v1/compare /usr/bin/../include/c++/v1/cmath \
+  /usr/bin/../include/c++/v1/__math/hypot.h \
+  /usr/bin/../include/c++/v1/__math/abs.h \
+  /usr/bin/../include/c++/v1/__math/exponential_functions.h \
+  /usr/bin/../include/c++/v1/__type_traits/promote.h \
+  /usr/bin/../include/c++/v1/__math/min_max.h \
+  /usr/bin/../include/c++/v1/__math/roots.h \
   /usr/bin/../include/c++/v1/__math/special_functions.h \
+  /usr/bin/../include/c++/v1/__math/copysign.h \
+  /usr/bin/../include/c++/v1/__math/traits.h \
+  /usr/bin/../include/c++/v1/math.h /usr/include/math.h \
+  /usr/include/bits/math-vector.h \
+  /usr/include/bits/libm-simd-decl-stubs.h \
+  /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+  /usr/include/bits/fp-fast.h /usr/include/bits/mathcalls-macros.h \
+  /usr/include/bits/mathcalls-helper-functions.h \
+  /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+  /usr/include/bits/iscanonical.h \
+  /usr/bin/../include/c++/v1/__math/error_functions.h \
+  /usr/bin/../include/c++/v1/__math/fdim.h \
+  /usr/bin/../include/c++/v1/__math/fma.h \
+  /usr/bin/../include/c++/v1/__math/gamma.h \
+  /usr/bin/../include/c++/v1/__math/hyperbolic_functions.h \
+  /usr/bin/../include/c++/v1/__math/inverse_hyperbolic_functions.h \
+  /usr/bin/../include/c++/v1/__math/inverse_trigonometric_functions.h \
+  /usr/bin/../include/c++/v1/__math/logarithms.h \
+  /usr/bin/../include/c++/v1/__math/modulo.h \
+  /usr/bin/../include/c++/v1/__math/remainder.h \
+  /usr/bin/../include/c++/v1/__math/rounding_functions.h \
+  /usr/bin/../include/c++/v1/__math/trigonometric_functions.h \
   /usr/bin/../include/c++/v1/utility \
   /usr/bin/../include/c++/v1/__utility/rel_ops.h \
   /usr/bin/../include/c++/v1/__utility/as_const.h \
@@ -649,4 +636,16 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o: \
   /usr/bin/../include/c++/v1/system_error \
   /usr/bin/../include/c++/v1/streambuf /usr/include/nl_types.h \
   /usr/bin/../include/c++/v1/cstdarg \
-  /home/klo/Work/Jams/MiniJam-Forge/spellforge/build/_deps/raylib-src/src/raymath.h
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../../lib/box2d/include/box2d/box2d.h \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../../lib/box2d/include/box2d/base.h \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../../lib/box2d/include/box2d/collision.h \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../../lib/box2d/include/box2d/math_functions.h \
+  /usr/bin/../include/c++/v1/float.h /usr/lib/clang/20/include/float.h \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../../lib/box2d/include/box2d/id.h \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../../lib/box2d/include/box2d/types.h \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../physics/physics.h \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../physics/../../lib/box2d/include/box2d/box2d.h \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../physics/../level/level.h \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../physics/../entity/entity.hpp \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/projectile.h \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/raylib/src/raymath.h

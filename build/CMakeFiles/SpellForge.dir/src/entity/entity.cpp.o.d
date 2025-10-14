@@ -2,7 +2,7 @@ CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o: \
   /usr/lib/clang/20/share/asan_ignorelist.txt \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/entity/entity.cpp \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/entity/entity.hpp \
-  /home/klo/Work/Jams/MiniJam-Forge/spellforge/build/_deps/raylib-src/src/raylib.h \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/raylib/src/raylib.h \
   /usr/lib/clang/20/include/stdarg.h \
   /usr/lib/clang/20/include/__stdarg_header_macro.h \
   /usr/lib/clang/20/include/__stdarg___gnuc_va_list.h \

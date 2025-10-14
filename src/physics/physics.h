@@ -3,11 +3,13 @@
 #include "raylib.h"
 #include "../level/level.h"
 #include "../entity/entity.hpp"
+#include <vector>
 
 const float tick 	= 1.0f / 20.0f;
 const int subSteps 	= 4;
 
 extern std::vector<b2BodyId> g_entityBodies;
+extern b2BodyId g_playerBody;
 
 // collision categories (adjust as needed)
 enum CollisionBits : uint64_t {
@@ -19,6 +21,14 @@ enum CollisionBits : uint64_t {
     AllBits         = ~0ull
 };
 
+struct DeadEnemy {
+    size_t index;
+    Vector2 pos;
+    int id;
+};
+
+static std::vector<DeadEnemy> g_deadEnemies;
+
 // pixels <-> meters (default: 1 tile == 1 meter)
 inline float PxToM(float px) { return px / (float)TILE_SIZE; }
 inline float MToPx(float m)  { return m  * (float)TILE_SIZE; }
@@ -28,6 +38,9 @@ inline Vector2 MToPx(b2Vec2   p){ return { MToPx(p.x), MToPx(p.y) }; }
 // world lifecycle
 b2WorldId InitWorld();
 void DestroyWorld(b2WorldId worldId);
+
+void Physics_QueueDeletion (size_t i, const Vector2& pos, int id);
+void Physics_FlushDeletions(b2WorldId world, EntitySystem* es);
 
 // build static colliders from your tile grid (one box per wall tile)
 void BuildStaticsFromGrid(b2WorldId worldId, const Grid* g);
@@ -42,3 +55,8 @@ b2BodyId CreatePlayer(b2WorldId worldId, Vector2 spawnPixels,
 
 // fetch player world position in pixels (center)
 Vector2 GetPlayerPixels(b2BodyId playerId);
+
+void Contact_ProcessPlayerEnemy(b2WorldId world, EntitySystem* es);
+
+
+

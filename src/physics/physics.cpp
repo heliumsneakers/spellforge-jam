@@ -1,9 +1,12 @@
 #include "physics.h"
+#include "../state.h"
 #include "../entity/entity.hpp"
+#include "../entity/enemies.hpp"
 #include "../../lib/box2d/include/box2d/box2d.h"
 #include <vector>
 
 std::vector<b2BodyId> g_entityBodies;
+b2BodyId g_playerBody;
 
 // --- world -------------------------------------------------------------
 b2WorldId InitWorld() {
@@ -18,6 +21,99 @@ void DestroyWorld(b2WorldId worldId) {
     b2DestroyWorld(worldId);
 }
 
+void Physics_QueueDeletion (size_t i, const Vector2& pos, int id){
+    g_deadEnemies.push_back({i, pos, id});
+}
+
+void Physics_FlushDeletions(b2WorldId world, EntitySystem* es) {
+    if (g_deadEnemies.empty()) return;
+
+    // Destroy bodies after step
+    for (const DeadEnemy& d : g_deadEnemies)
+    {
+        if (d.index >= g_entityBodies.size()) continue;
+        b2BodyId body = g_entityBodies[d.index];
+        if (b2Body_IsValid(body))
+        {
+            b2DestroyBody(body);
+        }
+        g_entityBodies[d.index] = b2_nullBodyId;
+
+        // Mark the entity inactive; keep index stable
+        if (d.index < es->pool.size())
+        {
+            es->pool[d.index].active = false;
+        }
+
+        // Spawn corpse now (safe: we’re post-step)
+        Spawn_Corpse_Prop(es, world, d.pos);
+
+        // // If you keep per-enemy AI state by id, clean it:
+        // sEnemyAI.erase(d.id);
+    }
+
+    g_deadEnemies.clear();
+}
+
+static bool IsEnemyBodyDirect(b2BodyId body, EntitySystem* es)
+{
+    for (size_t i = 0; i < es->pool.size(); ++i)
+    {
+        Entity& e = es->pool[i];
+        if (!e.active || e.kind != EntityKind::Enemy) continue;
+        if (i >= g_entityBodies.size()) continue;
+
+        b2BodyId enemyBody = g_entityBodies[i];
+        if (enemyBody.index1 == body.index1)
+            return true;
+    }
+    return false;
+}
+
+void Contact_ProcessPlayerEnemy(b2WorldId world, EntitySystem* es)
+{
+    if (g_gameOver || !es) return;
+
+    b2ContactEvents events = b2World_GetContactEvents(world);
+    if (events.beginCount == 0 && events.hitCount == 0) return;
+
+    // For debugging:
+    TraceLog(LOG_INFO, "PlayerEnemy ContactEvents: begin=%d hit=%d end=%d",
+             events.beginCount, events.hitCount, events.endCount);
+
+    // --- Check both begin and hit events for reliability ---
+    auto CheckCollision = [&](b2BodyId bodyA, b2BodyId bodyB)
+    {
+        // Player body touches enemy body?
+        if ((bodyA.index1 == g_playerBody.index1 && IsEnemyBodyDirect(bodyB, es)) ||
+            (bodyB.index1 == g_playerBody.index1 && IsEnemyBodyDirect(bodyA, es)))
+        {
+            g_gameOver = true;
+            TraceLog(LOG_INFO, "💀 Player touched by enemy — GAME OVER!");
+        }
+    };
+
+    // --- Begin touch events ---
+    for (int32_t i = 0; i < events.beginCount; ++i)
+    {
+        const b2ContactBeginTouchEvent* ev = &events.beginEvents[i];
+        b2BodyId bodyA = b2Shape_GetBody(ev->shapeIdA);
+        b2BodyId bodyB = b2Shape_GetBody(ev->shapeIdB);
+        CheckCollision(bodyA, bodyB);
+        if (g_gameOver) return;
+    }
+
+    // --- Hit events (for already-overlapping cases) ---
+    for (int32_t i = 0; i < events.hitCount; ++i)
+    {
+        const b2ContactHitEvent* ev = &events.hitEvents[i];
+        b2BodyId bodyA = b2Shape_GetBody(ev->shapeIdA);
+        b2BodyId bodyB = b2Shape_GetBody(ev->shapeIdB);
+        CheckCollision(bodyA, bodyB);
+        if (g_gameOver) return;
+    }
+}
+
 // --- statics -----------------------------------------------------------
 // Build one static chain loop per wall cluster by tracing the perimeter
 void BuildStaticsFromGrid(b2WorldId worldId, const Grid* g) {
@@ -26,8 +122,6 @@ void BuildStaticsFromGrid(b2WorldId worldId, const Grid* g) {
     // One static body to own all chain fixtures
     b2BodyDef bd = b2DefaultBodyDef();
     b2BodyId ground = b2CreateBody(worldId, &bd);
-
-    b2Body_EnableContactEvents(ground, true);
 
     const int W = g->w, H = g->h;
     const int VX = W + 1, VY = H + 1;
@@ -181,6 +275,7 @@ void BuildStaticsFromGrid(b2WorldId worldId, const Grid* g) {
                     // cd.filter = (b2Filter){ StaticBit, AllBits, 0 };
 
                     b2CreateChain(ground, &cd);
+                    b2Body_EnableContactEvents(ground, true);
                 }
                 free(pts);
             }
@@ -211,7 +306,6 @@ std::vector<b2BodyId> Create_Entity_Bodies(EntitySystem* es, b2WorldId worldId) 
         bd.position = { PxToM(E.pos.x), PxToM(E.pos.y) };
 
         b2BodyId body = b2CreateBody(worldId, &bd);
-        b2Body_EnableContactEvents(body, true);
 
         // Shape/fixture
         b2ShapeDef sd = b2DefaultShapeDef();
@@ -254,6 +348,8 @@ b2BodyId CreatePlayer(b2WorldId worldId, Vector2 spawnPixels, float halfWidthPx,
     bd.position = { PxToM(spawnPixels.x), PxToM(spawnPixels.y) };
     bd.linearDamping = linearDamping; // auto-stop when no input
     b2BodyId body = b2CreateBody(worldId, &bd);
+    
+    g_playerBody = body;
 
     b2ShapeDef sd = b2DefaultShapeDef();
     sd.filter = { PlayerBit, AllBits, 0 };

@@ -12,7 +12,14 @@
 #include <algorithm>
 
 // Define a collision filter for enemies
-static const b2Filter ENEMY_FILTER = { EnemyBit, AllBits, 0 };
+
+int g_enemiesKilled = 0;
+int g_wave = 0;
+float g_speedMultiplier = 1.0f;
+
+static b2WorldId g_lastWorld;
+static const Grid* g_lastGrid = nullptr;
+static Vector2 g_lastPlayerPos = {0};
 
 struct EnemyAI {
     std::vector<Vector2> path;
@@ -141,18 +148,22 @@ void Enemies_Spawn(EntitySystem* es, const Grid* g, Vector2 playerPos, int count
             e.kind = EntityKind::Enemy;
             e.pos = pos;
             e.half = { 10.0f, 10.0f };
-            e.color = RED;
+            e.color = GREEN;
             e.active = true;
+            e.maxHealth = 100.0f;
+            e.health    = 100.0f;
+            e.slowTimer = 0.0f;
             es->pool.push_back(e);
             break;
         }
     }
 }
 
-void Enemies_CreateBodies(EntitySystem* es, b2WorldId world) {
+void Enemies_CreateBodies(EntitySystem* es, b2WorldId world, size_t startIndex)
+{
     if (!es) return;
 
-    for (size_t i = 0; i < es->pool.size(); ++i)
+    for (size_t i = startIndex; i < es->pool.size(); ++i)
     {
         Entity& e = es->pool[i];
         if (!e.active || e.kind != EntityKind::Enemy) continue;
@@ -161,12 +172,12 @@ void Enemies_CreateBodies(EntitySystem* es, b2WorldId world) {
         bd.type = b2_dynamicBody;
         bd.position = { PxToM(e.pos.x), PxToM(e.pos.y) };
 
-         b2BodyId body = b2CreateBody(world, &bd);
+        b2BodyId body = b2CreateBody(world, &bd);
 
         b2ShapeDef sd = b2DefaultShapeDef();
         sd.density = 1.0f;
-        sd.filter = ENEMY_FILTER;
-
+        sd.filter.categoryBits = EnemyBit;
+        sd.filter.maskBits = AllBits;
         b2Polygon box = b2MakeBox(PxToM(e.half.x), PxToM(e.half.y));
         b2CreatePolygonShape(body, &sd, &box);
 
@@ -181,15 +192,19 @@ void Enemies_CreateBodies(EntitySystem* es, b2WorldId world) {
 void Enemies_Update(EntitySystem* es, const Grid* g, b2BodyId playerBody, float dt) {
     if (!es) return;
 
-    // player position in pixels
+    g_lastGrid = g;
+    g_lastWorld = b2Body_GetWorld(playerBody);
     b2Vec2 pM = b2Body_GetPosition(playerBody);
+    g_lastPlayerPos = { MToPx(pM.x), MToPx(pM.y) };
+
+    // player position in pixels
     Vector2 playerPx = { MToPx(pM.x), MToPx(pM.y) };
 
     // tuning
     const float repathEvery = 0.35f;   // seconds
     const float waypointReach = 8.0f;  // px
     const float stopRadius = 28.0f;    // px (arrival radius near player)
-    const float chaseSpeed = 100.0f;   // px/s
+    const float chaseSpeed = 40.0f;   // px/s
     const float accelGain  = 4.0f;     // force gain toward desired vel
     const float brakeGain  = 6.0f;     // stronger braking when inside stopRadius
 
@@ -201,6 +216,14 @@ void Enemies_Update(EntitySystem* es, const Grid* g, b2BodyId playerBody, float 
         b2BodyId body = g_entityBodies[i];
         if (body.index1 == 0) continue;
 
+
+        if (e.health <= 0 && e.active) {
+            Physics_QueueDeletion(i, e.pos, e.id);
+            e.active = false;
+            continue;
+        }
+
+ 
         // current enemy pos (px)
         b2Vec2 eM = b2Body_GetPosition(body);
         Vector2 posPx = { MToPx(eM.x), MToPx(eM.y) };
@@ -252,7 +275,23 @@ void Enemies_Update(EntitySystem* es, const Grid* g, b2BodyId playerBody, float 
         float dist = Vector2Length(toTarget);
         Vector2 dir = dist > 1.0f ? Vector2Scale(toTarget, 1.0f / dist) : Vector2{0,0};
 
-        float speed = chaseSpeed;
+        if (e.slowTimer > 0.0f)
+        {
+            e.slowTimer -= dt;
+            if (e.slowTimer < 0.0f) e.slowTimer = 0.0f;
+        }
+
+        float slowFactor = (e.slowTimer > 0.0f) ? 0.4f : 1.0f;
+
+        float speed = chaseSpeed * g_speedMultiplier * slowFactor;
+
+        if (e.slowTimer > 0.0f)
+            e.color = (Color){120, 200, 255, 255}; // icy blue
+        else if (e.health < e.maxHealth * 0.5f)
+            e.color = (Color){255, 100, 100, 255}; // darker red
+        else
+            e.color = GREEN;
+
         // smooth slowdown near final player radius
         if (dToPlayer < stopRadius * 2.0f) {
             float t = (dToPlayer - stopRadius) / stopRadius; // 1..0 across the last stopRadius
@@ -282,3 +321,38 @@ void Enemies_Update(EntitySystem* es, const Grid* g, b2BodyId playerBody, float 
     }
 }
 
+void Spawn_Corpse_Prop(EntitySystem* es, b2WorldId world, Vector2 pos)
+{
+    Entity corpse;
+    corpse.id = es->nextId++;
+    corpse.kind = EntityKind::Prop;
+    corpse.pos = pos;
+    corpse.half = { 6.0f, 6.0f };
+    corpse.color = BLACK; // black
+    corpse.active = true;
+    corpse.element = ElementType::NONE;
+    corpse.telekinetic = false;
+
+    es->pool.push_back(corpse);
+
+    // Create a simple static/dynamic body
+    b2BodyDef bd = b2DefaultBodyDef();
+    bd.type = b2_dynamicBody;
+    bd.position = { PxToM(pos.x), PxToM(pos.y) };
+
+    b2BodyId body = b2CreateBody(world, &bd);
+
+    b2ShapeDef sd = b2DefaultShapeDef();
+    sd.density = 5.0f;
+    sd.filter.categoryBits = DynamicBit;
+    sd.filter.maskBits = AllBits;
+
+    b2Polygon box = b2MakeBox(PxToM(corpse.half.x), PxToM(corpse.half.y));
+    b2CreatePolygonShape(body, &sd, &box);
+
+    b2Body_EnableContactEvents(body, true);
+
+    g_entityBodies.push_back(body);
+
+    TraceLog(LOG_INFO, "🪦 Spawned corpse prop at (%.1f, %.1f)", pos.x, pos.y);
+}
