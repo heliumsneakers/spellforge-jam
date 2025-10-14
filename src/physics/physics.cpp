@@ -21,38 +21,42 @@ void DestroyWorld(b2WorldId worldId) {
     b2DestroyWorld(worldId);
 }
 
-void Physics_QueueDeletion (size_t i, const Vector2& pos, int id){
-    g_deadEnemies.push_back({i, pos, id});
+void Physics_QueueDeletion (size_t i, const Vector2& pos, int id, EntityKind kind){
+    g_entDelQueue.push_back({i, pos, id, kind});
 }
 
-void Physics_FlushDeletions(b2WorldId world, EntitySystem* es) {
-    if (g_deadEnemies.empty()) return;
+void Physics_FlushDeletions(b2WorldId world, EntitySystem* es)
+{
+    if (g_entDelQueue.empty()) return;
 
-    // Destroy bodies after step
-    for (const DeadEnemy& d : g_deadEnemies)
+    for (const Ent_To_Del& d : g_entDelQueue)
     {
         if (d.index >= g_entityBodies.size()) continue;
         b2BodyId body = g_entityBodies[d.index];
+
         if (b2Body_IsValid(body))
         {
             b2DestroyBody(body);
         }
         g_entityBodies[d.index] = b2_nullBodyId;
 
-        // Mark the entity inactive; keep index stable
         if (d.index < es->pool.size())
         {
             es->pool[d.index].active = false;
         }
 
-        // Spawn corpse now (safe: we’re post-step)
-        Spawn_Corpse_Prop(es, world, d.pos);
+        // ✅ Only spawn corpses for enemies
+        if (d.kind == EntityKind::Enemy)
+        {
+            Spawn_Corpse_Prop(es, world, d.pos);
+        }
 
-        // // If you keep per-enemy AI state by id, clean it:
-        // sEnemyAI.erase(d.id);
+        // Optional: clean AI data
+        // if (d.kind == EntityKind::Enemy)
+        //     sEnemyAI.erase(d.id);
     }
 
-    g_deadEnemies.clear();
+    g_entDelQueue.clear();
 }
 
 static bool IsEnemyBodyDirect(b2BodyId body, EntitySystem* es)

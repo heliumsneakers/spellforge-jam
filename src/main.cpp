@@ -8,11 +8,6 @@
 #include "../lib/box2d/include/box2d/box2d.h"
 #include "state.h"
 
-Vector2 teleForce = { 50.0f, 25.0f };
-
-bool g_gameOver = false;
-int g_lastWaveSpawned = 0;
-
 void DrawScoreboard()
 {
     const int fontSize = 28;

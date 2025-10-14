@@ -21,13 +21,14 @@ enum CollisionBits : uint64_t {
     AllBits         = ~0ull
 };
 
-struct DeadEnemy {
+struct Ent_To_Del {
     size_t index;
     Vector2 pos;
     int id;
+    EntityKind kind;
 };
 
-static std::vector<DeadEnemy> g_deadEnemies;
+static std::vector<Ent_To_Del> g_entDelQueue;
 
 // pixels <-> meters (default: 1 tile == 1 meter)
 inline float PxToM(float px) { return px / (float)TILE_SIZE; }
@@ -39,7 +40,7 @@ inline Vector2 MToPx(b2Vec2   p){ return { MToPx(p.x), MToPx(p.y) }; }
 b2WorldId InitWorld();
 void DestroyWorld(b2WorldId worldId);
 
-void Physics_QueueDeletion (size_t i, const Vector2& pos, int id);
+void Physics_QueueDeletion (size_t i, const Vector2& pos, int id, EntityKind kind);
 void Physics_FlushDeletions(b2WorldId world, EntitySystem* es);
 
 // build static colliders from your tile grid (one box per wall tile)

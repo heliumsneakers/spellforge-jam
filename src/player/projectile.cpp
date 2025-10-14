@@ -4,6 +4,7 @@
 #include "raylib.h"
 #include "raymath.h"
 #include <algorithm>
+#include <box2d/box2d.h>
 
 // ------------------------------------------------------------
 // GLOBAL STATE
@@ -76,8 +77,15 @@ void Projectile_ProcessContacts(b2WorldId world, EntitySystem *es)
         const b2ContactBeginTouchEvent* ev = &events.beginEvents[i];
         b2ShapeId sA = ev->shapeIdA;
         b2ShapeId sB = ev->shapeIdB;
+
+        // verify validity of shape
+        if (!b2Shape_IsValid(sA) || !b2Shape_IsValid(sB)) continue;
+
         b2BodyId bodyA = b2Shape_GetBody(sA);
         b2BodyId bodyB = b2Shape_GetBody(sB);
+
+        // verify validity of body
+        if (!b2Body_IsValid(bodyA) || !b2Body_IsValid(bodyB)) continue;
 
         for (auto& p : g_projectiles)
         {
@@ -115,7 +123,7 @@ void Projectile_ProcessContacts(b2WorldId world, EntitySystem *es)
                                 e.slowTimer = 2.0f; // 2 seconds slow
                                 TraceLog(LOG_INFO, "❄️ Enemy %d hit by ice projectile (HP=%.1f, slowed)", e.id, e.health);
                             }
- 
+
                             break;
                         }
                     }
@@ -145,8 +153,15 @@ void Projectile_ProcessContacts(b2WorldId world, EntitySystem *es)
                 const b2ContactBeginTouchEvent* ev = &events.beginEvents[j];
                 b2ShapeId sA = ev->shapeIdA;
                 b2ShapeId sB = ev->shapeIdB;
+
+                // verify validity of shape
+                if (!b2Shape_IsValid(sA) || !b2Shape_IsValid(sB)) continue;
+
                 b2BodyId bodyA = b2Shape_GetBody(sA);
                 b2BodyId bodyB = b2Shape_GetBody(sB);
+
+                // verify validity of body
+                if (!b2Body_IsValid(bodyA) || !b2Body_IsValid(bodyB)) continue;
 
                 if (propBody.index1 != bodyA.index1 && propBody.index1 != bodyB.index1)
                     continue;
@@ -168,9 +183,9 @@ void Projectile_ProcessContacts(b2WorldId world, EntitySystem *es)
                             enemy.slowTimer = 3.0f;
                             TraceLog(LOG_INFO, "❄️ Enemy %d hit by telekinetic ice prop! (HP=%.1f, slowed)", enemy.id, enemy.health);
                         }
-                        
+
                         if (prop.active) {
-                            Physics_QueueDeletion(i, prop.pos, prop.id);
+                            Physics_QueueDeletion(i, prop.pos, prop.id, prop.kind);
                             prop.active = false;
                             continue;
                         }

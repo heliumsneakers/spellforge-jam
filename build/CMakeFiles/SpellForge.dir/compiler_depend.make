@@ -1530,6 +1530,7 @@ CMakeFiles/SpellForge.dir/src/level/level.cpp.o: /home/klo/Work/Jams/MiniJam-For
 
 CMakeFiles/SpellForge.dir/src/main.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/main.cpp \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/raylib/src/raylib.h \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/raylib/src/raymath.h \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/box2d/include/box2d/box2d.h \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/box2d/include/box2d/box2d.h \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/entity/entity.hpp \
@@ -2256,6 +2257,7 @@ CMakeFiles/SpellForge.dir/src/main.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spel
 
 CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/physics/physics.cpp \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/raylib/src/raylib.h \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/raylib/src/raymath.h \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/box2d/include/box2d/base.h \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/box2d/include/box2d/box2d.h \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/box2d/include/box2d/collision.h \
