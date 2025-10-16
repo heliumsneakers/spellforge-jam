@@ -134,8 +134,6 @@ int main() {
 
         b2World_Step(world, tick, subSteps);
 
-        Physics_FlushDeletions(world, &ents); 
-
         Contact_ProcessPlayerEnemy(world, &ents);
         Projectile_Update(world, &ents, tick);
         Entities_Update(&ents, tick);
@@ -158,6 +156,9 @@ int main() {
             Enemies_Spawn(&ents, &g, playerPosPx, spawnCount, 700.0f);
             Enemies_CreateBodies(&ents, world, prevCount);
         }
+
+        // Ensure deletions get flushed AFTER creations
+        Physics_FlushDeletions(world, &ents); 
 
         BeginDrawing();
         ClearBackground((Color){30,30,40,255});

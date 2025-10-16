@@ -24,7 +24,7 @@ void Projectile_HandleSwitch()
 
 void Projectile_Shoot(b2WorldId world, Vector2 playerPos, Camera2D cam)
 {
-    if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
+    if (IsMouseButtonDown(MOUSE_BUTTON_LEFT)) {
 
         Vector2 mouseWorld = GetScreenToWorld2D(GetMousePosition(), cam);
         Vector2 dir = Vector2Normalize(Vector2Subtract(mouseWorld, playerPos));

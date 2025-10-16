@@ -220,6 +220,7 @@ void Enemies_Update(EntitySystem* es, const Grid* g, b2BodyId playerBody, float 
         if (e.health <= 0 && e.active) {
             Physics_QueueDeletion(i, e.pos, e.id, e.kind);
             e.active = false;
+            g_enemiesKilled++;
             continue;
         }
 

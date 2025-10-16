@@ -3694,6 +3694,7 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o: /home/klo/Work/Jams/MiniJam-F
   /usr/lib/clang/20/share/asan_ignorelist.txt
 
 CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/projectile.cpp \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/box2d/include/box2d/box2d.h \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/raylib/src/raylib.h \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/raylib/src/raymath.h \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/box2d/include/box2d/base.h \
