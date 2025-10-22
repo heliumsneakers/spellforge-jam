@@ -25,8 +25,6 @@ void DrawScoreboard()
 
 void RestartGame(Player* player, EntitySystem* es, Grid* level, b2WorldId* world)
 {
-    TraceLog(LOG_INFO, "🔄 Restarting game...");
-
     g_enemiesKilled = 0;
     g_wave = 0;
     g_speedMultiplier = 1.0f;
@@ -59,8 +57,6 @@ void RestartGame(Player* player, EntitySystem* es, Grid* level, b2WorldId* world
     player->cam.zoom = 1.0f;
 
     g_gameOver = false;
-
-    TraceLog(LOG_INFO, "✅ Game fully restarted!");
 }
 
 int main() {
@@ -141,7 +137,7 @@ int main() {
             g_speedMultiplier += 0.05f;
             int spawnCount = 4;
 
-            TraceLog(LOG_INFO, "⚔️ Wave %d triggered! Kills=%d Speed x%.2f", 
+            TraceLog(LOG_INFO, "Wave %d triggered! Kills=%d Speed x%.2f", 
                      g_wave, g_enemiesKilled, g_speedMultiplier);
 
             size_t prevCount = ents.pool.size();
