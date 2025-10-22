@@ -32,37 +32,29 @@ void RestartGame(Player* player, EntitySystem* es, Grid* level, b2WorldId* world
     g_speedMultiplier = 1.0f;
     g_lastWaveSpawned = 0;
 
-    // 1. Destroy previous world completely
     if (b2World_IsValid(*world)) {
         b2DestroyWorld(*world);
     }
 
-    // 2. Create a brand new world
     *world = InitWorld();
     BuildStaticsFromGrid(*world, level);
 
-    // 3. Clear entities + physics body list
     g_entityBodies.clear();
     es->pool.clear();
 
-    // 4. Reset player
     Player_Init(player, level);
     g_playerBody = CreatePlayer(*world, player->pos, 12.0f, 12.0f, 6.0f);
 
-    // 5. Respawn environment props
     Entities_SpawnBoxesInLevel(es, level, 10, 20, {10.f, 10.f}, 0);
     g_entityBodies = Create_Entity_Bodies(es, *world);
 
 
     size_t prevCount = es->pool.size();
-    // 6. Spawn fresh enemies
     Enemies_Spawn(es, level, player->pos, 6, 150.0f);
     Enemies_CreateBodies(es, *world, prevCount);
 
-    // 7. Clear global projectile state
     g_projectiles.clear();
 
-    // 8. Reset camera
     player->cam.target = player->pos;
     player->cam.zoom = 1.0f;
 
@@ -207,7 +199,6 @@ int main() {
             int screenW = GetScreenWidth();
             int screenH = GetScreenHeight();
 
-            // Centered positions
             int x1 = (screenW - textWidth1) / 2;
             int y1 = screenH / 2 - 80;
 
@@ -217,12 +208,10 @@ int main() {
             int x2 = (screenW - textWidth2) / 2;
             int y2 = screenH / 2 + 40;
 
-            // Draw text layers
             DrawText(msg1, x1, y1, fontSize1, RED);
             DrawText(msg3, x3, y3, fontSize3, RAYWHITE);
             DrawText(msg2, x2, y2, fontSize2, GRAY);
 
-            // Wait for restart
             if (IsKeyPressed(KEY_R))
             {
                 RestartGame(&player, &ents, &g, &world);

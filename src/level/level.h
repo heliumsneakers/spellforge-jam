@@ -33,7 +33,7 @@ typedef struct {
     uint32_t seed;       // 0 -> time-based fully random
 } LevelGenParams;
 
-// ---- API ----
+
 bool  grid_init(Grid* g, int w, int h);
 void  grid_free(Grid* g);
 Tile* grid_at(Grid* g, int x, int y);

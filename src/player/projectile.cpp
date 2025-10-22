@@ -6,16 +6,11 @@
 #include <algorithm>
 #include <box2d/box2d.h>
 
-// ------------------------------------------------------------
 // GLOBAL STATE
-// ------------------------------------------------------------
 std::vector<Projectile> g_projectiles;
 ProjectileType g_currentProjectile = ProjectileType::FIRE;
 
-// ------------------------------------------------------------
 // PROJECTILE LOGIC
-// ------------------------------------------------------------
-
 void Projectile_HandleSwitch()
 {
     if (IsKeyPressed(KEY_Q)) g_currentProjectile = ProjectileType::FIRE;
@@ -59,9 +54,7 @@ void Projectile_Shoot(b2WorldId world, Vector2 playerPos, Camera2D cam)
     }
 }
 
-// ------------------------------------------------------------
 // PROCESS CONTACT EVENTS FROM BOX2D
-// ------------------------------------------------------------
 void Projectile_ProcessContacts(b2WorldId world, EntitySystem *es)
 {
     b2ContactEvents events = b2World_GetContactEvents(world); 
@@ -72,7 +65,7 @@ void Projectile_ProcessContacts(b2WorldId world, EntitySystem *es)
     TraceLog(LOG_INFO, "ContactEvents: begin=%d hit=%d end=%d",
              events.beginCount, events.hitCount, events.endCount);
 
-    // --- Handle Begin Touch ---
+    // Handle begin touch
     for (int32_t i = 0; i < events.beginCount; ++i) {
         const b2ContactBeginTouchEvent* ev = &events.beginEvents[i];
         b2ShapeId sA = ev->shapeIdA;
@@ -110,18 +103,18 @@ void Projectile_ProcessContacts(b2WorldId world, EntitySystem *es)
                         {
                             hitEnemy = true;
 
-                            // --- FIRE projectile: high damage ---
+                            // FIRE projectile: high damage
                             if (p.type == ProjectileType::FIRE)
                             {
                                 e.health -= 50.0f;
-                                TraceLog(LOG_INFO, "🔥 Enemy %d hit by fire projectile (HP=%.1f)", e.id, e.health);
+                                TraceLog(LOG_INFO, "Enemy %d hit by fire projectile (HP=%.1f)", e.id, e.health);
                             }
-                            // --- ICE projectile: slow effect ---
+                            // ICE projectile: slow effect
                             else if (p.type == ProjectileType::ICE)
                             {
                                 e.health -= 25.0f;
                                 e.slowTimer = 2.0f; // 2 seconds slow
-                                TraceLog(LOG_INFO, "❄️ Enemy %d hit by ice projectile (HP=%.1f, slowed)", e.id, e.health);
+                                TraceLog(LOG_INFO, "Enemy %d hit by ice projectile (HP=%.1f, slowed)", e.id, e.health);
                             }
 
                             break;
@@ -177,11 +170,11 @@ void Projectile_ProcessContacts(b2WorldId world, EntitySystem *es)
                     {
                         if (prop.element == ElementType::FIRE) {
                             enemy.health -= 100.0f;
-                            TraceLog(LOG_INFO, "🔥 Enemy %d hit by telekinetic fire prop! (HP=%.1f)", enemy.id, enemy.health);
+                            TraceLog(LOG_INFO, "Enemy %d hit by telekinetic fire prop! (HP=%.1f)", enemy.id, enemy.health);
                         } else if (prop.element == ElementType::ICE) {
                             enemy.health -= 90.0f;
                             enemy.slowTimer = 3.0f;
-                            TraceLog(LOG_INFO, "❄️ Enemy %d hit by telekinetic ice prop! (HP=%.1f, slowed)", enemy.id, enemy.health);
+                            TraceLog(LOG_INFO, "Enemy %d hit by telekinetic ice prop! (HP=%.1f, slowed)", enemy.id, enemy.health);
                         }
 
                         if (prop.active) {
@@ -198,12 +191,9 @@ void Projectile_ProcessContacts(b2WorldId world, EntitySystem *es)
     }
 }
 
-// ------------------------------------------------------------
 // UPDATE + DRAW
-// ------------------------------------------------------------
 void Projectile_Update(b2WorldId world, EntitySystem *es, float dt)
 {
-    // 1. Handle collisions this frame
     Projectile_ProcessContacts(world, es);
 
     for (auto& p : g_projectiles)
@@ -220,7 +210,6 @@ void Projectile_Update(b2WorldId world, EntitySystem *es, float dt)
         }
     }
 
-    // 3. Cleanup inactive projectiles
     g_projectiles.erase(
         std::remove_if(g_projectiles.begin(), g_projectiles.end(),
                        [](const Projectile& p){ return !p.active; }),

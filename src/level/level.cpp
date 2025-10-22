@@ -93,7 +93,7 @@ static void carve_corridor_wide(Grid* g, int cx0, int cy0, int cx1, int cy1, int
     }
 }
 
-// After carving floors, call this to surround floors with walls (cheap “outline”)
+// After carving floors, this to surrounds floors with walls (cheap “outline”)
 static void outline_walls(Grid* g) {
     for (int y=1; y<g->h-1; ++y)
     for (int x=1; x<g->w-1; ++x) {
@@ -109,12 +109,7 @@ static void outline_walls(Grid* g) {
     }
 }
 
-// --- generation --------------------------------------------------------
-//
-// New: parameterized generator with min/max room size AND min/max corridor width.
-// Pass everything via LevelGenParams for clarity.
-//
-
+// Level Generation
 void gen_level(Grid* g, const LevelGenParams* p) {
     uint32_t seed = p->seed ? p->seed : (uint32_t)time(NULL);
     uint32_t rng = seed;
@@ -124,7 +119,7 @@ void gen_level(Grid* g, const LevelGenParams* p) {
 
     int prev_cx = -1, prev_cy = -1;
     for (int i = 0; i < p->attempts; ++i) {
-        // Room size & position
+        // Room size and position
         int rw = rrange(&rng, p->roomMinW, p->roomMaxW);
         int rh = rrange(&rng, p->roomMinH, p->roomMaxH);
 
@@ -168,7 +163,7 @@ void collide_aabb_vs_walls(const Grid* g, float* px, float* py, float halfw, flo
     // Move X then Y; resolve penetration per axis by testing overlapped tile cells
     float x = *px, y = *py;
 
-    // --- X axis ---
+    // X axis
     x += vx;
     int left   = (int)((x - halfw) / TILE_SIZE);
     int right  = (int)((x + halfw - 0.001f) / TILE_SIZE);
@@ -191,7 +186,7 @@ void collide_aabb_vs_walls(const Grid* g, float* px, float* py, float halfw, flo
         }
     }
 
-    // --- Y axis ---
+    // Y axis
     y += vy;
     left   = (int)((x - halfw) / TILE_SIZE);
     right  = (int)((x + halfw - 0.001f) / TILE_SIZE);

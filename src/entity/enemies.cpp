@@ -56,7 +56,7 @@ static inline float Heuristic(int x1, int y1, int x2, int y2) {
     return fabsf((float)(x1 - x2)) + fabsf((float)(y1 - y2)); // Manhattan
 }
 
-// ------------------ A* PATHFIND ------------------
+// A* PATHFIND 
 static bool AStar_FindPath(const Grid* g, Vector2 startPx, Vector2 goalPx, std::vector<Vector2>& outPath) {
     outPath.clear();
 
@@ -123,7 +123,7 @@ static bool AStar_FindPath(const Grid* g, Vector2 startPx, Vector2 goalPx, std::
     return true;
 }
 
-// ------------------ SPAWN + BODY ------------------
+// Init and spawn enemies.
 void Enemies_Spawn(EntitySystem* es, const Grid* g, Vector2 playerPos, int count, float minDist) {
     if (!es || !g) return;
 
@@ -187,8 +187,7 @@ void Enemies_CreateBodies(EntitySystem* es, b2WorldId world, size_t startIndex)
     }
 }
 
-// ------------------ UPDATE ------------------
-
+// Update enemies within the physics system.
 void Enemies_Update(EntitySystem* es, const Grid* g, b2BodyId playerBody, float dt) {
     if (!es) return;
 
@@ -284,7 +283,7 @@ void Enemies_Update(EntitySystem* es, const Grid* g, b2BodyId playerBody, float 
 
         float slowFactor = (e.slowTimer > 0.0f) ? 0.4f : 1.0f;
 
-        float speed = chaseSpeed * g_speedMultiplier * slowFactor;
+        float speed = chaseSpeed * slowFactor;
 
         if (e.slowTimer > 0.0f)
             e.color = (Color){120, 200, 255, 255}; // icy blue

@@ -45,7 +45,6 @@ void Physics_FlushDeletions(b2WorldId world, EntitySystem* es)
             es->pool[d.index].active = false;
         }
 
-        // ✅ Only spawn corpses for enemies
         if (d.kind == EntityKind::Enemy)
         {
             Spawn_Corpse_Prop(es, world, d.pos);
@@ -81,11 +80,10 @@ void Contact_ProcessPlayerEnemy(b2WorldId world, EntitySystem* es)
     b2ContactEvents events = b2World_GetContactEvents(world);
     if (events.beginCount == 0 && events.hitCount == 0) return;
 
-    // For debugging:
     TraceLog(LOG_INFO, "PlayerEnemy ContactEvents: begin=%d hit=%d end=%d",
              events.beginCount, events.hitCount, events.endCount);
 
-    // --- Check both begin and hit events for reliability ---
+    // Check both begin and hit events for reliability
     auto CheckCollision = [&](b2BodyId bodyA, b2BodyId bodyB)
     {
         // Player body touches enemy body?
@@ -97,7 +95,7 @@ void Contact_ProcessPlayerEnemy(b2WorldId world, EntitySystem* es)
         }
     };
 
-    // --- Begin touch events ---
+    // Begin touch events
     for (int32_t i = 0; i < events.beginCount; ++i)
     {
         const b2ContactBeginTouchEvent* ev = &events.beginEvents[i];
@@ -107,7 +105,7 @@ void Contact_ProcessPlayerEnemy(b2WorldId world, EntitySystem* es)
         if (g_gameOver) return;
     }
 
-    // --- Hit events (for already-overlapping cases) ---
+    // Hit events (for already-overlapping)
     for (int32_t i = 0; i < events.hitCount; ++i)
     {
         const b2ContactHitEvent* ev = &events.hitEvents[i];
@@ -118,7 +116,6 @@ void Contact_ProcessPlayerEnemy(b2WorldId world, EntitySystem* es)
     }
 }
 
-// --- statics -----------------------------------------------------------
 // Build one static chain loop per wall cluster by tracing the perimeter
 void BuildStaticsFromGrid(b2WorldId worldId, const Grid* g) {
     if (!g || g->w <= 0 || g->h <= 0) return;
@@ -275,7 +272,7 @@ void BuildStaticsFromGrid(b2WorldId worldId, const Grid* g) {
                     cd.points = pts;
                     cd.count = m;
                     cd.isLoop = true;
-                    // Optional: set filter (depends on your Box2D version)
+                    // Optional: set filter
                     // cd.filter = (b2Filter){ StaticBit, AllBits, 0 };
 
                     b2CreateChain(ground, &cd);
@@ -329,7 +326,7 @@ void Entities_Update(EntitySystem* es, float dt) {
     if (!es) return;
 
     const size_t n = es->pool.size();
-    if (g_entityBodies.size() != n) return; // if you add/remove entities, rebuild bodies
+    if (g_entityBodies.size() != n) return; // if add/remove entities, rebuild bodies
 
     for (size_t i = 0; i < n; ++i) {
         Entity& E = es->pool[i];

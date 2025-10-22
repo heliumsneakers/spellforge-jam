@@ -11,7 +11,7 @@ const int subSteps 	= 4;
 extern std::vector<b2BodyId> g_entityBodies;
 extern b2BodyId g_playerBody;
 
-// collision categories (adjust as needed)
+// collision categories
 enum CollisionBits : uint64_t {
     StaticBit       = 0x0001,
     PlayerBit       = 0x0002,
@@ -30,7 +30,7 @@ struct Ent_To_Del {
 
 static std::vector<Ent_To_Del> g_entDelQueue;
 
-// pixels <-> meters (default: 1 tile == 1 meter)
+// pixels -> meters (default: 1 tile == 1 meter)
 inline float PxToM(float px) { return px / (float)TILE_SIZE; }
 inline float MToPx(float m)  { return m  * (float)TILE_SIZE; }
 inline Vector2 PxToM(Vector2 p){ return { PxToM(p.x), PxToM(p.y) }; }
@@ -43,13 +43,13 @@ void DestroyWorld(b2WorldId worldId);
 void Physics_QueueDeletion (size_t i, const Vector2& pos, int id, EntityKind kind);
 void Physics_FlushDeletions(b2WorldId world, EntitySystem* es);
 
-// build static colliders from your tile grid (one box per wall tile)
+// build static colliders from tile grid (one box per wall tile)
 void BuildStaticsFromGrid(b2WorldId worldId, const Grid* g);
 
 std::vector<b2BodyId> Create_Entity_Bodies(EntitySystem* es, b2WorldId worldId); 
 void Entities_Update(EntitySystem *es, float dt);
 
-// create a dynamic player body (top-down). returns the Box2D id.
+// create a dynamic player body, returns the Box2D id.
 b2BodyId CreatePlayer(b2WorldId worldId, Vector2 spawnPixels,
                       float halfWidthPx, float halfHeightPx,
                       float linearDamping = 10.0f);

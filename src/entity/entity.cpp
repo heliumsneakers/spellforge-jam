@@ -35,8 +35,6 @@ static const Entity* find_by_id(const EntitySystem* es, int id){
     return nullptr;
 }
 
-// --- API -------------------------------------------------------------------
-
 void Entities_Init(EntitySystem* es, uint32_t seed){
     es->pool.clear();
     es->nextId = 1;
@@ -114,7 +112,7 @@ int Entities_SpawnBoxesInLevel(EntitySystem* es,
     // Choose target count
     const int target = rrange(&rng, minCount, maxCount);
 
-    // Light shuffle via Fisher-Yates using our RNG
+    // Light shuffle via Fisher-Yates / Knuth shuffle (thanks to my TAOCP book)
     for (int i=(int)candidates.size()-1; i>0; --i){
         int j = rrange(&rng, 0, i);
         std::swap(candidates[i], candidates[j]);

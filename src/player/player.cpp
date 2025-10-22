@@ -116,7 +116,7 @@ void Telekinesis_Hold(Vector2 pos, float orbitRadius, Vector2 force, EntitySyste
         float dist = Vector2Length(delta);
         if (dist < 2.0f || dist > orbitRadius * 2.0f) continue;
 
-        // --- Assign element + color when grabbed ---
+        // Assign element + color when grabbed
         if (!e.telekinetic)
         {
             e.telekinetic = true;
@@ -129,7 +129,7 @@ void Telekinesis_Hold(Vector2 pos, float orbitRadius, Vector2 force, EntitySyste
             }
         }
 
-        // Orbital physics (unchanged)
+        // Orbit effect
         Vector2 dir = Vector2Normalize(delta);
         Vector2 tangent = { -dir.y, dir.x };
         float radialError = dist - orbitRadius;
@@ -187,7 +187,7 @@ void Telekinesis_Fire(Vector2 playerPos, float orbitRadius, float launchForce, E
 }
 
 void UpdatePlayer(b2BodyId playerId, float dt, Vector2 inputDir, float speedPixelsPerSec) {
-    // normalize input (WASD) so diagonals aren’t faster
+    // normalize input so diagonals aren’t faster
     float len = sqrt(inputDir.x*inputDir.x + inputDir.y*inputDir.y);
     if (len > 0.0001f) {
         inputDir.x /= len;
