@@ -280,9 +280,6 @@ void Enemies_Update(EntitySystem* es, const Grid* g, b2BodyId playerBody, float 
         }
         b2BodyId body = bIt->second;
 
-        // ----------------------------------------------------
-        // Death check
-        // ----------------------------------------------------
         if (en.health <= 0.f)
         {
             const int deadId = en.entId; // <-- capture before swap!
@@ -302,9 +299,7 @@ void Enemies_Update(EntitySystem* es, const Grid* g, b2BodyId playerBody, float 
             continue;
         }
 
-        // ----------------------------------------------------
-        // Movement + pathfinding
-        // ----------------------------------------------------
+
         b2Vec2 eM = b2Body_GetPosition(body);
         Vector2 posPx = { MToPx(eM.x), MToPx(eM.y) };
 
@@ -333,9 +328,6 @@ void Enemies_Update(EntitySystem* es, const Grid* g, b2BodyId playerBody, float 
         float dist = Vector2Length(toTarget);
         Vector2 dir = (dist > 1.0f) ? Vector2Scale(toTarget, 1.0f / dist) : Vector2{0,0};
 
-        // ----------------------------------------------------
-        // Speed modifiers (slowed / damaged / near player)
-        // ----------------------------------------------------
         if (en.slowTimer > 0.0f)
         {
             en.slowTimer -= dt;
