@@ -219,6 +219,24 @@ CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//No help, variable specified on the command line.
+GLFW_USE_WAYLAND:UNINITIALIZED=OFF
+
+//No help, variable specified on the command line.
+RAYLIB_SUPPORT_MODULE_RAUDIO:UNINITIALIZED=ON
+
+//No help, variable specified on the command line.
+RAYLIB_SUPPORT_MODULE_RMODELS:UNINITIALIZED=ON
+
+//No help, variable specified on the command line.
+RAYLIB_SUPPORT_MODULE_RSHAPES:UNINITIALIZED=ON
+
+//No help, variable specified on the command line.
+RAYLIB_SUPPORT_MODULE_RTEXT:UNINITIALIZED=ON
+
+//No help, variable specified on the command line.
+RAYLIB_SUPPORT_MODULE_RTEXTURES:UNINITIALIZED=ON
+
 //Value Computed by CMake
 SpellForge_BINARY_DIR:STATIC=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build
 
@@ -227,6 +245,9 @@ SpellForge_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 SpellForge_SOURCE_DIR:STATIC=/home/klo/Work/Jams/MiniJam-Forge/spellforge
+
+//No help, variable specified on the command line.
+USE_WAYLAND:UNINITIALIZED=OFF
 
 
 ########################

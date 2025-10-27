@@ -4,11 +4,26 @@
 #include "../entity/enemies.hpp"
 #include "../../lib/box2d/include/box2d/box2d.h"
 #include <vector>
+#include <unordered_map>
 
-std::vector<b2BodyId> g_entityBodies;
+std::unordered_map<int, b2BodyId> g_entityToBody;
+std::unordered_map<uint32_t, int> g_bodyToEntity;
+
 b2BodyId g_playerBody;
 
-// --- world -------------------------------------------------------------
+void Physics_RegisterBody(Entity& e, b2BodyId body) {
+    g_entityToBody[e.id] = body;
+    g_bodyToEntity[body.index1] = e.id;
+}
+
+void Physics_UnregisterBody(int entityId) {
+    auto it = g_entityToBody.find(entityId);
+    if (it != g_entityToBody.end()) {
+        g_bodyToEntity.erase(it->second.index1);
+        g_entityToBody.erase(it);
+    }
+}
+
 b2WorldId InitWorld() {
     b2WorldDef def = b2DefaultWorldDef();
     def.gravity = {0.0f, 0.0f}; // top-down: no gravity
@@ -25,93 +40,87 @@ void Physics_QueueDeletion (size_t i, const Vector2& pos, int id, EntityKind kin
     g_entDelQueue.push_back({i, pos, id, kind});
 }
 
-void Physics_FlushDeletions(b2WorldId world, EntitySystem* es)
-{
+void Physics_FlushDeletions(b2WorldId world, EntitySystem* es) {
     if (g_entDelQueue.empty()) return;
 
     for (const Ent_To_Del& d : g_entDelQueue)
     {
-        if (d.index >= g_entityBodies.size()) continue;
-        b2BodyId body = g_entityBodies[d.index];
-
-        if (b2Body_IsValid(body))
+        // 1. Destroy body if valid
+        auto it = g_entityToBody.find(d.id);
+        if (it != g_entityToBody.end())
         {
-            b2DestroyBody(body);
-        }
-        g_entityBodies[d.index] = b2_nullBodyId;
+            b2BodyId body = it->second;
+            if (b2Body_IsValid(body))
+                b2DestroyBody(body);
 
-        if (d.index < es->pool.size())
-        {
-            es->pool[d.index].active = false;
+            // unregister from global maps
+            Physics_UnregisterBody(d.id);
         }
 
+        // 2. Mark entity inactive
+        if (Entity* e = Entities_Get(es, d.id))
+            e->active = false;
+
+        // 3. If this was an enemy, spawn corpse + remove from g_enemies
         if (d.kind == EntityKind::Enemy)
         {
-            Spawn_Corpse_Prop(es, world, d.pos);
-        }
+            // Spawn_Corpse_Prop(es, world, d.pos);
 
-        // Optional: clean AI data
-        // if (d.kind == EntityKind::Enemy)
-        //     sEnemyAI.erase(d.id);
+            auto itE = g_enemyIndexByEntId.find(d.id);
+            if (itE != g_enemyIndexByEntId.end())
+            {
+                size_t idx = itE->second;
+                size_t last = g_enemies.size() - 1;
+
+                // maintain stable mapping for swapped element
+                if (idx != last)
+                {
+                    g_enemyIndexByEntId[g_enemies[last].entId] = idx;
+                    std::swap(g_enemies[idx], g_enemies[last]);
+                }
+
+                g_enemyIndexByEntId.erase(d.id);
+                g_enemies.pop_back();
+            }
+        }
     }
 
     g_entDelQueue.clear();
 }
 
-static bool IsEnemyBodyDirect(b2BodyId body, EntitySystem* es)
-{
-    for (size_t i = 0; i < es->pool.size(); ++i)
-    {
-        Entity& e = es->pool[i];
-        if (!e.active || e.kind != EntityKind::Enemy) continue;
-        if (i >= g_entityBodies.size()) continue;
+static bool IsEnemyBody(b2BodyId body, EntitySystem* es) {
+    uint32_t idx = body.index1;
+    auto it = g_bodyToEntity.find(idx);
+    if (it == g_bodyToEntity.end()) return false;
 
-        b2BodyId enemyBody = g_entityBodies[i];
-        if (enemyBody.index1 == body.index1)
-            return true;
-    }
-    return false;
+    int entityId = it->second;
+    Entity* e = Entities_Get(es, entityId);
+    return (e && e->active && e->kind == EntityKind::Enemy);
 }
 
-void Contact_ProcessPlayerEnemy(b2WorldId world, EntitySystem* es)
-{
+void Contact_ProcessPlayerEnemy(b2WorldId world, EntitySystem* es) {
     if (g_gameOver || !es) return;
 
     b2ContactEvents events = b2World_GetContactEvents(world);
     if (events.beginCount == 0 && events.hitCount == 0) return;
 
-    TraceLog(LOG_INFO, "PlayerEnemy ContactEvents: begin=%d hit=%d end=%d",
-             events.beginCount, events.hitCount, events.endCount);
-
-    // Check both begin and hit events for reliability
-    auto CheckCollision = [&](b2BodyId bodyA, b2BodyId bodyB)
-    {
-        // Player body touches enemy body?
-        if ((bodyA.index1 == g_playerBody.index1 && IsEnemyBodyDirect(bodyB, es)) ||
-            (bodyB.index1 == g_playerBody.index1 && IsEnemyBodyDirect(bodyA, es)))
-        {
+    auto CheckCollision = [&](b2BodyId a, b2BodyId b) {
+        if ((a.index1 == g_playerBody.index1 && IsEnemyBody(b, es)) ||
+            (b.index1 == g_playerBody.index1 && IsEnemyBody(a, es))) {
             g_gameOver = true;
             TraceLog(LOG_INFO, "💀 Player touched by enemy — GAME OVER!");
         }
     };
 
-    // Begin touch events
-    for (int32_t i = 0; i < events.beginCount; ++i)
-    {
-        const b2ContactBeginTouchEvent* ev = &events.beginEvents[i];
-        b2BodyId bodyA = b2Shape_GetBody(ev->shapeIdA);
-        b2BodyId bodyB = b2Shape_GetBody(ev->shapeIdB);
-        CheckCollision(bodyA, bodyB);
+    for (int32_t i = 0; i < events.beginCount; ++i) {
+        const b2ContactBeginTouchEvent& ev = events.beginEvents[i];
+        CheckCollision(b2Shape_GetBody(ev.shapeIdA), b2Shape_GetBody(ev.shapeIdB));
         if (g_gameOver) return;
     }
 
-    // Hit events (for already-overlapping)
-    for (int32_t i = 0; i < events.hitCount; ++i)
-    {
-        const b2ContactHitEvent* ev = &events.hitEvents[i];
-        b2BodyId bodyA = b2Shape_GetBody(ev->shapeIdA);
-        b2BodyId bodyB = b2Shape_GetBody(ev->shapeIdB);
-        CheckCollision(bodyA, bodyB);
+    for (int32_t i = 0; i < events.hitCount; ++i) {
+        const b2ContactHitEvent& ev = events.hitEvents[i];
+        CheckCollision(b2Shape_GetBody(ev.shapeIdA), b2Shape_GetBody(ev.shapeIdB));
         if (g_gameOver) return;
     }
 }
@@ -288,57 +297,51 @@ void BuildStaticsFromGrid(b2WorldId worldId, const Grid* g) {
     free(out);
 }
 
-std::vector<b2BodyId> Create_Entity_Bodies(EntitySystem* es, b2WorldId worldId) {
-    g_entityBodies.clear();
-    if (!es) return g_entityBodies;
+void Create_Entity_Bodies(EntitySystem* es, b2WorldId worldId) {
+    g_entityToBody.clear();
+    g_bodyToEntity.clear();
+    if (!es) return;
 
-    const size_t n = es->pool.size();
-    g_entityBodies.resize(n, b2_nullBodyId);
-
-    for (size_t i = 0; i < n; ++i) {
-        Entity& E = es->pool[i];
+    for (Entity& E : es->pool) {
         if (!E.active) continue;
 
-        // Body
         b2BodyDef bd = b2DefaultBodyDef();
         bd.type = b2_dynamicBody;
-        bd.linearDamping  = 6.0f;       
+        bd.linearDamping  = 6.0f;
         bd.angularDamping = 6.0f;
         bd.position = { PxToM(E.pos.x), PxToM(E.pos.y) };
 
         b2BodyId body = b2CreateBody(worldId, &bd);
 
-        // Shape/fixture
         b2ShapeDef sd = b2DefaultShapeDef();
-        sd.density     = 0.5f;
-        sd.filter      = {DynamicBit, AllBits, 0};
+        sd.density = 0.5f;
+        sd.filter = { DynamicBit, AllBits, 0 };
 
         b2Polygon box = b2MakeBox(PxToM(E.half.x), PxToM(E.half.y));
         b2CreatePolygonShape(body, &sd, &box);
+        b2Body_EnableContactEvents(body, true);
 
-        g_entityBodies[i] = body;
+        Physics_RegisterBody(E, body);
     }
-    TraceLog(LOG_INFO, "Created %zu entity bodies", g_entityBodies.size());
-    return g_entityBodies; 
+
+    TraceLog(LOG_INFO, "Created %zu entity bodies", es->pool.size());
 }
 
 void Entities_Update(EntitySystem* es, float dt) {
     if (!es) return;
 
-    const size_t n = es->pool.size();
-    if (g_entityBodies.size() != n) return; // if add/remove entities, rebuild bodies
-
-    for (size_t i = 0; i < n; ++i) {
-        Entity& E = es->pool[i];
+    for (Entity& E : es->pool) {
         if (!E.active) continue;
 
-        b2BodyId body = g_entityBodies[i];
-        if (body.index1 == 0) continue; // null/invalid
+        auto it = g_entityToBody.find(E.id);
+        if (it == g_entityToBody.end()) continue;
+
+        b2BodyId body = it->second;
+        if (body.index1 == 0) continue;
 
         b2Vec2 p = b2Body_GetPosition(body);
         E.pos.x = MToPx(p.x);
         E.pos.y = MToPx(p.y);
-        // rotation? add here 
     }
 }
 

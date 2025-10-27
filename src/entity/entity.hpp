@@ -25,10 +25,6 @@ struct Entity {
     Color color;
     bool active;
 
-    float health = 0.0f;
-    float maxHealth = 0.0f;
-    float slowTimer = 0.0f;
-
     ElementType element = ElementType::NONE;   // what element it carries
     bool telekinetic = false;                  // whether currently held
 };
@@ -37,7 +33,7 @@ struct Entity {
 struct EntitySystem {
     std::vector<Entity> pool;  // packed (inactive removed on destroy)
     int        nextId{1};
-    uint32_t   seed{0};        // for deterministic spawns if you want
+    uint32_t   seed{0};        // for deterministic spawns
 };
 
 

@@ -7,24 +7,28 @@
 #include "entity/enemies.hpp"
 #include "../lib/box2d/include/box2d/box2d.h"
 #include "state.h"
+#include <cstdio>
 
-void DrawScoreboard()
-{
+void DrawScoreboard() {
     const int fontSize = 28;
     const int margin = 20;
 
-    char text[128];
-    snprintf(text, sizeof(text), "Score: %d", g_enemiesKilled);
+    char text1[128];
+    char text2[128];
+    snprintf(text1, sizeof(text1), "Score: %d", g_enemiesKilled);
+    snprintf(text2, sizeof(text2), "Total Enemies: %d", g_enemies.size());
+    int textWidth1 = MeasureText(text1, fontSize);
+    int textWidth2 = MeasureText(text2, fontSize);
+    int x1 = GetScreenWidth() - textWidth1 - margin;
+    int x2 = GetScreenWidth() - textWidth2 - margin;
 
-    int textWidth = MeasureText(text, fontSize);
-    int x = GetScreenWidth() - textWidth - margin;
-    int y = margin;
-
-    DrawText(text, x, y, fontSize, RAYWHITE);
+    DrawText(text1, x1, margin, fontSize, RAYWHITE);
+    DrawText(text2, x2, margin + 30, fontSize, RAYWHITE);
 }
 
-void RestartGame(Player* player, EntitySystem* es, Grid* level, b2WorldId* world)
-{
+void RestartGame(Player* player, EntitySystem* es, Grid* level, b2WorldId* world) {
+    Enemies_Clear();
+
     g_enemiesKilled = 0;
     g_wave = 0;
     g_speedMultiplier = 1.0f;
@@ -37,19 +41,26 @@ void RestartGame(Player* player, EntitySystem* es, Grid* level, b2WorldId* world
     *world = InitWorld();
     BuildStaticsFromGrid(*world, level);
 
-    g_entityBodies.clear();
+    // New ID-based maps
+    g_entityToBody.clear();
+    g_bodyToEntity.clear();
     es->pool.clear();
 
     Player_Init(player, level);
     g_playerBody = CreatePlayer(*world, player->pos, 12.0f, 12.0f, 6.0f);
 
-    Entities_SpawnBoxesInLevel(es, level, 10, 20, {10.f, 10.f}, 0);
-    g_entityBodies = Create_Entity_Bodies(es, *world);
+    // Props / boxes
+    Entities_SpawnBoxesInLevel(es, level, 10, 20, (Vector2){10.f, 10.f}, 0);
+    Create_Entity_Bodies(es, *world);
 
-
-    size_t prevCount = es->pool.size();
+    // Enemies
+    const size_t prevCount = es->pool.size();
     Enemies_Spawn(es, level, player->pos, 6, 150.0f);
     Enemies_CreateBodies(es, *world, prevCount);
+
+    TraceLog(LOG_INFO, "Restart: entities=%zu enemies=%zu maps: e2b=%zu b2e=%zu",
+             es->pool.size(), g_enemies.size(),
+             g_entityToBody.size(), g_bodyToEntity.size());
 
     g_projectiles.clear();
 
@@ -62,7 +73,7 @@ void RestartGame(Player* player, EntitySystem* es, Grid* level, b2WorldId* world
 int main() {
     InitWindow(1280, 720, "SpellForge");
     SetTargetFPS(60);
-
+    
     Grid g;
     grid_init(&g, 80, 45);
 
@@ -72,7 +83,7 @@ int main() {
         .roomMaxW = 12, .roomMaxH = 10,
         .corridorMinW = 2,
         .corridorMaxW = 4,
-        .seed = 0       
+        .seed = 0
     };
 
     gen_level(&g, &params);
@@ -80,38 +91,41 @@ int main() {
     EntitySystem ents;
     Entities_Init(&ents, 0);
 
-    int made = Entities_SpawnBoxesInLevel(&ents, &g, 10, 20, {10.f, 10.f}, 0);
+    // Spawn some props/boxes in the level
+    Entities_SpawnBoxesInLevel(&ents, &g, 10, 20, (Vector2){10.f, 10.f}, 0);
 
     // INIT PHYSICS
     b2WorldId world = InitWorld();
-
     BuildStaticsFromGrid(world, &g);
 
     Player player;
     Player_Init(&player, &g);
 
     Vector2 spawnpx = player.pos;
-    b2BodyId playerBody = CreatePlayer(world, spawnpx, 12.0f, 12.0f);
+    b2BodyId playerBody = CreatePlayer(world, spawnpx, 12.0f, 12.0f); // linear damping default
 
-    g_entityBodies = Create_Entity_Bodies(&ents, world);
+    // Create bodies for existing entities (props, etc.)
+    Create_Entity_Bodies(&ents, world);
 
-
-    size_t prevCount = ents.pool.size();
+    // Enemies
+    const size_t prevCount = ents.pool.size();
     Enemies_Spawn(&ents, &g, player.pos, 10, 300.0f);
     Enemies_CreateBodies(&ents, world, prevCount);
 
-    TraceLog(LOG_INFO, "WORLD BUILT SETUP COMPLETE");
+
+    TraceLog(LOG_INFO, "WORLD BUILT SETUP COMPLETE: entities=%zu enemies=%zu maps: e2b=%zu b2e=%zu",
+             ents.pool.size(), g_enemies.size(),
+             g_entityToBody.size(), g_bodyToEntity.size());
 
     while (!WindowShouldClose()) {
         float dt = GetFrameTime();
 
         Vector2 dir = Build_Input();
-
         UpdatePlayer(playerBody, tick, dir, 200.0f);
 
-        if(IsKeyDown(KEY_SPACE)) {
+        if (IsKeyDown(KEY_SPACE)) {
             Telekinesis_Hold(player.pos, 50.0f, teleForce, &ents);
-        } else if(IsKeyReleased(KEY_SPACE)) {
+        } else if (IsKeyReleased(KEY_SPACE)) {
             Telekinesis_Fire(player.pos, 50.0f, 500.0f, &ents);
         }
 
@@ -126,27 +140,33 @@ int main() {
         Projectile_Update(world, &ents, tick);
         Entities_Update(&ents, tick);
 
+        // Sync player camera
         Vector2 playerPosPx = GetPlayerPixels(playerBody);
         player.pos = playerPosPx;
         player.cam.target = playerPosPx;
 
+        // Spawn waves
         if (g_enemiesKilled / 2 > g_lastWaveSpawned) {
             g_wave++;
-            g_lastWaveSpawned = g_enemiesKilled / 2; // mark wave as handled
+            g_lastWaveSpawned = g_enemiesKilled / 2;
 
             g_speedMultiplier += 0.05f;
             int spawnCount = 4;
 
-            TraceLog(LOG_INFO, "Wave %d triggered! Kills=%d Speed x%.2f", 
+            TraceLog(LOG_INFO, "Wave %d triggered! Kills=%d Speed x%.2f",
                      g_wave, g_enemiesKilled, g_speedMultiplier);
 
-            size_t prevCount = ents.pool.size();
+            const size_t prevCountWave = ents.pool.size();
             Enemies_Spawn(&ents, &g, playerPosPx, spawnCount, 700.0f);
-            Enemies_CreateBodies(&ents, world, prevCount);
+            Enemies_CreateBodies(&ents, world, prevCountWave);
+
+            TraceLog(LOG_INFO, "Wave spawn: entities=%zu enemies=%zu maps: e2b=%zu b2e=%zu",
+                     ents.pool.size(), g_enemies.size(),
+                     g_entityToBody.size(), g_bodyToEntity.size());
         }
 
         // Ensure deletions get flushed AFTER creations
-        Physics_FlushDeletions(world, &ents); 
+        Physics_FlushDeletions(world, &ents);
 
         BeginDrawing();
         ClearBackground((Color){30,30,40,255});
@@ -154,17 +174,16 @@ int main() {
         BeginMode2D(player.cam);
 
         // Draw grid
-        for (int y=0; y<g.h; ++y)
-            for (int x=0; x<g.w; ++x) {
-                Tile* t = grid_at(&g,x,y);
-                Color c = (t->id == TILE_WALL)? (Color){60,60,70,255} : (Color){200,200,200,255};
-                DrawRectangle(x*TILE_SIZE, y*TILE_SIZE, TILE_SIZE, TILE_SIZE, c);
+        for (int y = 0; y < g.h; ++y)
+            for (int x = 0; x < g.w; ++x) {
+                Tile* t = grid_at(&g, x, y);
+                Color c = (t->id == TILE_WALL) ? (Color){60,60,70,255} : (Color){200,200,200,255};
+                DrawRectangle(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE, c);
             }
 
         Entities_Draw(&ents);
         Projectile_Draw();
         Player_Draw(&player);
-
 
         EndMode2D();
 
@@ -172,15 +191,12 @@ int main() {
             DrawScoreboard();
         }
 
-        if (g_gameOver)
-        {
-            // Fill the screen with opaque black background
+        if (g_gameOver) {
             DrawRectangle(0, 0, GetScreenWidth(), GetScreenHeight(), BLACK);
 
             const char* msg1 = "GAME OVER";
             const char* msg2 = "Press R to restart";
 
-            // Create score text before resetting
             char msg3[128];
             snprintf(msg3, sizeof(msg3), "Wave: %d   Kills: %d", g_wave, g_enemiesKilled);
 
@@ -208,8 +224,7 @@ int main() {
             DrawText(msg3, x3, y3, fontSize3, RAYWHITE);
             DrawText(msg2, x2, y2, fontSize2, GRAY);
 
-            if (IsKeyPressed(KEY_R))
-            {
+            if (IsKeyPressed(KEY_R)) {
                 RestartGame(&player, &ents, &g, &world);
                 g_gameOver = false;
             }
@@ -218,6 +233,7 @@ int main() {
     }
 
     grid_free(&g);
+    Enemies_Clear();
     Entities_Clear(&ents);
     CloseWindow();
 }

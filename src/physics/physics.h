@@ -4,11 +4,13 @@
 #include "../level/level.h"
 #include "../entity/entity.hpp"
 #include <vector>
+#include <unordered_map>
 
 const float tick 	= 1.0f / 20.0f;
 const int subSteps 	= 4;
 
-extern std::vector<b2BodyId> g_entityBodies;
+extern std::unordered_map<int, b2BodyId> g_entityToBody;
+extern std::unordered_map<uint32_t, int> g_bodyToEntity;
 extern b2BodyId g_playerBody;
 
 // collision categories
@@ -40,14 +42,18 @@ inline Vector2 MToPx(b2Vec2   p){ return { MToPx(p.x), MToPx(p.y) }; }
 b2WorldId InitWorld();
 void DestroyWorld(b2WorldId worldId);
 
+void Physics_RegisterBody(Entity& e, b2BodyId body);
+void Physics_UnregisterBody(int entityId);
+
+
 void Physics_QueueDeletion (size_t i, const Vector2& pos, int id, EntityKind kind);
 void Physics_FlushDeletions(b2WorldId world, EntitySystem* es);
 
 // build static colliders from tile grid (one box per wall tile)
 void BuildStaticsFromGrid(b2WorldId worldId, const Grid* g);
 
-std::vector<b2BodyId> Create_Entity_Bodies(EntitySystem* es, b2WorldId worldId); 
-void Entities_Update(EntitySystem *es, float dt);
+void Create_Entity_Bodies(EntitySystem* es, b2WorldId worldId);
+void Entities_Update(EntitySystem* es, float dt);
 
 // create a dynamic player body, returns the Box2D id.
 b2BodyId CreatePlayer(b2WorldId worldId, Vector2 spawnPixels,
@@ -58,6 +64,4 @@ b2BodyId CreatePlayer(b2WorldId worldId, Vector2 spawnPixels,
 Vector2 GetPlayerPixels(b2BodyId playerId);
 
 void Contact_ProcessPlayerEnemy(b2WorldId world, EntitySystem* es);
-
-
 

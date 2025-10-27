@@ -55,139 +55,98 @@ void Projectile_Shoot(b2WorldId world, Vector2 playerPos, Camera2D cam)
 }
 
 // PROCESS CONTACT EVENTS FROM BOX2D
-void Projectile_ProcessContacts(b2WorldId world, EntitySystem *es)
+
+void Projectile_ProcessContacts(b2WorldId world, EntitySystem* es)
 {
-    b2ContactEvents events = b2World_GetContactEvents(world); 
+    if (!es) return;
 
+    b2ContactEvents events = b2World_GetContactEvents(world);
     if (events.beginCount == 0 && events.hitCount == 0 && events.endCount == 0)
-        return; // nothing happened this frame
+        return;
 
-    TraceLog(LOG_INFO, "ContactEvents: begin=%d hit=%d end=%d",
+    TraceLog(LOG_INFO, "Projectile contacts: begin=%d hit=%d end=%d",
              events.beginCount, events.hitCount, events.endCount);
 
-    // Handle begin touch
-    for (int32_t i = 0; i < events.beginCount; ++i) {
+    auto entityFromBody = [&](b2BodyId body) -> Entity* {
+        auto it = g_bodyToEntity.find(body.index1);
+        if (it == g_bodyToEntity.end()) return nullptr;
+        return Entities_Get(es, it->second);
+    };
+
+    auto damageEnemyFromEntity = [&](Entity* e, float dmg, float slowSec, const char* tag)
+    {
+        if (!e || !e->active || e->kind != EntityKind::Enemy) return false;
+        if (Enemy* en = Enemy_FromEntityId(e->id)) {
+            en->health -= dmg;
+            if (slowSec > 0.0f) en->slowTimer = slowSec;
+            TraceLog(LOG_INFO, "%s Enemy %d (HP=%.1f)", tag, e->id, en->health);
+            return true;
+        }
+        return false;
+    };
+
+    // --- Handle begin contacts (enough for our gameplay)
+    for (int32_t i = 0; i < events.beginCount; ++i)
+    {
         const b2ContactBeginTouchEvent* ev = &events.beginEvents[i];
-        b2ShapeId sA = ev->shapeIdA;
-        b2ShapeId sB = ev->shapeIdB;
+        if (!b2Shape_IsValid(ev->shapeIdA) || !b2Shape_IsValid(ev->shapeIdB)) continue;
 
-        // verify validity of shape
-        if (!b2Shape_IsValid(sA) || !b2Shape_IsValid(sB)) continue;
-
-        b2BodyId bodyA = b2Shape_GetBody(sA);
-        b2BodyId bodyB = b2Shape_GetBody(sB);
-
-        // verify validity of body
+        b2BodyId bodyA = b2Shape_GetBody(ev->shapeIdA);
+        b2BodyId bodyB = b2Shape_GetBody(ev->shapeIdB);
         if (!b2Body_IsValid(bodyA) || !b2Body_IsValid(bodyB)) continue;
+
+        Entity* entA = entityFromBody(bodyA);
+        Entity* entB = entityFromBody(bodyB);
 
         for (auto& p : g_projectiles)
         {
-            if (!p.active) continue;
-            b2BodyId pBody = p.body;
+            if (!p.active || !b2Body_IsValid(p.body)) continue;
+            if (p.body.index1 != bodyA.index1 && p.body.index1 != bodyB.index1) continue;
 
-            if (pBody.index1 == bodyA.index1 || pBody.index1 == bodyB.index1)
-            {
-                // Projectile collided with something
-                bool hitEnemy = false;
-
-                // check which entity we hit
-                if (es)
-                {
-                    for (size_t j = 0; j < es->pool.size(); ++j)
-                    {
-                        Entity& e = es->pool[j];
-                        if (!e.active || e.kind != EntityKind::Enemy) continue;
-
-                        b2BodyId eBody = g_entityBodies[j];
-                        if (eBody.index1 == bodyA.index1 || eBody.index1 == bodyB.index1)
-                        {
-                            hitEnemy = true;
-
-                            // FIRE projectile: high damage
-                            if (p.type == ProjectileType::FIRE)
-                            {
-                                e.health -= 50.0f;
-                                TraceLog(LOG_INFO, "Enemy %d hit by fire projectile (HP=%.1f)", e.id, e.health);
-                            }
-                            // ICE projectile: slow effect
-                            else if (p.type == ProjectileType::ICE)
-                            {
-                                e.health -= 25.0f;
-                                e.slowTimer = 2.0f; // 2 seconds slow
-                                TraceLog(LOG_INFO, "Enemy %d hit by ice projectile (HP=%.1f, slowed)", e.id, e.health);
-                            }
-
-                            break;
-                        }
-                    }
-                }
-
-                // destroy projectile
-                if (b2Body_IsValid(pBody))
-                    b2DestroyBody(pBody);
-                p.active = false;
-
-                if (hitEnemy)
-                    break;
+            // Apply projectile effects
+            bool hit = false;
+            if (p.type == ProjectileType::FIRE) {
+                // 50 dmg, no slow
+                hit |= damageEnemyFromEntity(entA, 50.0f, 0.0f, "🔥 Enemy hit by FIRE projectile");
+                hit |= damageEnemyFromEntity(entB, 50.0f, 0.0f, "🔥 Enemy hit by FIRE projectile");
+            } else if (p.type == ProjectileType::ICE) {
+                // 25 dmg + 2s slow
+                hit |= damageEnemyFromEntity(entA, 25.0f, 2.0f, "❄️ Enemy hit by ICE projectile");
+                hit |= damageEnemyFromEntity(entB, 25.0f, 2.0f, "❄️ Enemy hit by ICE projectile");
             }
+
+            // Destroy projectile either way after a contact
+            if (b2Body_IsValid(p.body)) b2DestroyBody(p.body);
+            p.active = false;
+
+            if (hit) break; // done with this contact for this projectile
         }
 
-        for (size_t i = 0; i < es->pool.size(); ++i)
+        auto applyPropHit = [&](Entity* propEnt, Entity* otherEnt)
         {
-            Entity& prop = es->pool[i];
-            if (!prop.active || prop.kind == EntityKind::Enemy) continue;
-            if (prop.element == ElementType::NONE) continue; // not infused
+            if (!propEnt || !propEnt->active) return;
+            if (propEnt->kind == EntityKind::Enemy) return;
+            if (propEnt->element == ElementType::NONE) return;
 
-            b2BodyId propBody = g_entityBodies[i];
+            if (!otherEnt || !otherEnt->active || otherEnt->kind != EntityKind::Enemy) return;
 
-            // check for collisions between this prop and enemies
-            for (int32_t j = 0; j < events.beginCount; ++j)
-            {
-                const b2ContactBeginTouchEvent* ev = &events.beginEvents[j];
-                b2ShapeId sA = ev->shapeIdA;
-                b2ShapeId sB = ev->shapeIdB;
-
-                // verify validity of shape
-                if (!b2Shape_IsValid(sA) || !b2Shape_IsValid(sB)) continue;
-
-                b2BodyId bodyA = b2Shape_GetBody(sA);
-                b2BodyId bodyB = b2Shape_GetBody(sB);
-
-                // verify validity of body
-                if (!b2Body_IsValid(bodyA) || !b2Body_IsValid(bodyB)) continue;
-
-                if (propBody.index1 != bodyA.index1 && propBody.index1 != bodyB.index1)
-                    continue;
-
-                // Find the enemy hit
-                for (size_t k = 0; k < es->pool.size(); ++k)
-                {
-                    Entity& enemy = es->pool[k];
-                    if (!enemy.active || enemy.kind != EntityKind::Enemy) continue;
-
-                    b2BodyId enemyBody = g_entityBodies[k];
-                    if (enemyBody.index1 == bodyA.index1 || enemyBody.index1 == bodyB.index1)
-                    {
-                        if (prop.element == ElementType::FIRE) {
-                            enemy.health -= 100.0f;
-                            TraceLog(LOG_INFO, "Enemy %d hit by telekinetic fire prop! (HP=%.1f)", enemy.id, enemy.health);
-                        } else if (prop.element == ElementType::ICE) {
-                            enemy.health -= 90.0f;
-                            enemy.slowTimer = 3.0f;
-                            TraceLog(LOG_INFO, "Enemy %d hit by telekinetic ice prop! (HP=%.1f, slowed)", enemy.id, enemy.health);
-                        }
-
-                        if (prop.active) {
-                            Physics_QueueDeletion(i, prop.pos, prop.id, prop.kind);
-                            prop.active = false;
-                            continue;
-                        }
-
-                        break;
-                    }
+            if (propEnt->element == ElementType::FIRE) {
+                if (damageEnemyFromEntity(otherEnt, 100.0f, 0.0f, "🔥 Enemy hit by telekinetic FIRE prop!")) {
+                    // destroy the prop entity
+                    Physics_QueueDeletion(0, propEnt->pos, propEnt->id, propEnt->kind);
+                    propEnt->active = false;
+                }
+            } else if (propEnt->element == ElementType::ICE) {
+                if (damageEnemyFromEntity(otherEnt, 90.0f, 3.0f, "❄️ Enemy hit by telekinetic ICE prop!")) {
+                    Physics_QueueDeletion(0, propEnt->pos, propEnt->id, propEnt->kind);
+                    propEnt->active = false;
                 }
             }
-        }
+        };
+
+        // Check both directions: prop(A) -> enemy(B), prop(B) -> enemy(A)
+        applyPropHit(entA, entB);
+        applyPropHit(entB, entA);
     }
 }
 

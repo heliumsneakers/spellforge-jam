@@ -44,6 +44,7 @@ CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o: /home/klo/Work/Jams/MiniJam-
   /usr/include/c++/v1/__algorithm/find_segment_if.h \
   /usr/include/c++/v1/__algorithm/for_each.h \
   /usr/include/c++/v1/__algorithm/for_each_n.h \
+  /usr/include/c++/v1/__algorithm/for_each_n_segment.h \
   /usr/include/c++/v1/__algorithm/for_each_segment.h \
   /usr/include/c++/v1/__algorithm/generate.h \
   /usr/include/c++/v1/__algorithm/generate_n.h \
@@ -148,8 +149,12 @@ CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o: /home/klo/Work/Jams/MiniJam-
   /usr/include/c++/v1/__bit/countr.h \
   /usr/include/c++/v1/__bit/invert_if.h \
   /usr/include/c++/v1/__bit/popcount.h \
-  /usr/include/c++/v1/__bit/rotate.h \
   /usr/include/c++/v1/__bit_reference \
+  /usr/include/c++/v1/__charconv/tables.h \
+  /usr/include/c++/v1/__charconv/to_chars_base_10.h \
+  /usr/include/c++/v1/__charconv/to_chars_integral.h \
+  /usr/include/c++/v1/__charconv/to_chars_result.h \
+  /usr/include/c++/v1/__charconv/traits.h \
   /usr/include/c++/v1/__chrono/convert_to_timespec.h \
   /usr/include/c++/v1/__chrono/duration.h \
   /usr/include/c++/v1/__chrono/high_resolution_clock.h \
@@ -289,9 +294,19 @@ CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o: /home/klo/Work/Jams/MiniJam-
   /usr/include/c++/v1/__iterator/unreachable_sentinel.h \
   /usr/include/c++/v1/__iterator/wrap_iter.h \
   /usr/include/c++/v1/__locale \
+  /usr/include/c++/v1/__locale_dir/check_grouping.h \
+  /usr/include/c++/v1/__locale_dir/get_c_locale.h \
   /usr/include/c++/v1/__locale_dir/locale_base_api.h \
-  /usr/include/c++/v1/__locale_dir/locale_base_api/bsd_locale_fallbacks.h \
+  /usr/include/c++/v1/__locale_dir/messages.h \
+  /usr/include/c++/v1/__locale_dir/money.h \
+  /usr/include/c++/v1/__locale_dir/num.h \
   /usr/include/c++/v1/__locale_dir/pad_and_output.h \
+  /usr/include/c++/v1/__locale_dir/scan_keyword.h \
+  /usr/include/c++/v1/__locale_dir/support/linux.h \
+  /usr/include/c++/v1/__locale_dir/time.h \
+  /usr/include/c++/v1/__locale_dir/wbuffer_convert.h \
+  /usr/include/c++/v1/__locale_dir/wstring_convert.h \
+  /usr/include/c++/v1/__log_hardening_failure \
   /usr/include/c++/v1/__math/abs.h \
   /usr/include/c++/v1/__math/copysign.h \
   /usr/include/c++/v1/__math/error_functions.h \
@@ -325,8 +340,10 @@ CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o: /home/klo/Work/Jams/MiniJam-
   /usr/include/c++/v1/__memory/auto_ptr.h \
   /usr/include/c++/v1/__memory/compressed_pair.h \
   /usr/include/c++/v1/__memory/construct_at.h \
+  /usr/include/c++/v1/__memory/destroy.h \
   /usr/include/c++/v1/__memory/destruct_n.h \
   /usr/include/c++/v1/__memory/inout_ptr.h \
+  /usr/include/c++/v1/__memory/is_sufficiently_aligned.h \
   /usr/include/c++/v1/__memory/noexcept_move_assign_container.h \
   /usr/include/c++/v1/__memory/out_ptr.h \
   /usr/include/c++/v1/__memory/pointer_traits.h \
@@ -370,7 +387,6 @@ CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o: /home/klo/Work/Jams/MiniJam-
   /usr/include/c++/v1/__ranges/enable_borrowed_range.h \
   /usr/include/c++/v1/__ranges/enable_view.h \
   /usr/include/c++/v1/__ranges/from_range.h \
-  /usr/include/c++/v1/__ranges/movable_box.h \
   /usr/include/c++/v1/__ranges/size.h \
   /usr/include/c++/v1/__ranges/subrange.h \
   /usr/include/c++/v1/__ranges/view_interface.h \
@@ -400,9 +416,8 @@ CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o: /home/klo/Work/Jams/MiniJam-
   /usr/include/c++/v1/__tuple/tuple_size.h \
   /usr/include/c++/v1/__tuple/tuple_types.h \
   /usr/include/c++/v1/__type_traits/add_cv_quals.h \
-  /usr/include/c++/v1/__type_traits/add_lvalue_reference.h \
   /usr/include/c++/v1/__type_traits/add_pointer.h \
-  /usr/include/c++/v1/__type_traits/add_rvalue_reference.h \
+  /usr/include/c++/v1/__type_traits/add_reference.h \
   /usr/include/c++/v1/__type_traits/aligned_storage.h \
   /usr/include/c++/v1/__type_traits/aligned_union.h \
   /usr/include/c++/v1/__type_traits/alignment_of.h \
@@ -424,6 +439,7 @@ CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o: /home/klo/Work/Jams/MiniJam-
   /usr/include/c++/v1/__type_traits/extent.h \
   /usr/include/c++/v1/__type_traits/has_unique_object_representation.h \
   /usr/include/c++/v1/__type_traits/has_virtual_destructor.h \
+  /usr/include/c++/v1/__type_traits/integer_traits.h \
   /usr/include/c++/v1/__type_traits/integral_constant.h \
   /usr/include/c++/v1/__type_traits/invoke.h \
   /usr/include/c++/v1/__type_traits/is_abstract.h \
@@ -467,10 +483,10 @@ CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o: /home/klo/Work/Jams/MiniJam-
   /usr/include/c++/v1/__type_traits/is_reference.h \
   /usr/include/c++/v1/__type_traits/is_reference_wrapper.h \
   /usr/include/c++/v1/__type_traits/is_referenceable.h \
+  /usr/include/c++/v1/__type_traits/is_replaceable.h \
   /usr/include/c++/v1/__type_traits/is_same.h \
   /usr/include/c++/v1/__type_traits/is_scalar.h \
   /usr/include/c++/v1/__type_traits/is_signed.h \
-  /usr/include/c++/v1/__type_traits/is_signed_integer.h \
   /usr/include/c++/v1/__type_traits/is_specialization.h \
   /usr/include/c++/v1/__type_traits/is_standard_layout.h \
   /usr/include/c++/v1/__type_traits/is_swappable.h \
@@ -483,12 +499,13 @@ CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o: /home/klo/Work/Jams/MiniJam-
   /usr/include/c++/v1/__type_traits/is_trivially_relocatable.h \
   /usr/include/c++/v1/__type_traits/is_unbounded_array.h \
   /usr/include/c++/v1/__type_traits/is_union.h \
+  /usr/include/c++/v1/__type_traits/is_unqualified.h \
   /usr/include/c++/v1/__type_traits/is_unsigned.h \
-  /usr/include/c++/v1/__type_traits/is_unsigned_integer.h \
   /usr/include/c++/v1/__type_traits/is_valid_expansion.h \
   /usr/include/c++/v1/__type_traits/is_void.h \
   /usr/include/c++/v1/__type_traits/is_volatile.h \
   /usr/include/c++/v1/__type_traits/lazy.h \
+  /usr/include/c++/v1/__type_traits/make_32_64_or_128_bit.h \
   /usr/include/c++/v1/__type_traits/make_const_lvalue_ref.h \
   /usr/include/c++/v1/__type_traits/make_signed.h \
   /usr/include/c++/v1/__type_traits/make_unsigned.h \
@@ -497,6 +514,7 @@ CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o: /home/klo/Work/Jams/MiniJam-
   /usr/include/c++/v1/__type_traits/negation.h \
   /usr/include/c++/v1/__type_traits/promote.h \
   /usr/include/c++/v1/__type_traits/rank.h \
+  /usr/include/c++/v1/__type_traits/reference_constructs_from_temporary.h \
   /usr/include/c++/v1/__type_traits/remove_all_extents.h \
   /usr/include/c++/v1/__type_traits/remove_const.h \
   /usr/include/c++/v1/__type_traits/remove_const_ref.h \
@@ -545,6 +563,7 @@ CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o: /home/klo/Work/Jams/MiniJam-
   /usr/include/c++/v1/__vector/vector.h \
   /usr/include/c++/v1/__vector/vector_bool.h \
   /usr/include/c++/v1/__verbose_abort \
+  /usr/include/c++/v1/__verbose_trap \
   /usr/include/c++/v1/algorithm \
   /usr/include/c++/v1/array \
   /usr/include/c++/v1/atomic \
@@ -725,27 +744,27 @@ CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o: /home/klo/Work/Jams/MiniJam-
   /usr/include/time.h \
   /usr/include/wchar.h \
   /usr/include/wctype.h \
-  /usr/lib/clang/20/include/__stdarg___gnuc_va_list.h \
-  /usr/lib/clang/20/include/__stdarg___va_copy.h \
-  /usr/lib/clang/20/include/__stdarg_header_macro.h \
-  /usr/lib/clang/20/include/__stdarg_va_arg.h \
-  /usr/lib/clang/20/include/__stdarg_va_copy.h \
-  /usr/lib/clang/20/include/__stdarg_va_list.h \
-  /usr/lib/clang/20/include/__stddef_header_macro.h \
-  /usr/lib/clang/20/include/__stddef_max_align_t.h \
-  /usr/lib/clang/20/include/__stddef_null.h \
-  /usr/lib/clang/20/include/__stddef_nullptr_t.h \
-  /usr/lib/clang/20/include/__stddef_offsetof.h \
-  /usr/lib/clang/20/include/__stddef_ptrdiff_t.h \
-  /usr/lib/clang/20/include/__stddef_size_t.h \
-  /usr/lib/clang/20/include/__stddef_wchar_t.h \
-  /usr/lib/clang/20/include/float.h \
-  /usr/lib/clang/20/include/limits.h \
-  /usr/lib/clang/20/include/stdarg.h \
-  /usr/lib/clang/20/include/stdbool.h \
-  /usr/lib/clang/20/include/stddef.h \
-  /usr/lib/clang/20/include/stdint.h \
-  /usr/lib/clang/20/share/asan_ignorelist.txt
+  /usr/lib/clang/21/include/__stdarg___gnuc_va_list.h \
+  /usr/lib/clang/21/include/__stdarg___va_copy.h \
+  /usr/lib/clang/21/include/__stdarg_header_macro.h \
+  /usr/lib/clang/21/include/__stdarg_va_arg.h \
+  /usr/lib/clang/21/include/__stdarg_va_copy.h \
+  /usr/lib/clang/21/include/__stdarg_va_list.h \
+  /usr/lib/clang/21/include/__stddef_header_macro.h \
+  /usr/lib/clang/21/include/__stddef_max_align_t.h \
+  /usr/lib/clang/21/include/__stddef_null.h \
+  /usr/lib/clang/21/include/__stddef_nullptr_t.h \
+  /usr/lib/clang/21/include/__stddef_offsetof.h \
+  /usr/lib/clang/21/include/__stddef_ptrdiff_t.h \
+  /usr/lib/clang/21/include/__stddef_size_t.h \
+  /usr/lib/clang/21/include/__stddef_wchar_t.h \
+  /usr/lib/clang/21/include/float.h \
+  /usr/lib/clang/21/include/limits.h \
+  /usr/lib/clang/21/include/stdarg.h \
+  /usr/lib/clang/21/include/stdbool.h \
+  /usr/lib/clang/21/include/stddef.h \
+  /usr/lib/clang/21/include/stdint.h \
+  /usr/lib/clang/21/share/asan_ignorelist.txt
 
 CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/entity/entity.cpp \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/raylib/src/raylib.h \
@@ -777,6 +796,7 @@ CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o: /home/klo/Work/Jams/MiniJam-F
   /usr/include/c++/v1/__algorithm/find_segment_if.h \
   /usr/include/c++/v1/__algorithm/for_each.h \
   /usr/include/c++/v1/__algorithm/for_each_n.h \
+  /usr/include/c++/v1/__algorithm/for_each_n_segment.h \
   /usr/include/c++/v1/__algorithm/for_each_segment.h \
   /usr/include/c++/v1/__algorithm/generate.h \
   /usr/include/c++/v1/__algorithm/generate_n.h \
@@ -881,8 +901,12 @@ CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o: /home/klo/Work/Jams/MiniJam-F
   /usr/include/c++/v1/__bit/countr.h \
   /usr/include/c++/v1/__bit/invert_if.h \
   /usr/include/c++/v1/__bit/popcount.h \
-  /usr/include/c++/v1/__bit/rotate.h \
   /usr/include/c++/v1/__bit_reference \
+  /usr/include/c++/v1/__charconv/tables.h \
+  /usr/include/c++/v1/__charconv/to_chars_base_10.h \
+  /usr/include/c++/v1/__charconv/to_chars_integral.h \
+  /usr/include/c++/v1/__charconv/to_chars_result.h \
+  /usr/include/c++/v1/__charconv/traits.h \
   /usr/include/c++/v1/__chrono/convert_to_timespec.h \
   /usr/include/c++/v1/__chrono/duration.h \
   /usr/include/c++/v1/__chrono/high_resolution_clock.h \
@@ -1002,9 +1026,19 @@ CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o: /home/klo/Work/Jams/MiniJam-F
   /usr/include/c++/v1/__iterator/unreachable_sentinel.h \
   /usr/include/c++/v1/__iterator/wrap_iter.h \
   /usr/include/c++/v1/__locale \
+  /usr/include/c++/v1/__locale_dir/check_grouping.h \
+  /usr/include/c++/v1/__locale_dir/get_c_locale.h \
   /usr/include/c++/v1/__locale_dir/locale_base_api.h \
-  /usr/include/c++/v1/__locale_dir/locale_base_api/bsd_locale_fallbacks.h \
+  /usr/include/c++/v1/__locale_dir/messages.h \
+  /usr/include/c++/v1/__locale_dir/money.h \
+  /usr/include/c++/v1/__locale_dir/num.h \
   /usr/include/c++/v1/__locale_dir/pad_and_output.h \
+  /usr/include/c++/v1/__locale_dir/scan_keyword.h \
+  /usr/include/c++/v1/__locale_dir/support/linux.h \
+  /usr/include/c++/v1/__locale_dir/time.h \
+  /usr/include/c++/v1/__locale_dir/wbuffer_convert.h \
+  /usr/include/c++/v1/__locale_dir/wstring_convert.h \
+  /usr/include/c++/v1/__log_hardening_failure \
   /usr/include/c++/v1/__math/abs.h \
   /usr/include/c++/v1/__math/copysign.h \
   /usr/include/c++/v1/__math/error_functions.h \
@@ -1038,8 +1072,10 @@ CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o: /home/klo/Work/Jams/MiniJam-F
   /usr/include/c++/v1/__memory/auto_ptr.h \
   /usr/include/c++/v1/__memory/compressed_pair.h \
   /usr/include/c++/v1/__memory/construct_at.h \
+  /usr/include/c++/v1/__memory/destroy.h \
   /usr/include/c++/v1/__memory/destruct_n.h \
   /usr/include/c++/v1/__memory/inout_ptr.h \
+  /usr/include/c++/v1/__memory/is_sufficiently_aligned.h \
   /usr/include/c++/v1/__memory/noexcept_move_assign_container.h \
   /usr/include/c++/v1/__memory/out_ptr.h \
   /usr/include/c++/v1/__memory/pointer_traits.h \
@@ -1082,7 +1118,6 @@ CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o: /home/klo/Work/Jams/MiniJam-F
   /usr/include/c++/v1/__ranges/enable_borrowed_range.h \
   /usr/include/c++/v1/__ranges/enable_view.h \
   /usr/include/c++/v1/__ranges/from_range.h \
-  /usr/include/c++/v1/__ranges/movable_box.h \
   /usr/include/c++/v1/__ranges/size.h \
   /usr/include/c++/v1/__ranges/subrange.h \
   /usr/include/c++/v1/__ranges/view_interface.h \
@@ -1112,9 +1147,8 @@ CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o: /home/klo/Work/Jams/MiniJam-F
   /usr/include/c++/v1/__tuple/tuple_size.h \
   /usr/include/c++/v1/__tuple/tuple_types.h \
   /usr/include/c++/v1/__type_traits/add_cv_quals.h \
-  /usr/include/c++/v1/__type_traits/add_lvalue_reference.h \
   /usr/include/c++/v1/__type_traits/add_pointer.h \
-  /usr/include/c++/v1/__type_traits/add_rvalue_reference.h \
+  /usr/include/c++/v1/__type_traits/add_reference.h \
   /usr/include/c++/v1/__type_traits/aligned_storage.h \
   /usr/include/c++/v1/__type_traits/aligned_union.h \
   /usr/include/c++/v1/__type_traits/alignment_of.h \
@@ -1135,6 +1169,7 @@ CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o: /home/klo/Work/Jams/MiniJam-F
   /usr/include/c++/v1/__type_traits/extent.h \
   /usr/include/c++/v1/__type_traits/has_unique_object_representation.h \
   /usr/include/c++/v1/__type_traits/has_virtual_destructor.h \
+  /usr/include/c++/v1/__type_traits/integer_traits.h \
   /usr/include/c++/v1/__type_traits/integral_constant.h \
   /usr/include/c++/v1/__type_traits/invoke.h \
   /usr/include/c++/v1/__type_traits/is_abstract.h \
@@ -1178,10 +1213,10 @@ CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o: /home/klo/Work/Jams/MiniJam-F
   /usr/include/c++/v1/__type_traits/is_reference.h \
   /usr/include/c++/v1/__type_traits/is_reference_wrapper.h \
   /usr/include/c++/v1/__type_traits/is_referenceable.h \
+  /usr/include/c++/v1/__type_traits/is_replaceable.h \
   /usr/include/c++/v1/__type_traits/is_same.h \
   /usr/include/c++/v1/__type_traits/is_scalar.h \
   /usr/include/c++/v1/__type_traits/is_signed.h \
-  /usr/include/c++/v1/__type_traits/is_signed_integer.h \
   /usr/include/c++/v1/__type_traits/is_specialization.h \
   /usr/include/c++/v1/__type_traits/is_standard_layout.h \
   /usr/include/c++/v1/__type_traits/is_swappable.h \
@@ -1194,12 +1229,13 @@ CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o: /home/klo/Work/Jams/MiniJam-F
   /usr/include/c++/v1/__type_traits/is_trivially_relocatable.h \
   /usr/include/c++/v1/__type_traits/is_unbounded_array.h \
   /usr/include/c++/v1/__type_traits/is_union.h \
+  /usr/include/c++/v1/__type_traits/is_unqualified.h \
   /usr/include/c++/v1/__type_traits/is_unsigned.h \
-  /usr/include/c++/v1/__type_traits/is_unsigned_integer.h \
   /usr/include/c++/v1/__type_traits/is_valid_expansion.h \
   /usr/include/c++/v1/__type_traits/is_void.h \
   /usr/include/c++/v1/__type_traits/is_volatile.h \
   /usr/include/c++/v1/__type_traits/lazy.h \
+  /usr/include/c++/v1/__type_traits/make_32_64_or_128_bit.h \
   /usr/include/c++/v1/__type_traits/make_const_lvalue_ref.h \
   /usr/include/c++/v1/__type_traits/make_signed.h \
   /usr/include/c++/v1/__type_traits/make_unsigned.h \
@@ -1208,6 +1244,7 @@ CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o: /home/klo/Work/Jams/MiniJam-F
   /usr/include/c++/v1/__type_traits/negation.h \
   /usr/include/c++/v1/__type_traits/promote.h \
   /usr/include/c++/v1/__type_traits/rank.h \
+  /usr/include/c++/v1/__type_traits/reference_constructs_from_temporary.h \
   /usr/include/c++/v1/__type_traits/remove_all_extents.h \
   /usr/include/c++/v1/__type_traits/remove_const.h \
   /usr/include/c++/v1/__type_traits/remove_cv.h \
@@ -1254,6 +1291,7 @@ CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o: /home/klo/Work/Jams/MiniJam-F
   /usr/include/c++/v1/__vector/vector.h \
   /usr/include/c++/v1/__vector/vector_bool.h \
   /usr/include/c++/v1/__verbose_abort \
+  /usr/include/c++/v1/__verbose_trap \
   /usr/include/c++/v1/algorithm \
   /usr/include/c++/v1/array \
   /usr/include/c++/v1/atomic \
@@ -1429,26 +1467,26 @@ CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o: /home/klo/Work/Jams/MiniJam-F
   /usr/include/time.h \
   /usr/include/wchar.h \
   /usr/include/wctype.h \
-  /usr/lib/clang/20/include/__stdarg___gnuc_va_list.h \
-  /usr/lib/clang/20/include/__stdarg___va_copy.h \
-  /usr/lib/clang/20/include/__stdarg_header_macro.h \
-  /usr/lib/clang/20/include/__stdarg_va_arg.h \
-  /usr/lib/clang/20/include/__stdarg_va_copy.h \
-  /usr/lib/clang/20/include/__stdarg_va_list.h \
-  /usr/lib/clang/20/include/__stddef_header_macro.h \
-  /usr/lib/clang/20/include/__stddef_max_align_t.h \
-  /usr/lib/clang/20/include/__stddef_null.h \
-  /usr/lib/clang/20/include/__stddef_nullptr_t.h \
-  /usr/lib/clang/20/include/__stddef_offsetof.h \
-  /usr/lib/clang/20/include/__stddef_ptrdiff_t.h \
-  /usr/lib/clang/20/include/__stddef_size_t.h \
-  /usr/lib/clang/20/include/__stddef_wchar_t.h \
-  /usr/lib/clang/20/include/limits.h \
-  /usr/lib/clang/20/include/stdarg.h \
-  /usr/lib/clang/20/include/stdbool.h \
-  /usr/lib/clang/20/include/stddef.h \
-  /usr/lib/clang/20/include/stdint.h \
-  /usr/lib/clang/20/share/asan_ignorelist.txt
+  /usr/lib/clang/21/include/__stdarg___gnuc_va_list.h \
+  /usr/lib/clang/21/include/__stdarg___va_copy.h \
+  /usr/lib/clang/21/include/__stdarg_header_macro.h \
+  /usr/lib/clang/21/include/__stdarg_va_arg.h \
+  /usr/lib/clang/21/include/__stdarg_va_copy.h \
+  /usr/lib/clang/21/include/__stdarg_va_list.h \
+  /usr/lib/clang/21/include/__stddef_header_macro.h \
+  /usr/lib/clang/21/include/__stddef_max_align_t.h \
+  /usr/lib/clang/21/include/__stddef_null.h \
+  /usr/lib/clang/21/include/__stddef_nullptr_t.h \
+  /usr/lib/clang/21/include/__stddef_offsetof.h \
+  /usr/lib/clang/21/include/__stddef_ptrdiff_t.h \
+  /usr/lib/clang/21/include/__stddef_size_t.h \
+  /usr/lib/clang/21/include/__stddef_wchar_t.h \
+  /usr/lib/clang/21/include/limits.h \
+  /usr/lib/clang/21/include/stdarg.h \
+  /usr/lib/clang/21/include/stdbool.h \
+  /usr/lib/clang/21/include/stddef.h \
+  /usr/lib/clang/21/include/stdint.h \
+  /usr/lib/clang/21/share/asan_ignorelist.txt
 
 CMakeFiles/SpellForge.dir/src/level/level.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/level/level.cpp \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/level/level.h \
@@ -1459,6 +1497,11 @@ CMakeFiles/SpellForge.dir/src/level/level.cpp.o: /home/klo/Work/Jams/MiniJam-For
   /usr/include/c++/v1/__configuration/compiler.h \
   /usr/include/c++/v1/__configuration/language.h \
   /usr/include/c++/v1/__configuration/platform.h \
+  /usr/include/c++/v1/__math/abs.h \
+  /usr/include/c++/v1/__type_traits/enable_if.h \
+  /usr/include/c++/v1/__type_traits/integral_constant.h \
+  /usr/include/c++/v1/__type_traits/is_integral.h \
+  /usr/include/c++/v1/__type_traits/remove_cv.h \
   /usr/include/c++/v1/stdbool.h \
   /usr/include/c++/v1/stddef.h \
   /usr/include/c++/v1/stdlib.h \
@@ -1520,13 +1563,13 @@ CMakeFiles/SpellForge.dir/src/level/level.cpp.o: /home/klo/Work/Jams/MiniJam-For
   /usr/include/sys/select.h \
   /usr/include/sys/types.h \
   /usr/include/time.h \
-  /usr/lib/clang/20/include/__stddef_null.h \
-  /usr/lib/clang/20/include/__stddef_size_t.h \
-  /usr/lib/clang/20/include/__stddef_wchar_t.h \
-  /usr/lib/clang/20/include/stdbool.h \
-  /usr/lib/clang/20/include/stddef.h \
-  /usr/lib/clang/20/include/stdint.h \
-  /usr/lib/clang/20/share/asan_ignorelist.txt
+  /usr/lib/clang/21/include/__stddef_null.h \
+  /usr/lib/clang/21/include/__stddef_size_t.h \
+  /usr/lib/clang/21/include/__stddef_wchar_t.h \
+  /usr/lib/clang/21/include/stdbool.h \
+  /usr/lib/clang/21/include/stddef.h \
+  /usr/lib/clang/21/include/stdint.h \
+  /usr/lib/clang/21/share/asan_ignorelist.txt
 
 CMakeFiles/SpellForge.dir/src/main.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/main.cpp \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/raylib/src/raylib.h \
@@ -1580,6 +1623,7 @@ CMakeFiles/SpellForge.dir/src/main.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spel
   /usr/include/c++/v1/__algorithm/find_segment_if.h \
   /usr/include/c++/v1/__algorithm/for_each.h \
   /usr/include/c++/v1/__algorithm/for_each_n.h \
+  /usr/include/c++/v1/__algorithm/for_each_n_segment.h \
   /usr/include/c++/v1/__algorithm/for_each_segment.h \
   /usr/include/c++/v1/__algorithm/generate.h \
   /usr/include/c++/v1/__algorithm/generate_n.h \
@@ -1684,8 +1728,12 @@ CMakeFiles/SpellForge.dir/src/main.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spel
   /usr/include/c++/v1/__bit/countr.h \
   /usr/include/c++/v1/__bit/invert_if.h \
   /usr/include/c++/v1/__bit/popcount.h \
-  /usr/include/c++/v1/__bit/rotate.h \
   /usr/include/c++/v1/__bit_reference \
+  /usr/include/c++/v1/__charconv/tables.h \
+  /usr/include/c++/v1/__charconv/to_chars_base_10.h \
+  /usr/include/c++/v1/__charconv/to_chars_integral.h \
+  /usr/include/c++/v1/__charconv/to_chars_result.h \
+  /usr/include/c++/v1/__charconv/traits.h \
   /usr/include/c++/v1/__chrono/convert_to_timespec.h \
   /usr/include/c++/v1/__chrono/duration.h \
   /usr/include/c++/v1/__chrono/high_resolution_clock.h \
@@ -1745,6 +1793,7 @@ CMakeFiles/SpellForge.dir/src/main.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spel
   /usr/include/c++/v1/__functional/hash.h \
   /usr/include/c++/v1/__functional/identity.h \
   /usr/include/c++/v1/__functional/invoke.h \
+  /usr/include/c++/v1/__functional/is_transparent.h \
   /usr/include/c++/v1/__functional/operations.h \
   /usr/include/c++/v1/__functional/ranges_operations.h \
   /usr/include/c++/v1/__functional/reference_wrapper.h \
@@ -1770,6 +1819,7 @@ CMakeFiles/SpellForge.dir/src/main.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spel
   /usr/include/c++/v1/__fwd/tuple.h \
   /usr/include/c++/v1/__fwd/variant.h \
   /usr/include/c++/v1/__fwd/vector.h \
+  /usr/include/c++/v1/__hash_table \
   /usr/include/c++/v1/__ios/fpos.h \
   /usr/include/c++/v1/__iterator/access.h \
   /usr/include/c++/v1/__iterator/advance.h \
@@ -1781,6 +1831,7 @@ CMakeFiles/SpellForge.dir/src/main.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spel
   /usr/include/c++/v1/__iterator/default_sentinel.h \
   /usr/include/c++/v1/__iterator/distance.h \
   /usr/include/c++/v1/__iterator/empty.h \
+  /usr/include/c++/v1/__iterator/erase_if_container.h \
   /usr/include/c++/v1/__iterator/front_insert_iterator.h \
   /usr/include/c++/v1/__iterator/incrementable_traits.h \
   /usr/include/c++/v1/__iterator/insert_iterator.h \
@@ -1796,6 +1847,7 @@ CMakeFiles/SpellForge.dir/src/main.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spel
   /usr/include/c++/v1/__iterator/ostream_iterator.h \
   /usr/include/c++/v1/__iterator/ostreambuf_iterator.h \
   /usr/include/c++/v1/__iterator/prev.h \
+  /usr/include/c++/v1/__iterator/ranges_iterator_traits.h \
   /usr/include/c++/v1/__iterator/readable_traits.h \
   /usr/include/c++/v1/__iterator/reverse_access.h \
   /usr/include/c++/v1/__iterator/reverse_iterator.h \
@@ -1805,9 +1857,19 @@ CMakeFiles/SpellForge.dir/src/main.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spel
   /usr/include/c++/v1/__iterator/unreachable_sentinel.h \
   /usr/include/c++/v1/__iterator/wrap_iter.h \
   /usr/include/c++/v1/__locale \
+  /usr/include/c++/v1/__locale_dir/check_grouping.h \
+  /usr/include/c++/v1/__locale_dir/get_c_locale.h \
   /usr/include/c++/v1/__locale_dir/locale_base_api.h \
-  /usr/include/c++/v1/__locale_dir/locale_base_api/bsd_locale_fallbacks.h \
+  /usr/include/c++/v1/__locale_dir/messages.h \
+  /usr/include/c++/v1/__locale_dir/money.h \
+  /usr/include/c++/v1/__locale_dir/num.h \
   /usr/include/c++/v1/__locale_dir/pad_and_output.h \
+  /usr/include/c++/v1/__locale_dir/scan_keyword.h \
+  /usr/include/c++/v1/__locale_dir/support/linux.h \
+  /usr/include/c++/v1/__locale_dir/time.h \
+  /usr/include/c++/v1/__locale_dir/wbuffer_convert.h \
+  /usr/include/c++/v1/__locale_dir/wstring_convert.h \
+  /usr/include/c++/v1/__log_hardening_failure \
   /usr/include/c++/v1/__math/abs.h \
   /usr/include/c++/v1/__math/copysign.h \
   /usr/include/c++/v1/__math/error_functions.h \
@@ -1841,8 +1903,10 @@ CMakeFiles/SpellForge.dir/src/main.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spel
   /usr/include/c++/v1/__memory/auto_ptr.h \
   /usr/include/c++/v1/__memory/compressed_pair.h \
   /usr/include/c++/v1/__memory/construct_at.h \
+  /usr/include/c++/v1/__memory/destroy.h \
   /usr/include/c++/v1/__memory/destruct_n.h \
   /usr/include/c++/v1/__memory/inout_ptr.h \
+  /usr/include/c++/v1/__memory/is_sufficiently_aligned.h \
   /usr/include/c++/v1/__memory/noexcept_move_assign_container.h \
   /usr/include/c++/v1/__memory/out_ptr.h \
   /usr/include/c++/v1/__memory/pointer_traits.h \
@@ -1872,6 +1936,7 @@ CMakeFiles/SpellForge.dir/src/main.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spel
   /usr/include/c++/v1/__new/new_handler.h \
   /usr/include/c++/v1/__new/nothrow_t.h \
   /usr/include/c++/v1/__new/placement_new_delete.h \
+  /usr/include/c++/v1/__node_handle \
   /usr/include/c++/v1/__numeric/partial_sum.h \
   /usr/include/c++/v1/__random/is_valid.h \
   /usr/include/c++/v1/__random/log2.h \
@@ -1885,7 +1950,6 @@ CMakeFiles/SpellForge.dir/src/main.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spel
   /usr/include/c++/v1/__ranges/enable_borrowed_range.h \
   /usr/include/c++/v1/__ranges/enable_view.h \
   /usr/include/c++/v1/__ranges/from_range.h \
-  /usr/include/c++/v1/__ranges/movable_box.h \
   /usr/include/c++/v1/__ranges/size.h \
   /usr/include/c++/v1/__ranges/subrange.h \
   /usr/include/c++/v1/__ranges/view_interface.h \
@@ -1915,12 +1979,12 @@ CMakeFiles/SpellForge.dir/src/main.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spel
   /usr/include/c++/v1/__tuple/tuple_size.h \
   /usr/include/c++/v1/__tuple/tuple_types.h \
   /usr/include/c++/v1/__type_traits/add_cv_quals.h \
-  /usr/include/c++/v1/__type_traits/add_lvalue_reference.h \
   /usr/include/c++/v1/__type_traits/add_pointer.h \
-  /usr/include/c++/v1/__type_traits/add_rvalue_reference.h \
+  /usr/include/c++/v1/__type_traits/add_reference.h \
   /usr/include/c++/v1/__type_traits/aligned_storage.h \
   /usr/include/c++/v1/__type_traits/aligned_union.h \
   /usr/include/c++/v1/__type_traits/alignment_of.h \
+  /usr/include/c++/v1/__type_traits/can_extract_key.h \
   /usr/include/c++/v1/__type_traits/common_reference.h \
   /usr/include/c++/v1/__type_traits/common_type.h \
   /usr/include/c++/v1/__type_traits/conditional.h \
@@ -1938,6 +2002,7 @@ CMakeFiles/SpellForge.dir/src/main.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spel
   /usr/include/c++/v1/__type_traits/extent.h \
   /usr/include/c++/v1/__type_traits/has_unique_object_representation.h \
   /usr/include/c++/v1/__type_traits/has_virtual_destructor.h \
+  /usr/include/c++/v1/__type_traits/integer_traits.h \
   /usr/include/c++/v1/__type_traits/integral_constant.h \
   /usr/include/c++/v1/__type_traits/invoke.h \
   /usr/include/c++/v1/__type_traits/is_abstract.h \
@@ -1981,10 +2046,10 @@ CMakeFiles/SpellForge.dir/src/main.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spel
   /usr/include/c++/v1/__type_traits/is_reference.h \
   /usr/include/c++/v1/__type_traits/is_reference_wrapper.h \
   /usr/include/c++/v1/__type_traits/is_referenceable.h \
+  /usr/include/c++/v1/__type_traits/is_replaceable.h \
   /usr/include/c++/v1/__type_traits/is_same.h \
   /usr/include/c++/v1/__type_traits/is_scalar.h \
   /usr/include/c++/v1/__type_traits/is_signed.h \
-  /usr/include/c++/v1/__type_traits/is_signed_integer.h \
   /usr/include/c++/v1/__type_traits/is_specialization.h \
   /usr/include/c++/v1/__type_traits/is_standard_layout.h \
   /usr/include/c++/v1/__type_traits/is_swappable.h \
@@ -1997,12 +2062,13 @@ CMakeFiles/SpellForge.dir/src/main.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spel
   /usr/include/c++/v1/__type_traits/is_trivially_relocatable.h \
   /usr/include/c++/v1/__type_traits/is_unbounded_array.h \
   /usr/include/c++/v1/__type_traits/is_union.h \
+  /usr/include/c++/v1/__type_traits/is_unqualified.h \
   /usr/include/c++/v1/__type_traits/is_unsigned.h \
-  /usr/include/c++/v1/__type_traits/is_unsigned_integer.h \
   /usr/include/c++/v1/__type_traits/is_valid_expansion.h \
   /usr/include/c++/v1/__type_traits/is_void.h \
   /usr/include/c++/v1/__type_traits/is_volatile.h \
   /usr/include/c++/v1/__type_traits/lazy.h \
+  /usr/include/c++/v1/__type_traits/make_32_64_or_128_bit.h \
   /usr/include/c++/v1/__type_traits/make_const_lvalue_ref.h \
   /usr/include/c++/v1/__type_traits/make_signed.h \
   /usr/include/c++/v1/__type_traits/make_unsigned.h \
@@ -2011,8 +2077,10 @@ CMakeFiles/SpellForge.dir/src/main.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spel
   /usr/include/c++/v1/__type_traits/negation.h \
   /usr/include/c++/v1/__type_traits/promote.h \
   /usr/include/c++/v1/__type_traits/rank.h \
+  /usr/include/c++/v1/__type_traits/reference_constructs_from_temporary.h \
   /usr/include/c++/v1/__type_traits/remove_all_extents.h \
   /usr/include/c++/v1/__type_traits/remove_const.h \
+  /usr/include/c++/v1/__type_traits/remove_const_ref.h \
   /usr/include/c++/v1/__type_traits/remove_cv.h \
   /usr/include/c++/v1/__type_traits/remove_cvref.h \
   /usr/include/c++/v1/__type_traits/remove_extent.h \
@@ -2057,6 +2125,7 @@ CMakeFiles/SpellForge.dir/src/main.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spel
   /usr/include/c++/v1/__vector/vector.h \
   /usr/include/c++/v1/__vector/vector_bool.h \
   /usr/include/c++/v1/__verbose_abort \
+  /usr/include/c++/v1/__verbose_trap \
   /usr/include/c++/v1/algorithm \
   /usr/include/c++/v1/array \
   /usr/include/c++/v1/atomic \
@@ -2106,6 +2175,7 @@ CMakeFiles/SpellForge.dir/src/main.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spel
   /usr/include/c++/v1/tuple \
   /usr/include/c++/v1/type_traits \
   /usr/include/c++/v1/typeinfo \
+  /usr/include/c++/v1/unordered_map \
   /usr/include/c++/v1/utility \
   /usr/include/c++/v1/variant \
   /usr/include/c++/v1/vector \
@@ -2233,27 +2303,27 @@ CMakeFiles/SpellForge.dir/src/main.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spel
   /usr/include/time.h \
   /usr/include/wchar.h \
   /usr/include/wctype.h \
-  /usr/lib/clang/20/include/__stdarg___gnuc_va_list.h \
-  /usr/lib/clang/20/include/__stdarg___va_copy.h \
-  /usr/lib/clang/20/include/__stdarg_header_macro.h \
-  /usr/lib/clang/20/include/__stdarg_va_arg.h \
-  /usr/lib/clang/20/include/__stdarg_va_copy.h \
-  /usr/lib/clang/20/include/__stdarg_va_list.h \
-  /usr/lib/clang/20/include/__stddef_header_macro.h \
-  /usr/lib/clang/20/include/__stddef_max_align_t.h \
-  /usr/lib/clang/20/include/__stddef_null.h \
-  /usr/lib/clang/20/include/__stddef_nullptr_t.h \
-  /usr/lib/clang/20/include/__stddef_offsetof.h \
-  /usr/lib/clang/20/include/__stddef_ptrdiff_t.h \
-  /usr/lib/clang/20/include/__stddef_size_t.h \
-  /usr/lib/clang/20/include/__stddef_wchar_t.h \
-  /usr/lib/clang/20/include/float.h \
-  /usr/lib/clang/20/include/limits.h \
-  /usr/lib/clang/20/include/stdarg.h \
-  /usr/lib/clang/20/include/stdbool.h \
-  /usr/lib/clang/20/include/stddef.h \
-  /usr/lib/clang/20/include/stdint.h \
-  /usr/lib/clang/20/share/asan_ignorelist.txt
+  /usr/lib/clang/21/include/__stdarg___gnuc_va_list.h \
+  /usr/lib/clang/21/include/__stdarg___va_copy.h \
+  /usr/lib/clang/21/include/__stdarg_header_macro.h \
+  /usr/lib/clang/21/include/__stdarg_va_arg.h \
+  /usr/lib/clang/21/include/__stdarg_va_copy.h \
+  /usr/lib/clang/21/include/__stdarg_va_list.h \
+  /usr/lib/clang/21/include/__stddef_header_macro.h \
+  /usr/lib/clang/21/include/__stddef_max_align_t.h \
+  /usr/lib/clang/21/include/__stddef_null.h \
+  /usr/lib/clang/21/include/__stddef_nullptr_t.h \
+  /usr/lib/clang/21/include/__stddef_offsetof.h \
+  /usr/lib/clang/21/include/__stddef_ptrdiff_t.h \
+  /usr/lib/clang/21/include/__stddef_size_t.h \
+  /usr/lib/clang/21/include/__stddef_wchar_t.h \
+  /usr/lib/clang/21/include/float.h \
+  /usr/lib/clang/21/include/limits.h \
+  /usr/lib/clang/21/include/stdarg.h \
+  /usr/lib/clang/21/include/stdbool.h \
+  /usr/lib/clang/21/include/stddef.h \
+  /usr/lib/clang/21/include/stdint.h \
+  /usr/lib/clang/21/share/asan_ignorelist.txt
 
 CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/physics/physics.cpp \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/raylib/src/raylib.h \
@@ -2299,6 +2369,7 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o: /home/klo/Work/Jams/MiniJam
   /usr/include/c++/v1/__algorithm/find_segment_if.h \
   /usr/include/c++/v1/__algorithm/for_each.h \
   /usr/include/c++/v1/__algorithm/for_each_n.h \
+  /usr/include/c++/v1/__algorithm/for_each_n_segment.h \
   /usr/include/c++/v1/__algorithm/for_each_segment.h \
   /usr/include/c++/v1/__algorithm/generate.h \
   /usr/include/c++/v1/__algorithm/generate_n.h \
@@ -2403,8 +2474,12 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o: /home/klo/Work/Jams/MiniJam
   /usr/include/c++/v1/__bit/countr.h \
   /usr/include/c++/v1/__bit/invert_if.h \
   /usr/include/c++/v1/__bit/popcount.h \
-  /usr/include/c++/v1/__bit/rotate.h \
   /usr/include/c++/v1/__bit_reference \
+  /usr/include/c++/v1/__charconv/tables.h \
+  /usr/include/c++/v1/__charconv/to_chars_base_10.h \
+  /usr/include/c++/v1/__charconv/to_chars_integral.h \
+  /usr/include/c++/v1/__charconv/to_chars_result.h \
+  /usr/include/c++/v1/__charconv/traits.h \
   /usr/include/c++/v1/__chrono/convert_to_timespec.h \
   /usr/include/c++/v1/__chrono/duration.h \
   /usr/include/c++/v1/__chrono/high_resolution_clock.h \
@@ -2464,6 +2539,7 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o: /home/klo/Work/Jams/MiniJam
   /usr/include/c++/v1/__functional/hash.h \
   /usr/include/c++/v1/__functional/identity.h \
   /usr/include/c++/v1/__functional/invoke.h \
+  /usr/include/c++/v1/__functional/is_transparent.h \
   /usr/include/c++/v1/__functional/operations.h \
   /usr/include/c++/v1/__functional/ranges_operations.h \
   /usr/include/c++/v1/__functional/reference_wrapper.h \
@@ -2489,6 +2565,7 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o: /home/klo/Work/Jams/MiniJam
   /usr/include/c++/v1/__fwd/tuple.h \
   /usr/include/c++/v1/__fwd/variant.h \
   /usr/include/c++/v1/__fwd/vector.h \
+  /usr/include/c++/v1/__hash_table \
   /usr/include/c++/v1/__ios/fpos.h \
   /usr/include/c++/v1/__iterator/access.h \
   /usr/include/c++/v1/__iterator/advance.h \
@@ -2500,6 +2577,7 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o: /home/klo/Work/Jams/MiniJam
   /usr/include/c++/v1/__iterator/default_sentinel.h \
   /usr/include/c++/v1/__iterator/distance.h \
   /usr/include/c++/v1/__iterator/empty.h \
+  /usr/include/c++/v1/__iterator/erase_if_container.h \
   /usr/include/c++/v1/__iterator/front_insert_iterator.h \
   /usr/include/c++/v1/__iterator/incrementable_traits.h \
   /usr/include/c++/v1/__iterator/insert_iterator.h \
@@ -2515,6 +2593,7 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o: /home/klo/Work/Jams/MiniJam
   /usr/include/c++/v1/__iterator/ostream_iterator.h \
   /usr/include/c++/v1/__iterator/ostreambuf_iterator.h \
   /usr/include/c++/v1/__iterator/prev.h \
+  /usr/include/c++/v1/__iterator/ranges_iterator_traits.h \
   /usr/include/c++/v1/__iterator/readable_traits.h \
   /usr/include/c++/v1/__iterator/reverse_access.h \
   /usr/include/c++/v1/__iterator/reverse_iterator.h \
@@ -2524,9 +2603,19 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o: /home/klo/Work/Jams/MiniJam
   /usr/include/c++/v1/__iterator/unreachable_sentinel.h \
   /usr/include/c++/v1/__iterator/wrap_iter.h \
   /usr/include/c++/v1/__locale \
+  /usr/include/c++/v1/__locale_dir/check_grouping.h \
+  /usr/include/c++/v1/__locale_dir/get_c_locale.h \
   /usr/include/c++/v1/__locale_dir/locale_base_api.h \
-  /usr/include/c++/v1/__locale_dir/locale_base_api/bsd_locale_fallbacks.h \
+  /usr/include/c++/v1/__locale_dir/messages.h \
+  /usr/include/c++/v1/__locale_dir/money.h \
+  /usr/include/c++/v1/__locale_dir/num.h \
   /usr/include/c++/v1/__locale_dir/pad_and_output.h \
+  /usr/include/c++/v1/__locale_dir/scan_keyword.h \
+  /usr/include/c++/v1/__locale_dir/support/linux.h \
+  /usr/include/c++/v1/__locale_dir/time.h \
+  /usr/include/c++/v1/__locale_dir/wbuffer_convert.h \
+  /usr/include/c++/v1/__locale_dir/wstring_convert.h \
+  /usr/include/c++/v1/__log_hardening_failure \
   /usr/include/c++/v1/__math/abs.h \
   /usr/include/c++/v1/__math/copysign.h \
   /usr/include/c++/v1/__math/error_functions.h \
@@ -2560,8 +2649,10 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o: /home/klo/Work/Jams/MiniJam
   /usr/include/c++/v1/__memory/auto_ptr.h \
   /usr/include/c++/v1/__memory/compressed_pair.h \
   /usr/include/c++/v1/__memory/construct_at.h \
+  /usr/include/c++/v1/__memory/destroy.h \
   /usr/include/c++/v1/__memory/destruct_n.h \
   /usr/include/c++/v1/__memory/inout_ptr.h \
+  /usr/include/c++/v1/__memory/is_sufficiently_aligned.h \
   /usr/include/c++/v1/__memory/noexcept_move_assign_container.h \
   /usr/include/c++/v1/__memory/out_ptr.h \
   /usr/include/c++/v1/__memory/pointer_traits.h \
@@ -2591,6 +2682,7 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o: /home/klo/Work/Jams/MiniJam
   /usr/include/c++/v1/__new/new_handler.h \
   /usr/include/c++/v1/__new/nothrow_t.h \
   /usr/include/c++/v1/__new/placement_new_delete.h \
+  /usr/include/c++/v1/__node_handle \
   /usr/include/c++/v1/__numeric/partial_sum.h \
   /usr/include/c++/v1/__random/is_valid.h \
   /usr/include/c++/v1/__random/log2.h \
@@ -2604,7 +2696,6 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o: /home/klo/Work/Jams/MiniJam
   /usr/include/c++/v1/__ranges/enable_borrowed_range.h \
   /usr/include/c++/v1/__ranges/enable_view.h \
   /usr/include/c++/v1/__ranges/from_range.h \
-  /usr/include/c++/v1/__ranges/movable_box.h \
   /usr/include/c++/v1/__ranges/size.h \
   /usr/include/c++/v1/__ranges/subrange.h \
   /usr/include/c++/v1/__ranges/view_interface.h \
@@ -2634,12 +2725,12 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o: /home/klo/Work/Jams/MiniJam
   /usr/include/c++/v1/__tuple/tuple_size.h \
   /usr/include/c++/v1/__tuple/tuple_types.h \
   /usr/include/c++/v1/__type_traits/add_cv_quals.h \
-  /usr/include/c++/v1/__type_traits/add_lvalue_reference.h \
   /usr/include/c++/v1/__type_traits/add_pointer.h \
-  /usr/include/c++/v1/__type_traits/add_rvalue_reference.h \
+  /usr/include/c++/v1/__type_traits/add_reference.h \
   /usr/include/c++/v1/__type_traits/aligned_storage.h \
   /usr/include/c++/v1/__type_traits/aligned_union.h \
   /usr/include/c++/v1/__type_traits/alignment_of.h \
+  /usr/include/c++/v1/__type_traits/can_extract_key.h \
   /usr/include/c++/v1/__type_traits/common_reference.h \
   /usr/include/c++/v1/__type_traits/common_type.h \
   /usr/include/c++/v1/__type_traits/conditional.h \
@@ -2657,6 +2748,7 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o: /home/klo/Work/Jams/MiniJam
   /usr/include/c++/v1/__type_traits/extent.h \
   /usr/include/c++/v1/__type_traits/has_unique_object_representation.h \
   /usr/include/c++/v1/__type_traits/has_virtual_destructor.h \
+  /usr/include/c++/v1/__type_traits/integer_traits.h \
   /usr/include/c++/v1/__type_traits/integral_constant.h \
   /usr/include/c++/v1/__type_traits/invoke.h \
   /usr/include/c++/v1/__type_traits/is_abstract.h \
@@ -2700,10 +2792,10 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o: /home/klo/Work/Jams/MiniJam
   /usr/include/c++/v1/__type_traits/is_reference.h \
   /usr/include/c++/v1/__type_traits/is_reference_wrapper.h \
   /usr/include/c++/v1/__type_traits/is_referenceable.h \
+  /usr/include/c++/v1/__type_traits/is_replaceable.h \
   /usr/include/c++/v1/__type_traits/is_same.h \
   /usr/include/c++/v1/__type_traits/is_scalar.h \
   /usr/include/c++/v1/__type_traits/is_signed.h \
-  /usr/include/c++/v1/__type_traits/is_signed_integer.h \
   /usr/include/c++/v1/__type_traits/is_specialization.h \
   /usr/include/c++/v1/__type_traits/is_standard_layout.h \
   /usr/include/c++/v1/__type_traits/is_swappable.h \
@@ -2716,12 +2808,13 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o: /home/klo/Work/Jams/MiniJam
   /usr/include/c++/v1/__type_traits/is_trivially_relocatable.h \
   /usr/include/c++/v1/__type_traits/is_unbounded_array.h \
   /usr/include/c++/v1/__type_traits/is_union.h \
+  /usr/include/c++/v1/__type_traits/is_unqualified.h \
   /usr/include/c++/v1/__type_traits/is_unsigned.h \
-  /usr/include/c++/v1/__type_traits/is_unsigned_integer.h \
   /usr/include/c++/v1/__type_traits/is_valid_expansion.h \
   /usr/include/c++/v1/__type_traits/is_void.h \
   /usr/include/c++/v1/__type_traits/is_volatile.h \
   /usr/include/c++/v1/__type_traits/lazy.h \
+  /usr/include/c++/v1/__type_traits/make_32_64_or_128_bit.h \
   /usr/include/c++/v1/__type_traits/make_const_lvalue_ref.h \
   /usr/include/c++/v1/__type_traits/make_signed.h \
   /usr/include/c++/v1/__type_traits/make_unsigned.h \
@@ -2730,8 +2823,10 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o: /home/klo/Work/Jams/MiniJam
   /usr/include/c++/v1/__type_traits/negation.h \
   /usr/include/c++/v1/__type_traits/promote.h \
   /usr/include/c++/v1/__type_traits/rank.h \
+  /usr/include/c++/v1/__type_traits/reference_constructs_from_temporary.h \
   /usr/include/c++/v1/__type_traits/remove_all_extents.h \
   /usr/include/c++/v1/__type_traits/remove_const.h \
+  /usr/include/c++/v1/__type_traits/remove_const_ref.h \
   /usr/include/c++/v1/__type_traits/remove_cv.h \
   /usr/include/c++/v1/__type_traits/remove_cvref.h \
   /usr/include/c++/v1/__type_traits/remove_extent.h \
@@ -2776,6 +2871,7 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o: /home/klo/Work/Jams/MiniJam
   /usr/include/c++/v1/__vector/vector.h \
   /usr/include/c++/v1/__vector/vector_bool.h \
   /usr/include/c++/v1/__verbose_abort \
+  /usr/include/c++/v1/__verbose_trap \
   /usr/include/c++/v1/algorithm \
   /usr/include/c++/v1/array \
   /usr/include/c++/v1/atomic \
@@ -2825,6 +2921,7 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o: /home/klo/Work/Jams/MiniJam
   /usr/include/c++/v1/tuple \
   /usr/include/c++/v1/type_traits \
   /usr/include/c++/v1/typeinfo \
+  /usr/include/c++/v1/unordered_map \
   /usr/include/c++/v1/utility \
   /usr/include/c++/v1/variant \
   /usr/include/c++/v1/vector \
@@ -2952,27 +3049,27 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o: /home/klo/Work/Jams/MiniJam
   /usr/include/time.h \
   /usr/include/wchar.h \
   /usr/include/wctype.h \
-  /usr/lib/clang/20/include/__stdarg___gnuc_va_list.h \
-  /usr/lib/clang/20/include/__stdarg___va_copy.h \
-  /usr/lib/clang/20/include/__stdarg_header_macro.h \
-  /usr/lib/clang/20/include/__stdarg_va_arg.h \
-  /usr/lib/clang/20/include/__stdarg_va_copy.h \
-  /usr/lib/clang/20/include/__stdarg_va_list.h \
-  /usr/lib/clang/20/include/__stddef_header_macro.h \
-  /usr/lib/clang/20/include/__stddef_max_align_t.h \
-  /usr/lib/clang/20/include/__stddef_null.h \
-  /usr/lib/clang/20/include/__stddef_nullptr_t.h \
-  /usr/lib/clang/20/include/__stddef_offsetof.h \
-  /usr/lib/clang/20/include/__stddef_ptrdiff_t.h \
-  /usr/lib/clang/20/include/__stddef_size_t.h \
-  /usr/lib/clang/20/include/__stddef_wchar_t.h \
-  /usr/lib/clang/20/include/float.h \
-  /usr/lib/clang/20/include/limits.h \
-  /usr/lib/clang/20/include/stdarg.h \
-  /usr/lib/clang/20/include/stdbool.h \
-  /usr/lib/clang/20/include/stddef.h \
-  /usr/lib/clang/20/include/stdint.h \
-  /usr/lib/clang/20/share/asan_ignorelist.txt
+  /usr/lib/clang/21/include/__stdarg___gnuc_va_list.h \
+  /usr/lib/clang/21/include/__stdarg___va_copy.h \
+  /usr/lib/clang/21/include/__stdarg_header_macro.h \
+  /usr/lib/clang/21/include/__stdarg_va_arg.h \
+  /usr/lib/clang/21/include/__stdarg_va_copy.h \
+  /usr/lib/clang/21/include/__stdarg_va_list.h \
+  /usr/lib/clang/21/include/__stddef_header_macro.h \
+  /usr/lib/clang/21/include/__stddef_max_align_t.h \
+  /usr/lib/clang/21/include/__stddef_null.h \
+  /usr/lib/clang/21/include/__stddef_nullptr_t.h \
+  /usr/lib/clang/21/include/__stddef_offsetof.h \
+  /usr/lib/clang/21/include/__stddef_ptrdiff_t.h \
+  /usr/lib/clang/21/include/__stddef_size_t.h \
+  /usr/lib/clang/21/include/__stddef_wchar_t.h \
+  /usr/lib/clang/21/include/float.h \
+  /usr/lib/clang/21/include/limits.h \
+  /usr/lib/clang/21/include/stdarg.h \
+  /usr/lib/clang/21/include/stdbool.h \
+  /usr/lib/clang/21/include/stddef.h \
+  /usr/lib/clang/21/include/stdint.h \
+  /usr/lib/clang/21/share/asan_ignorelist.txt
 
 CMakeFiles/SpellForge.dir/src/player/player.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/player.cpp \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/raylib/src/raylib.h \
@@ -3018,6 +3115,7 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o: /home/klo/Work/Jams/MiniJam-F
   /usr/include/c++/v1/__algorithm/find_segment_if.h \
   /usr/include/c++/v1/__algorithm/for_each.h \
   /usr/include/c++/v1/__algorithm/for_each_n.h \
+  /usr/include/c++/v1/__algorithm/for_each_n_segment.h \
   /usr/include/c++/v1/__algorithm/for_each_segment.h \
   /usr/include/c++/v1/__algorithm/generate.h \
   /usr/include/c++/v1/__algorithm/generate_n.h \
@@ -3122,8 +3220,12 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o: /home/klo/Work/Jams/MiniJam-F
   /usr/include/c++/v1/__bit/countr.h \
   /usr/include/c++/v1/__bit/invert_if.h \
   /usr/include/c++/v1/__bit/popcount.h \
-  /usr/include/c++/v1/__bit/rotate.h \
   /usr/include/c++/v1/__bit_reference \
+  /usr/include/c++/v1/__charconv/tables.h \
+  /usr/include/c++/v1/__charconv/to_chars_base_10.h \
+  /usr/include/c++/v1/__charconv/to_chars_integral.h \
+  /usr/include/c++/v1/__charconv/to_chars_result.h \
+  /usr/include/c++/v1/__charconv/traits.h \
   /usr/include/c++/v1/__chrono/convert_to_timespec.h \
   /usr/include/c++/v1/__chrono/duration.h \
   /usr/include/c++/v1/__chrono/high_resolution_clock.h \
@@ -3183,6 +3285,7 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o: /home/klo/Work/Jams/MiniJam-F
   /usr/include/c++/v1/__functional/hash.h \
   /usr/include/c++/v1/__functional/identity.h \
   /usr/include/c++/v1/__functional/invoke.h \
+  /usr/include/c++/v1/__functional/is_transparent.h \
   /usr/include/c++/v1/__functional/operations.h \
   /usr/include/c++/v1/__functional/ranges_operations.h \
   /usr/include/c++/v1/__functional/reference_wrapper.h \
@@ -3208,6 +3311,7 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o: /home/klo/Work/Jams/MiniJam-F
   /usr/include/c++/v1/__fwd/tuple.h \
   /usr/include/c++/v1/__fwd/variant.h \
   /usr/include/c++/v1/__fwd/vector.h \
+  /usr/include/c++/v1/__hash_table \
   /usr/include/c++/v1/__ios/fpos.h \
   /usr/include/c++/v1/__iterator/access.h \
   /usr/include/c++/v1/__iterator/advance.h \
@@ -3219,6 +3323,7 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o: /home/klo/Work/Jams/MiniJam-F
   /usr/include/c++/v1/__iterator/default_sentinel.h \
   /usr/include/c++/v1/__iterator/distance.h \
   /usr/include/c++/v1/__iterator/empty.h \
+  /usr/include/c++/v1/__iterator/erase_if_container.h \
   /usr/include/c++/v1/__iterator/front_insert_iterator.h \
   /usr/include/c++/v1/__iterator/incrementable_traits.h \
   /usr/include/c++/v1/__iterator/insert_iterator.h \
@@ -3234,6 +3339,7 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o: /home/klo/Work/Jams/MiniJam-F
   /usr/include/c++/v1/__iterator/ostream_iterator.h \
   /usr/include/c++/v1/__iterator/ostreambuf_iterator.h \
   /usr/include/c++/v1/__iterator/prev.h \
+  /usr/include/c++/v1/__iterator/ranges_iterator_traits.h \
   /usr/include/c++/v1/__iterator/readable_traits.h \
   /usr/include/c++/v1/__iterator/reverse_access.h \
   /usr/include/c++/v1/__iterator/reverse_iterator.h \
@@ -3243,9 +3349,19 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o: /home/klo/Work/Jams/MiniJam-F
   /usr/include/c++/v1/__iterator/unreachable_sentinel.h \
   /usr/include/c++/v1/__iterator/wrap_iter.h \
   /usr/include/c++/v1/__locale \
+  /usr/include/c++/v1/__locale_dir/check_grouping.h \
+  /usr/include/c++/v1/__locale_dir/get_c_locale.h \
   /usr/include/c++/v1/__locale_dir/locale_base_api.h \
-  /usr/include/c++/v1/__locale_dir/locale_base_api/bsd_locale_fallbacks.h \
+  /usr/include/c++/v1/__locale_dir/messages.h \
+  /usr/include/c++/v1/__locale_dir/money.h \
+  /usr/include/c++/v1/__locale_dir/num.h \
   /usr/include/c++/v1/__locale_dir/pad_and_output.h \
+  /usr/include/c++/v1/__locale_dir/scan_keyword.h \
+  /usr/include/c++/v1/__locale_dir/support/linux.h \
+  /usr/include/c++/v1/__locale_dir/time.h \
+  /usr/include/c++/v1/__locale_dir/wbuffer_convert.h \
+  /usr/include/c++/v1/__locale_dir/wstring_convert.h \
+  /usr/include/c++/v1/__log_hardening_failure \
   /usr/include/c++/v1/__math/abs.h \
   /usr/include/c++/v1/__math/copysign.h \
   /usr/include/c++/v1/__math/error_functions.h \
@@ -3279,8 +3395,10 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o: /home/klo/Work/Jams/MiniJam-F
   /usr/include/c++/v1/__memory/auto_ptr.h \
   /usr/include/c++/v1/__memory/compressed_pair.h \
   /usr/include/c++/v1/__memory/construct_at.h \
+  /usr/include/c++/v1/__memory/destroy.h \
   /usr/include/c++/v1/__memory/destruct_n.h \
   /usr/include/c++/v1/__memory/inout_ptr.h \
+  /usr/include/c++/v1/__memory/is_sufficiently_aligned.h \
   /usr/include/c++/v1/__memory/noexcept_move_assign_container.h \
   /usr/include/c++/v1/__memory/out_ptr.h \
   /usr/include/c++/v1/__memory/pointer_traits.h \
@@ -3310,6 +3428,7 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o: /home/klo/Work/Jams/MiniJam-F
   /usr/include/c++/v1/__new/new_handler.h \
   /usr/include/c++/v1/__new/nothrow_t.h \
   /usr/include/c++/v1/__new/placement_new_delete.h \
+  /usr/include/c++/v1/__node_handle \
   /usr/include/c++/v1/__numeric/partial_sum.h \
   /usr/include/c++/v1/__random/is_valid.h \
   /usr/include/c++/v1/__random/log2.h \
@@ -3323,7 +3442,6 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o: /home/klo/Work/Jams/MiniJam-F
   /usr/include/c++/v1/__ranges/enable_borrowed_range.h \
   /usr/include/c++/v1/__ranges/enable_view.h \
   /usr/include/c++/v1/__ranges/from_range.h \
-  /usr/include/c++/v1/__ranges/movable_box.h \
   /usr/include/c++/v1/__ranges/size.h \
   /usr/include/c++/v1/__ranges/subrange.h \
   /usr/include/c++/v1/__ranges/view_interface.h \
@@ -3353,12 +3471,12 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o: /home/klo/Work/Jams/MiniJam-F
   /usr/include/c++/v1/__tuple/tuple_size.h \
   /usr/include/c++/v1/__tuple/tuple_types.h \
   /usr/include/c++/v1/__type_traits/add_cv_quals.h \
-  /usr/include/c++/v1/__type_traits/add_lvalue_reference.h \
   /usr/include/c++/v1/__type_traits/add_pointer.h \
-  /usr/include/c++/v1/__type_traits/add_rvalue_reference.h \
+  /usr/include/c++/v1/__type_traits/add_reference.h \
   /usr/include/c++/v1/__type_traits/aligned_storage.h \
   /usr/include/c++/v1/__type_traits/aligned_union.h \
   /usr/include/c++/v1/__type_traits/alignment_of.h \
+  /usr/include/c++/v1/__type_traits/can_extract_key.h \
   /usr/include/c++/v1/__type_traits/common_reference.h \
   /usr/include/c++/v1/__type_traits/common_type.h \
   /usr/include/c++/v1/__type_traits/conditional.h \
@@ -3376,6 +3494,7 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o: /home/klo/Work/Jams/MiniJam-F
   /usr/include/c++/v1/__type_traits/extent.h \
   /usr/include/c++/v1/__type_traits/has_unique_object_representation.h \
   /usr/include/c++/v1/__type_traits/has_virtual_destructor.h \
+  /usr/include/c++/v1/__type_traits/integer_traits.h \
   /usr/include/c++/v1/__type_traits/integral_constant.h \
   /usr/include/c++/v1/__type_traits/invoke.h \
   /usr/include/c++/v1/__type_traits/is_abstract.h \
@@ -3419,10 +3538,10 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o: /home/klo/Work/Jams/MiniJam-F
   /usr/include/c++/v1/__type_traits/is_reference.h \
   /usr/include/c++/v1/__type_traits/is_reference_wrapper.h \
   /usr/include/c++/v1/__type_traits/is_referenceable.h \
+  /usr/include/c++/v1/__type_traits/is_replaceable.h \
   /usr/include/c++/v1/__type_traits/is_same.h \
   /usr/include/c++/v1/__type_traits/is_scalar.h \
   /usr/include/c++/v1/__type_traits/is_signed.h \
-  /usr/include/c++/v1/__type_traits/is_signed_integer.h \
   /usr/include/c++/v1/__type_traits/is_specialization.h \
   /usr/include/c++/v1/__type_traits/is_standard_layout.h \
   /usr/include/c++/v1/__type_traits/is_swappable.h \
@@ -3435,12 +3554,13 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o: /home/klo/Work/Jams/MiniJam-F
   /usr/include/c++/v1/__type_traits/is_trivially_relocatable.h \
   /usr/include/c++/v1/__type_traits/is_unbounded_array.h \
   /usr/include/c++/v1/__type_traits/is_union.h \
+  /usr/include/c++/v1/__type_traits/is_unqualified.h \
   /usr/include/c++/v1/__type_traits/is_unsigned.h \
-  /usr/include/c++/v1/__type_traits/is_unsigned_integer.h \
   /usr/include/c++/v1/__type_traits/is_valid_expansion.h \
   /usr/include/c++/v1/__type_traits/is_void.h \
   /usr/include/c++/v1/__type_traits/is_volatile.h \
   /usr/include/c++/v1/__type_traits/lazy.h \
+  /usr/include/c++/v1/__type_traits/make_32_64_or_128_bit.h \
   /usr/include/c++/v1/__type_traits/make_const_lvalue_ref.h \
   /usr/include/c++/v1/__type_traits/make_signed.h \
   /usr/include/c++/v1/__type_traits/make_unsigned.h \
@@ -3449,8 +3569,10 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o: /home/klo/Work/Jams/MiniJam-F
   /usr/include/c++/v1/__type_traits/negation.h \
   /usr/include/c++/v1/__type_traits/promote.h \
   /usr/include/c++/v1/__type_traits/rank.h \
+  /usr/include/c++/v1/__type_traits/reference_constructs_from_temporary.h \
   /usr/include/c++/v1/__type_traits/remove_all_extents.h \
   /usr/include/c++/v1/__type_traits/remove_const.h \
+  /usr/include/c++/v1/__type_traits/remove_const_ref.h \
   /usr/include/c++/v1/__type_traits/remove_cv.h \
   /usr/include/c++/v1/__type_traits/remove_cvref.h \
   /usr/include/c++/v1/__type_traits/remove_extent.h \
@@ -3495,6 +3617,7 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o: /home/klo/Work/Jams/MiniJam-F
   /usr/include/c++/v1/__vector/vector.h \
   /usr/include/c++/v1/__vector/vector_bool.h \
   /usr/include/c++/v1/__verbose_abort \
+  /usr/include/c++/v1/__verbose_trap \
   /usr/include/c++/v1/algorithm \
   /usr/include/c++/v1/array \
   /usr/include/c++/v1/atomic \
@@ -3544,6 +3667,7 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o: /home/klo/Work/Jams/MiniJam-F
   /usr/include/c++/v1/tuple \
   /usr/include/c++/v1/type_traits \
   /usr/include/c++/v1/typeinfo \
+  /usr/include/c++/v1/unordered_map \
   /usr/include/c++/v1/utility \
   /usr/include/c++/v1/variant \
   /usr/include/c++/v1/vector \
@@ -3671,27 +3795,27 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o: /home/klo/Work/Jams/MiniJam-F
   /usr/include/time.h \
   /usr/include/wchar.h \
   /usr/include/wctype.h \
-  /usr/lib/clang/20/include/__stdarg___gnuc_va_list.h \
-  /usr/lib/clang/20/include/__stdarg___va_copy.h \
-  /usr/lib/clang/20/include/__stdarg_header_macro.h \
-  /usr/lib/clang/20/include/__stdarg_va_arg.h \
-  /usr/lib/clang/20/include/__stdarg_va_copy.h \
-  /usr/lib/clang/20/include/__stdarg_va_list.h \
-  /usr/lib/clang/20/include/__stddef_header_macro.h \
-  /usr/lib/clang/20/include/__stddef_max_align_t.h \
-  /usr/lib/clang/20/include/__stddef_null.h \
-  /usr/lib/clang/20/include/__stddef_nullptr_t.h \
-  /usr/lib/clang/20/include/__stddef_offsetof.h \
-  /usr/lib/clang/20/include/__stddef_ptrdiff_t.h \
-  /usr/lib/clang/20/include/__stddef_size_t.h \
-  /usr/lib/clang/20/include/__stddef_wchar_t.h \
-  /usr/lib/clang/20/include/float.h \
-  /usr/lib/clang/20/include/limits.h \
-  /usr/lib/clang/20/include/stdarg.h \
-  /usr/lib/clang/20/include/stdbool.h \
-  /usr/lib/clang/20/include/stddef.h \
-  /usr/lib/clang/20/include/stdint.h \
-  /usr/lib/clang/20/share/asan_ignorelist.txt
+  /usr/lib/clang/21/include/__stdarg___gnuc_va_list.h \
+  /usr/lib/clang/21/include/__stdarg___va_copy.h \
+  /usr/lib/clang/21/include/__stdarg_header_macro.h \
+  /usr/lib/clang/21/include/__stdarg_va_arg.h \
+  /usr/lib/clang/21/include/__stdarg_va_copy.h \
+  /usr/lib/clang/21/include/__stdarg_va_list.h \
+  /usr/lib/clang/21/include/__stddef_header_macro.h \
+  /usr/lib/clang/21/include/__stddef_max_align_t.h \
+  /usr/lib/clang/21/include/__stddef_null.h \
+  /usr/lib/clang/21/include/__stddef_nullptr_t.h \
+  /usr/lib/clang/21/include/__stddef_offsetof.h \
+  /usr/lib/clang/21/include/__stddef_ptrdiff_t.h \
+  /usr/lib/clang/21/include/__stddef_size_t.h \
+  /usr/lib/clang/21/include/__stddef_wchar_t.h \
+  /usr/lib/clang/21/include/float.h \
+  /usr/lib/clang/21/include/limits.h \
+  /usr/lib/clang/21/include/stdarg.h \
+  /usr/lib/clang/21/include/stdbool.h \
+  /usr/lib/clang/21/include/stddef.h \
+  /usr/lib/clang/21/include/stdint.h \
+  /usr/lib/clang/21/share/asan_ignorelist.txt
 
 CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o: /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/projectile.cpp \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/box2d/include/box2d/box2d.h \
@@ -3740,6 +3864,7 @@ CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o: /home/klo/Work/Jams/MiniJ
   /usr/include/c++/v1/__algorithm/find_segment_if.h \
   /usr/include/c++/v1/__algorithm/for_each.h \
   /usr/include/c++/v1/__algorithm/for_each_n.h \
+  /usr/include/c++/v1/__algorithm/for_each_n_segment.h \
   /usr/include/c++/v1/__algorithm/for_each_segment.h \
   /usr/include/c++/v1/__algorithm/generate.h \
   /usr/include/c++/v1/__algorithm/generate_n.h \
@@ -3844,8 +3969,12 @@ CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o: /home/klo/Work/Jams/MiniJ
   /usr/include/c++/v1/__bit/countr.h \
   /usr/include/c++/v1/__bit/invert_if.h \
   /usr/include/c++/v1/__bit/popcount.h \
-  /usr/include/c++/v1/__bit/rotate.h \
   /usr/include/c++/v1/__bit_reference \
+  /usr/include/c++/v1/__charconv/tables.h \
+  /usr/include/c++/v1/__charconv/to_chars_base_10.h \
+  /usr/include/c++/v1/__charconv/to_chars_integral.h \
+  /usr/include/c++/v1/__charconv/to_chars_result.h \
+  /usr/include/c++/v1/__charconv/traits.h \
   /usr/include/c++/v1/__chrono/convert_to_timespec.h \
   /usr/include/c++/v1/__chrono/duration.h \
   /usr/include/c++/v1/__chrono/high_resolution_clock.h \
@@ -3905,6 +4034,7 @@ CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o: /home/klo/Work/Jams/MiniJ
   /usr/include/c++/v1/__functional/hash.h \
   /usr/include/c++/v1/__functional/identity.h \
   /usr/include/c++/v1/__functional/invoke.h \
+  /usr/include/c++/v1/__functional/is_transparent.h \
   /usr/include/c++/v1/__functional/operations.h \
   /usr/include/c++/v1/__functional/ranges_operations.h \
   /usr/include/c++/v1/__functional/reference_wrapper.h \
@@ -3930,6 +4060,7 @@ CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o: /home/klo/Work/Jams/MiniJ
   /usr/include/c++/v1/__fwd/tuple.h \
   /usr/include/c++/v1/__fwd/variant.h \
   /usr/include/c++/v1/__fwd/vector.h \
+  /usr/include/c++/v1/__hash_table \
   /usr/include/c++/v1/__ios/fpos.h \
   /usr/include/c++/v1/__iterator/access.h \
   /usr/include/c++/v1/__iterator/advance.h \
@@ -3941,6 +4072,7 @@ CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o: /home/klo/Work/Jams/MiniJ
   /usr/include/c++/v1/__iterator/default_sentinel.h \
   /usr/include/c++/v1/__iterator/distance.h \
   /usr/include/c++/v1/__iterator/empty.h \
+  /usr/include/c++/v1/__iterator/erase_if_container.h \
   /usr/include/c++/v1/__iterator/front_insert_iterator.h \
   /usr/include/c++/v1/__iterator/incrementable_traits.h \
   /usr/include/c++/v1/__iterator/insert_iterator.h \
@@ -3956,6 +4088,7 @@ CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o: /home/klo/Work/Jams/MiniJ
   /usr/include/c++/v1/__iterator/ostream_iterator.h \
   /usr/include/c++/v1/__iterator/ostreambuf_iterator.h \
   /usr/include/c++/v1/__iterator/prev.h \
+  /usr/include/c++/v1/__iterator/ranges_iterator_traits.h \
   /usr/include/c++/v1/__iterator/readable_traits.h \
   /usr/include/c++/v1/__iterator/reverse_access.h \
   /usr/include/c++/v1/__iterator/reverse_iterator.h \
@@ -3965,9 +4098,19 @@ CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o: /home/klo/Work/Jams/MiniJ
   /usr/include/c++/v1/__iterator/unreachable_sentinel.h \
   /usr/include/c++/v1/__iterator/wrap_iter.h \
   /usr/include/c++/v1/__locale \
+  /usr/include/c++/v1/__locale_dir/check_grouping.h \
+  /usr/include/c++/v1/__locale_dir/get_c_locale.h \
   /usr/include/c++/v1/__locale_dir/locale_base_api.h \
-  /usr/include/c++/v1/__locale_dir/locale_base_api/bsd_locale_fallbacks.h \
+  /usr/include/c++/v1/__locale_dir/messages.h \
+  /usr/include/c++/v1/__locale_dir/money.h \
+  /usr/include/c++/v1/__locale_dir/num.h \
   /usr/include/c++/v1/__locale_dir/pad_and_output.h \
+  /usr/include/c++/v1/__locale_dir/scan_keyword.h \
+  /usr/include/c++/v1/__locale_dir/support/linux.h \
+  /usr/include/c++/v1/__locale_dir/time.h \
+  /usr/include/c++/v1/__locale_dir/wbuffer_convert.h \
+  /usr/include/c++/v1/__locale_dir/wstring_convert.h \
+  /usr/include/c++/v1/__log_hardening_failure \
   /usr/include/c++/v1/__math/abs.h \
   /usr/include/c++/v1/__math/copysign.h \
   /usr/include/c++/v1/__math/error_functions.h \
@@ -4001,8 +4144,10 @@ CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o: /home/klo/Work/Jams/MiniJ
   /usr/include/c++/v1/__memory/auto_ptr.h \
   /usr/include/c++/v1/__memory/compressed_pair.h \
   /usr/include/c++/v1/__memory/construct_at.h \
+  /usr/include/c++/v1/__memory/destroy.h \
   /usr/include/c++/v1/__memory/destruct_n.h \
   /usr/include/c++/v1/__memory/inout_ptr.h \
+  /usr/include/c++/v1/__memory/is_sufficiently_aligned.h \
   /usr/include/c++/v1/__memory/noexcept_move_assign_container.h \
   /usr/include/c++/v1/__memory/out_ptr.h \
   /usr/include/c++/v1/__memory/pointer_traits.h \
@@ -4032,6 +4177,7 @@ CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o: /home/klo/Work/Jams/MiniJ
   /usr/include/c++/v1/__new/new_handler.h \
   /usr/include/c++/v1/__new/nothrow_t.h \
   /usr/include/c++/v1/__new/placement_new_delete.h \
+  /usr/include/c++/v1/__node_handle \
   /usr/include/c++/v1/__numeric/partial_sum.h \
   /usr/include/c++/v1/__random/is_valid.h \
   /usr/include/c++/v1/__random/log2.h \
@@ -4045,7 +4191,6 @@ CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o: /home/klo/Work/Jams/MiniJ
   /usr/include/c++/v1/__ranges/enable_borrowed_range.h \
   /usr/include/c++/v1/__ranges/enable_view.h \
   /usr/include/c++/v1/__ranges/from_range.h \
-  /usr/include/c++/v1/__ranges/movable_box.h \
   /usr/include/c++/v1/__ranges/size.h \
   /usr/include/c++/v1/__ranges/subrange.h \
   /usr/include/c++/v1/__ranges/view_interface.h \
@@ -4075,12 +4220,12 @@ CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o: /home/klo/Work/Jams/MiniJ
   /usr/include/c++/v1/__tuple/tuple_size.h \
   /usr/include/c++/v1/__tuple/tuple_types.h \
   /usr/include/c++/v1/__type_traits/add_cv_quals.h \
-  /usr/include/c++/v1/__type_traits/add_lvalue_reference.h \
   /usr/include/c++/v1/__type_traits/add_pointer.h \
-  /usr/include/c++/v1/__type_traits/add_rvalue_reference.h \
+  /usr/include/c++/v1/__type_traits/add_reference.h \
   /usr/include/c++/v1/__type_traits/aligned_storage.h \
   /usr/include/c++/v1/__type_traits/aligned_union.h \
   /usr/include/c++/v1/__type_traits/alignment_of.h \
+  /usr/include/c++/v1/__type_traits/can_extract_key.h \
   /usr/include/c++/v1/__type_traits/common_reference.h \
   /usr/include/c++/v1/__type_traits/common_type.h \
   /usr/include/c++/v1/__type_traits/conditional.h \
@@ -4098,6 +4243,7 @@ CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o: /home/klo/Work/Jams/MiniJ
   /usr/include/c++/v1/__type_traits/extent.h \
   /usr/include/c++/v1/__type_traits/has_unique_object_representation.h \
   /usr/include/c++/v1/__type_traits/has_virtual_destructor.h \
+  /usr/include/c++/v1/__type_traits/integer_traits.h \
   /usr/include/c++/v1/__type_traits/integral_constant.h \
   /usr/include/c++/v1/__type_traits/invoke.h \
   /usr/include/c++/v1/__type_traits/is_abstract.h \
@@ -4141,10 +4287,10 @@ CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o: /home/klo/Work/Jams/MiniJ
   /usr/include/c++/v1/__type_traits/is_reference.h \
   /usr/include/c++/v1/__type_traits/is_reference_wrapper.h \
   /usr/include/c++/v1/__type_traits/is_referenceable.h \
+  /usr/include/c++/v1/__type_traits/is_replaceable.h \
   /usr/include/c++/v1/__type_traits/is_same.h \
   /usr/include/c++/v1/__type_traits/is_scalar.h \
   /usr/include/c++/v1/__type_traits/is_signed.h \
-  /usr/include/c++/v1/__type_traits/is_signed_integer.h \
   /usr/include/c++/v1/__type_traits/is_specialization.h \
   /usr/include/c++/v1/__type_traits/is_standard_layout.h \
   /usr/include/c++/v1/__type_traits/is_swappable.h \
@@ -4157,12 +4303,13 @@ CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o: /home/klo/Work/Jams/MiniJ
   /usr/include/c++/v1/__type_traits/is_trivially_relocatable.h \
   /usr/include/c++/v1/__type_traits/is_unbounded_array.h \
   /usr/include/c++/v1/__type_traits/is_union.h \
+  /usr/include/c++/v1/__type_traits/is_unqualified.h \
   /usr/include/c++/v1/__type_traits/is_unsigned.h \
-  /usr/include/c++/v1/__type_traits/is_unsigned_integer.h \
   /usr/include/c++/v1/__type_traits/is_valid_expansion.h \
   /usr/include/c++/v1/__type_traits/is_void.h \
   /usr/include/c++/v1/__type_traits/is_volatile.h \
   /usr/include/c++/v1/__type_traits/lazy.h \
+  /usr/include/c++/v1/__type_traits/make_32_64_or_128_bit.h \
   /usr/include/c++/v1/__type_traits/make_const_lvalue_ref.h \
   /usr/include/c++/v1/__type_traits/make_signed.h \
   /usr/include/c++/v1/__type_traits/make_unsigned.h \
@@ -4171,8 +4318,10 @@ CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o: /home/klo/Work/Jams/MiniJ
   /usr/include/c++/v1/__type_traits/negation.h \
   /usr/include/c++/v1/__type_traits/promote.h \
   /usr/include/c++/v1/__type_traits/rank.h \
+  /usr/include/c++/v1/__type_traits/reference_constructs_from_temporary.h \
   /usr/include/c++/v1/__type_traits/remove_all_extents.h \
   /usr/include/c++/v1/__type_traits/remove_const.h \
+  /usr/include/c++/v1/__type_traits/remove_const_ref.h \
   /usr/include/c++/v1/__type_traits/remove_cv.h \
   /usr/include/c++/v1/__type_traits/remove_cvref.h \
   /usr/include/c++/v1/__type_traits/remove_extent.h \
@@ -4217,6 +4366,7 @@ CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o: /home/klo/Work/Jams/MiniJ
   /usr/include/c++/v1/__vector/vector.h \
   /usr/include/c++/v1/__vector/vector_bool.h \
   /usr/include/c++/v1/__verbose_abort \
+  /usr/include/c++/v1/__verbose_trap \
   /usr/include/c++/v1/algorithm \
   /usr/include/c++/v1/array \
   /usr/include/c++/v1/atomic \
@@ -4266,6 +4416,7 @@ CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o: /home/klo/Work/Jams/MiniJ
   /usr/include/c++/v1/tuple \
   /usr/include/c++/v1/type_traits \
   /usr/include/c++/v1/typeinfo \
+  /usr/include/c++/v1/unordered_map \
   /usr/include/c++/v1/utility \
   /usr/include/c++/v1/variant \
   /usr/include/c++/v1/vector \
@@ -4393,27 +4544,27 @@ CMakeFiles/SpellForge.dir/src/player/projectile.cpp.o: /home/klo/Work/Jams/MiniJ
   /usr/include/time.h \
   /usr/include/wchar.h \
   /usr/include/wctype.h \
-  /usr/lib/clang/20/include/__stdarg___gnuc_va_list.h \
-  /usr/lib/clang/20/include/__stdarg___va_copy.h \
-  /usr/lib/clang/20/include/__stdarg_header_macro.h \
-  /usr/lib/clang/20/include/__stdarg_va_arg.h \
-  /usr/lib/clang/20/include/__stdarg_va_copy.h \
-  /usr/lib/clang/20/include/__stdarg_va_list.h \
-  /usr/lib/clang/20/include/__stddef_header_macro.h \
-  /usr/lib/clang/20/include/__stddef_max_align_t.h \
-  /usr/lib/clang/20/include/__stddef_null.h \
-  /usr/lib/clang/20/include/__stddef_nullptr_t.h \
-  /usr/lib/clang/20/include/__stddef_offsetof.h \
-  /usr/lib/clang/20/include/__stddef_ptrdiff_t.h \
-  /usr/lib/clang/20/include/__stddef_size_t.h \
-  /usr/lib/clang/20/include/__stddef_wchar_t.h \
-  /usr/lib/clang/20/include/float.h \
-  /usr/lib/clang/20/include/limits.h \
-  /usr/lib/clang/20/include/stdarg.h \
-  /usr/lib/clang/20/include/stdbool.h \
-  /usr/lib/clang/20/include/stddef.h \
-  /usr/lib/clang/20/include/stdint.h \
-  /usr/lib/clang/20/share/asan_ignorelist.txt
+  /usr/lib/clang/21/include/__stdarg___gnuc_va_list.h \
+  /usr/lib/clang/21/include/__stdarg___va_copy.h \
+  /usr/lib/clang/21/include/__stdarg_header_macro.h \
+  /usr/lib/clang/21/include/__stdarg_va_arg.h \
+  /usr/lib/clang/21/include/__stdarg_va_copy.h \
+  /usr/lib/clang/21/include/__stdarg_va_list.h \
+  /usr/lib/clang/21/include/__stddef_header_macro.h \
+  /usr/lib/clang/21/include/__stddef_max_align_t.h \
+  /usr/lib/clang/21/include/__stddef_null.h \
+  /usr/lib/clang/21/include/__stddef_nullptr_t.h \
+  /usr/lib/clang/21/include/__stddef_offsetof.h \
+  /usr/lib/clang/21/include/__stddef_ptrdiff_t.h \
+  /usr/lib/clang/21/include/__stddef_size_t.h \
+  /usr/lib/clang/21/include/__stddef_wchar_t.h \
+  /usr/lib/clang/21/include/float.h \
+  /usr/lib/clang/21/include/limits.h \
+  /usr/lib/clang/21/include/stdarg.h \
+  /usr/lib/clang/21/include/stdbool.h \
+  /usr/lib/clang/21/include/stddef.h \
+  /usr/lib/clang/21/include/stdint.h \
+  /usr/lib/clang/21/share/asan_ignorelist.txt
 
 bin/SpellForge: /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/box2d/build/src/libbox2d.a \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/raylib/build/raylib/libraylib.a \
@@ -4440,11 +4591,11 @@ bin/SpellForge: /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/box2d/build/src
   /usr/lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o \
   /usr/lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o \
   /usr/lib64/gcc/x86_64-pc-linux-gnu/15.2.1/libgcc.a \
-  /usr/lib/clang/20/lib/linux/libclang_rt.asan-x86_64.a \
-  /usr/lib/clang/20/lib/linux/libclang_rt.asan-x86_64.a.syms \
-  /usr/lib/clang/20/lib/linux/libclang_rt.asan_cxx-x86_64.a \
-  /usr/lib/clang/20/lib/linux/libclang_rt.asan_cxx-x86_64.a.syms \
-  /usr/lib/clang/20/lib/linux/libclang_rt.asan_static-x86_64.a \
+  /usr/lib/clang/21/lib/linux/libclang_rt.asan-x86_64.a \
+  /usr/lib/clang/21/lib/linux/libclang_rt.asan-x86_64.a.syms \
+  /usr/lib/clang/21/lib/linux/libclang_rt.asan_cxx-x86_64.a \
+  /usr/lib/clang/21/lib/linux/libclang_rt.asan_cxx-x86_64.a.syms \
+  /usr/lib/clang/21/lib/linux/libclang_rt.asan_static-x86_64.a \
   /usr/lib/ld-linux-x86-64.so.2 \
   /usr/lib/libGLX.so.0 \
   /usr/lib/libGLdispatch.so.0 \
@@ -4489,19 +4640,17 @@ CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o:
 
 /usr/lib/libXrender.so.1:
 
-/usr/lib/libXext.so.6:
-
 /usr/lib/libXdmcp.so.6:
 
 /usr/lib/libXau.so.6:
 
 /usr/lib/libGLdispatch.so.0:
 
-/usr/lib/clang/20/lib/linux/libclang_rt.asan_static-x86_64.a:
+/usr/lib/clang/21/lib/linux/libclang_rt.asan_cxx-x86_64.a.syms:
 
-/usr/lib/clang/20/lib/linux/libclang_rt.asan_cxx-x86_64.a:
+/usr/lib/clang/21/lib/linux/libclang_rt.asan_cxx-x86_64.a:
 
-/usr/lib/clang/20/lib/linux/libclang_rt.asan-x86_64.a.syms:
+/usr/lib/clang/21/lib/linux/libclang_rt.asan-x86_64.a:
 
 /usr/lib64/libresolv.so:
 
@@ -4523,8 +4672,6 @@ CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o:
 
 /usr/lib64/libXi.so:
 
-/usr/lib64/libXcursor.so:
-
 /usr/lib64/libX11.so:
 
 /usr/lib64/crtn.o:
@@ -4532,8 +4679,6 @@ CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o:
 /usr/lib64/Scrt1.o:
 
 /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/raylib/build/raylib/libraylib.a:
-
-/home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/box2d/build/src/libbox2d.a:
 
 /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/projectile.cpp:
 
@@ -4545,33 +4690,31 @@ CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o:
 
 /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/level/level.cpp:
 
-/home/klo/Work/Jams/MiniJam-Forge/spellforge/src/entity/entity.cpp:
+/usr/lib/clang/21/include/stdbool.h:
 
-/usr/lib/clang/20/include/stdarg.h:
+/usr/lib/clang/21/include/stdarg.h:
 
-/usr/lib/clang/20/include/float.h:
+/usr/lib/clang/21/include/limits.h:
 
-/usr/lib/clang/20/include/__stddef_wchar_t.h:
+/usr/lib/clang/21/include/__stddef_wchar_t.h:
 
-/usr/lib/clang/20/include/__stddef_size_t.h:
+/usr/lib/clang/21/include/__stddef_size_t.h:
 
-/usr/lib/clang/20/include/__stddef_ptrdiff_t.h:
+/usr/lib/clang/21/include/__stddef_offsetof.h:
 
-/usr/lib/clang/20/include/__stddef_offsetof.h:
+/usr/lib/clang/21/include/__stdarg_va_copy.h:
 
-/usr/lib/clang/20/include/__stddef_nullptr_t.h:
+/usr/lib/clang/21/include/__stdarg___va_copy.h:
 
-/usr/lib/clang/20/include/__stdarg_va_arg.h:
-
-/usr/lib/clang/20/include/__stdarg___va_copy.h:
-
-/usr/lib/clang/20/include/__stdarg___gnuc_va_list.h:
+/usr/lib/clang/21/include/__stdarg___gnuc_va_list.h:
 
 /usr/include/wctype.h:
 
 /usr/include/wchar.h:
 
 /usr/include/time.h:
+
+/usr/lib/clang/21/share/asan_ignorelist.txt:
 
 /usr/include/sys/select.h:
 
@@ -4590,8 +4733,6 @@ CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o:
 /usr/include/stdc-predef.h:
 
 /usr/include/sched.h:
-
-/usr/include/pthread.h:
 
 /usr/include/nl_types.h:
 
@@ -4675,8 +4816,6 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 
 /usr/include/bits/stdint-intn.h:
 
-/usr/include/bits/setjmp.h:
-
 /usr/include/bits/struct_rwlock.h:
 
 /usr/include/bits/sched.h:
@@ -4684,8 +4823,6 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 /usr/include/bits/pthreadtypes.h:
 
 /usr/include/bits/mathcalls.h:
-
-/usr/include/bits/mathcalls-narrow.h:
 
 /usr/include/bits/mathcalls-macros.h:
 
@@ -4729,6 +4866,8 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 
 /usr/include/asm-generic/int-ll64.h:
 
+/usr/lib/clang/21/include/__stddef_null.h:
+
 /usr/include/asm-generic/errno.h:
 
 /usr/include/asm-generic/bitsperlong.h:
@@ -4740,6 +4879,8 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 /usr/include/c++/v1/wchar.h:
 
 /usr/include/c++/v1/version:
+
+/usr/include/c++/v1/vector:
 
 /usr/include/c++/v1/utility:
 
@@ -4761,10 +4902,6 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 
 /usr/include/c++/v1/new:
 
-/usr/include/strings.h:
-
-/usr/include/c++/v1/memory:
-
 /usr/include/c++/v1/locale:
 
 /usr/include/c++/v1/iterator:
@@ -4778,6 +4915,8 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 /usr/include/c++/v1/initializer_list:
 
 /usr/include/c++/v1/float.h:
+
+/usr/lib/clang/21/include/__stddef_max_align_t.h:
 
 /usr/include/c++/v1/errno.h:
 
@@ -4805,33 +4944,47 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 
 /usr/include/c++/v1/array:
 
-/usr/include/asm-generic/types.h:
+/usr/include/c++/v1/algorithm:
 
-/usr/include/c++/v1/__iterator/distance.h:
+/home/klo/Work/Jams/MiniJam-Forge/spellforge/src/entity/entity.cpp:
 
-/usr/include/c++/v1/__format/enable_insertable.h:
+/usr/include/c++/v1/__verbose_trap:
 
-/usr/include/c++/v1/__split_buffer:
+/usr/include/c++/v1/__verbose_abort:
 
-/usr/lib/clang/20/lib/linux/libclang_rt.asan-x86_64.a:
+/usr/include/c++/v1/__vector/vector_bool.h:
 
-/usr/include/c++/v1/__tuple/make_tuple_types.h:
+/usr/include/c++/v1/__vector/swap.h:
 
-/usr/include/c++/v1/__iterator/default_sentinel.h:
+/usr/lib/clang/21/include/__stddef_header_macro.h:
 
-/usr/include/c++/v1/__algorithm/is_sorted.h:
+/usr/include/c++/v1/__vector/pmr.h:
 
-/usr/include/c++/v1/__iterator/data.h:
+/usr/include/c++/v1/__vector/container_traits.h:
 
-/usr/include/c++/v1/streambuf:
+/usr/include/c++/v1/__variant/monostate.h:
 
-/usr/include/c++/v1/__iterator/aliasing_iterator.h:
+/usr/include/c++/v1/__utility/unreachable.h:
+
+/usr/include/c++/v1/__utility/swap.h:
+
+/usr/include/c++/v1/__utility/scope_guard.h:
+
+/usr/include/c++/v1/__utility/private_constructor_tag.h:
+
+/usr/include/c++/v1/__utility/piecewise_construct.h:
 
 /usr/include/c++/v1/__iterator/advance.h:
+
+/usr/lib/clang/21/lib/linux/libclang_rt.asan_static-x86_64.a:
 
 /usr/include/c++/v1/__iterator/access.h:
 
 /usr/include/c++/v1/__ios/fpos.h:
+
+/home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/box2d/build/src/libbox2d.a:
+
+/usr/include/c++/v1/__charconv/to_chars_base_10.h:
 
 /usr/include/bits/wchar.h:
 
@@ -4859,9 +5012,13 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 
 /usr/include/c++/v1/__functional/unary_negate.h:
 
+/usr/include/c++/v1/__locale_dir/check_grouping.h:
+
 /usr/include/c++/v1/__functional/operations.h:
 
 /usr/include/c++/v1/__atomic/support.h:
+
+/usr/lib/clang/21/include/__stddef_ptrdiff_t.h:
 
 /usr/include/c++/v1/__new/launder.h:
 
@@ -4889,13 +5046,23 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 
 /usr/include/c++/v1/__memory/unique_ptr.h:
 
+/usr/lib/clang/21/include/__stdarg_header_macro.h:
+
 /usr/include/bits/stdint-least.h:
 
 /usr/include/c++/v1/__type_traits/dependent_type.h:
 
-/usr/include/c++/v1/__functional/boyer_moore_searcher.h:
+/usr/include/c++/v1/__format/enable_insertable.h:
 
-/usr/include/c++/v1/__ranges/movable_box.h:
+/usr/include/asm-generic/types.h:
+
+/usr/include/c++/v1/__iterator/distance.h:
+
+/usr/include/c++/v1/__split_buffer:
+
+/usr/include/c++/v1/__tuple/make_tuple_types.h:
+
+/usr/include/c++/v1/__functional/boyer_moore_searcher.h:
 
 /usr/include/c++/v1/mutex:
 
@@ -4909,8 +5076,6 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 
 /usr/include/c++/v1/__type_traits/can_extract_key.h:
 
-/usr/include/c++/v1/__configuration/platform.h:
-
 /usr/include/c++/v1/__iterator/iterator.h:
 
 /usr/include/c++/v1/__cstddef/max_align_t.h:
@@ -4922,6 +5087,8 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 /usr/include/c++/v1/__configuration/language.h:
 
 /usr/include/c++/v1/__condition_variable/condition_variable.h:
+
+/usr/include/c++/v1/__log_hardening_failure:
 
 /usr/include/c++/v1/__concepts/swappable.h:
 
@@ -4949,6 +5116,8 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 
 /usr/include/c++/v1/__concepts/derived_from.h:
 
+/usr/include/c++/v1/__locale_dir/messages.h:
+
 /usr/include/c++/v1/__utility/auto_cast.h:
 
 /usr/include/c++/v1/__fwd/bit_reference.h:
@@ -4959,17 +5128,11 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 
 /usr/include/c++/v1/__system_error/error_condition.h:
 
-/usr/include/c++/v1/__iterator/concepts.h:
-
-/usr/include/c++/v1/__fwd/istream.h:
-
 /usr/lib32/libGLX.so.0:
 
 /usr/include/c++/v1/clocale:
 
 /usr/include/c++/v1/__iterator/readable_traits.h:
-
-/usr/include/c++/v1/__concepts/constructible.h:
 
 /usr/include/c++/v1/__algorithm/unique_copy.h:
 
@@ -4991,8 +5154,6 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 
 /usr/include/c++/v1/__compare/compare_three_way_result.h:
 
-/usr/include/c++/v1/__compare/compare_three_way.h:
-
 /usr/include/c++/v1/__algorithm/is_heap.h:
 
 /usr/include/c++/v1/__type_traits/remove_const.h:
@@ -5011,15 +5172,27 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 
 /usr/include/c++/v1/__chrono/high_resolution_clock.h:
 
-/usr/include/c++/v1/__bit/rotate.h:
+/usr/lib64/libXcursor.so:
 
-/usr/include/c++/v1/__algorithm/remove.h:
+/usr/include/c++/v1/__charconv/traits.h:
 
-/home/klo/Work/Jams/MiniJam-Forge/spellforge/src/physics/physics.h:
+/usr/include/c++/v1/streambuf:
 
-/usr/include/c++/v1/__math/exponential_functions.h:
+/usr/include/c++/v1/__iterator/aliasing_iterator.h:
 
-/usr/include/c++/v1/__type_traits/is_trivial.h:
+/usr/include/asm/posix_types_64.h:
+
+/usr/include/c++/v1/__vector/vector.h:
+
+/usr/include/c++/v1/__iterator/iter_move.h:
+
+/usr/include/pthread.h:
+
+/usr/include/c++/v1/__charconv/to_chars_result.h:
+
+/usr/include/c++/v1/__ranges/subrange.h:
+
+/usr/include/c++/v1/__configuration/platform.h:
 
 /usr/include/ctype.h:
 
@@ -5063,8 +5236,6 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 
 /usr/include/c++/v1/__algorithm/lexicographical_compare_three_way.h:
 
-/usr/include/c++/v1/__algorithm/lexicographical_compare.h:
-
 /usr/include/c++/v1/__memory/shared_ptr.h:
 
 /usr/include/c++/v1/__chrono/duration.h:
@@ -5079,6 +5250,8 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 
 /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/raylib/src/raymath.h:
 
+/usr/include/c++/v1/__algorithm/is_sorted.h:
+
 /usr/include/c++/v1/__concepts/class_or_enum.h:
 
 /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/box2d/include/box2d/math_functions.h:
@@ -5091,11 +5264,23 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 
 /usr/include/c++/v1/__bit/countr.h:
 
-/usr/lib/clang/20/lib/linux/libclang_rt.asan_cxx-x86_64.a.syms:
-
 /usr/include/c++/v1/__algorithm/generate.h:
 
 /usr/include/c++/v1/__algorithm/sort.h:
+
+/usr/include/c++/v1/__fwd/memory_resource.h:
+
+/usr/include/c++/v1/__algorithm/ranges_copy.h:
+
+/usr/include/c++/v1/__iterator/default_sentinel.h:
+
+/usr/include/c++/v1/__locale_dir/money.h:
+
+/usr/include/c++/v1/__fwd/string.h:
+
+/usr/include/c++/v1/__ranges/empty.h:
+
+/usr/include/c++/v1/__type_traits/make_unsigned.h:
 
 /usr/include/c++/v1/__algorithm/for_each.h:
 
@@ -5119,6 +5304,18 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 
 /usr/include/c++/v1/__memory/allocator_arg_t.h:
 
+/usr/include/c++/v1/__atomic/atomic_sync.h:
+
+/usr/include/c++/v1/__fwd/fstream.h:
+
+/usr/include/c++/v1/__new/placement_new_delete.h:
+
+/usr/include/bits/types/struct_timeval.h:
+
+/usr/include/c++/v1/__algorithm/for_each_n.h:
+
+/usr/include/c++/v1/__utility/is_valid_range.h:
+
 /usr/include/c++/v1/__bit_reference:
 
 /usr/include/c++/v1/__algorithm/merge.h:
@@ -5129,23 +5326,9 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 
 /usr/include/c++/v1/__tuple/sfinae_helpers.h:
 
+/usr/lib/clang/21/lib/linux/libclang_rt.asan-x86_64.a.syms:
+
 /usr/include/c++/v1/__type_traits/is_allocator.h:
-
-/usr/lib/libc_nonshared.a:
-
-/usr/include/c++/v1/__algorithm/make_projected.h:
-
-/usr/lib/clang/20/include/stdint.h:
-
-/usr/include/c++/v1/__algorithm/replace_copy.h:
-
-/usr/include/c++/v1/__algorithm/stable_partition.h:
-
-/usr/include/c++/v1/__algorithm/upper_bound.h:
-
-/usr/include/c++/v1/__node_handle:
-
-/usr/include/c++/v1/__vector/swap.h:
 
 /usr/include/c++/v1/__algorithm/adjacent_find.h:
 
@@ -5162,6 +5345,8 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 /usr/include/c++/v1/__algorithm/find_end.h:
 
 /usr/include/c++/v1/__algorithm/three_way_comp_ref_type.h:
+
+/usr/lib/clang/21/include/__stdarg_va_list.h:
 
 /usr/include/c++/v1/__utility/empty.h:
 
@@ -5188,8 +5373,6 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 /usr/include/c++/v1/__algorithm/comp_ref_type.h:
 
 /usr/include/c++/v1/__algorithm/replace_copy_if.h:
-
-/usr/include/c++/v1/algorithm:
 
 /usr/include/c++/v1/__atomic/atomic.h:
 
@@ -5219,15 +5402,15 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 
 /usr/include/c++/v1/__thread/support/pthread.h:
 
-/home/klo/Work/Jams/MiniJam-Forge/spellforge/src/level/level.h:
-
 /usr/include/c++/v1/__algorithm/copy_if.h:
 
 /usr/lib64/gcc/x86_64-pc-linux-gnu/15.2.1/libgcc.a:
 
 /usr/include/c++/v1/__type_traits/is_trivially_assignable.h:
 
-/usr/include/c++/v1/__iterator/bounded_iter.h:
+/usr/include/c++/v1/__charconv/to_chars_integral.h:
+
+/usr/include/c++/v1/__type_traits/rank.h:
 
 /usr/include/asm/posix_types.h:
 
@@ -5237,11 +5420,17 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 
 /usr/include/c++/v1/__type_traits/is_scalar.h:
 
+/usr/include/c++/v1/__math/error_functions.h:
+
+/usr/include/c++/v1/__charconv/tables.h:
+
 /usr/include/c++/v1/__bit/invert_if.h:
 
 /usr/include/c++/v1/__algorithm/find_segment_if.h:
 
 /usr/include/c++/v1/__numeric/partial_sum.h:
+
+/usr/lib/clang/21/include/stddef.h:
 
 /usr/include/c++/v1/__algorithm/minmax.h:
 
@@ -5256,8 +5445,6 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 /usr/include/c++/v1/__algorithm/unwrap_iter.h:
 
 /usr/include/c++/v1/__iterator/incrementable_traits.h:
-
-/usr/lib/clang/20/include/stddef.h:
 
 /usr/include/c++/v1/__concepts/predicate.h:
 
@@ -5281,6 +5468,8 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 
 /usr/include/c++/v1/__algorithm/inplace_merge.h:
 
+/usr/lib/clang/21/include/__stdarg_va_arg.h:
+
 /usr/include/c++/v1/__type_traits/add_pointer.h:
 
 /usr/include/c++/v1/__algorithm/partial_sort_copy.h:
@@ -5301,7 +5490,13 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 
 /usr/include/c++/v1/__concepts/assignable.h:
 
+/usr/include/c++/v1/__iterator/data.h:
+
 /usr/include/c++/v1/__algorithm/min_element.h:
+
+/usr/include/c++/v1/__concepts/different_from.h:
+
+/usr/include/c++/v1/__algorithm/unique.h:
 
 /usr/include/c++/v1/__algorithm/reverse.h:
 
@@ -5313,6 +5508,18 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 
 /usr/include/c++/v1/__type_traits/is_convertible.h:
 
+/usr/include/c++/v1/__algorithm/stable_partition.h:
+
+/usr/include/c++/v1/__algorithm/upper_bound.h:
+
+/usr/include/c++/v1/__node_handle:
+
+/usr/lib/libc_nonshared.a:
+
+/usr/include/c++/v1/__algorithm/make_projected.h:
+
+/usr/include/c++/v1/__algorithm/replace_copy.h:
+
 /usr/include/c++/v1/optional:
 
 /usr/include/c++/v1/__algorithm/max.h:
@@ -5320,8 +5527,6 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 /usr/include/c++/v1/__atomic/contention_t.h:
 
 /usr/include/c++/v1/__configuration/compiler.h:
-
-/usr/lib/clang/20/include/__stdarg_va_list.h:
 
 /usr/include/c++/v1/__algorithm/ranges_copy_n.h:
 
@@ -5361,8 +5566,6 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 
 /usr/include/c++/v1/__functional/function.h:
 
-/usr/lib/clang/20/include/__stdarg_header_macro.h:
-
 /usr/include/c++/v1/__atomic/atomic_init.h:
 
 /usr/include/c++/v1/__algorithm/generate_n.h:
@@ -5395,43 +5598,11 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 
 /usr/include/c++/v1/__locale:
 
-/usr/include/bits/types/struct_timeval.h:
-
-/usr/include/c++/v1/__algorithm/for_each_n.h:
-
-/usr/lib/clang/20/include/__stddef_max_align_t.h:
-
-/usr/include/c++/v1/__concepts/different_from.h:
-
-/usr/include/c++/v1/__algorithm/unique.h:
-
-/usr/include/c++/v1/__type_traits/is_unsigned_integer.h:
-
-/usr/include/c++/v1/__utility/is_valid_range.h:
-
-/usr/include/c++/v1/__atomic/atomic_sync.h:
-
-/usr/include/c++/v1/__math/error_functions.h:
-
-/usr/include/c++/v1/__fwd/fstream.h:
-
-/usr/include/c++/v1/__new/placement_new_delete.h:
-
 /usr/include/c++/v1/cstdlib:
 
 /usr/include/c++/v1/__algorithm/partition_point.h:
 
 /usr/include/c++/v1/__algorithm/set_difference.h:
-
-/usr/include/c++/v1/__fwd/memory_resource.h:
-
-/usr/include/c++/v1/__algorithm/ranges_copy.h:
-
-/usr/include/c++/v1/__fwd/string.h:
-
-/usr/include/c++/v1/__ranges/empty.h:
-
-/usr/include/c++/v1/__type_traits/make_unsigned.h:
 
 /usr/include/c++/v1/__functional/pointer_to_binary_function.h:
 
@@ -5440,6 +5611,14 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 /usr/include/c++/v1/__bit/bit_cast.h:
 
 /usr/include/c++/v1/__atomic/memory_order.h:
+
+/usr/include/c++/v1/__algorithm/remove.h:
+
+/home/klo/Work/Jams/MiniJam-Forge/spellforge/src/physics/physics.h:
+
+/usr/include/c++/v1/__math/exponential_functions.h:
+
+/usr/include/c++/v1/__type_traits/is_trivial.h:
 
 /usr/include/asm/errno.h:
 
@@ -5454,6 +5633,10 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o:
 /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/box2d/include/box2d/base.h:
 
 /usr/include/c++/v1/__memory/allocator.h:
+
+/usr/include/c++/v1/__concepts/constructible.h:
+
+/usr/include/c++/v1/__type_traits/make_32_64_or_128_bit.h:
 
 /usr/include/bits/types/error_t.h:
 
@@ -5489,6 +5672,8 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o:
 
 /usr/include/c++/v1/__algorithm/remove_if.h:
 
+/usr/include/c++/v1/__locale_dir/scan_keyword.h:
+
 /usr/include/c++/v1/__algorithm/swap_ranges.h:
 
 /usr/include/c++/v1/__iterator/iterator_traits.h:
@@ -5521,7 +5706,15 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o:
 
 /usr/include/c++/v1/__atomic/atomic_lock_free.h:
 
+/usr/include/c++/v1/__iterator/bounded_iter.h:
+
+/usr/include/c++/v1/__fwd/istream.h:
+
+/usr/include/c++/v1/__iterator/concepts.h:
+
 /usr/include/c++/v1/__iterator/empty.h:
+
+/usr/include/c++/v1/__locale_dir/wstring_convert.h:
 
 /usr/include/c++/v1/__memory/pointer_traits.h:
 
@@ -5531,9 +5724,9 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o:
 
 /usr/include/c++/v1/__type_traits/is_constant_evaluated.h:
 
-/usr/include/c++/v1/__algorithm/equal_range.h:
-
 /usr/include/c++/v1/__utility/rel_ops.h:
+
+/usr/include/c++/v1/__algorithm/equal_range.h:
 
 /usr/include/c++/v1/__iterator/segmented_iterator.h:
 
@@ -5565,21 +5758,25 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o:
 
 /usr/include/c++/v1/__iterator/ostream_iterator.h:
 
+/usr/include/c++/v1/__locale_dir/support/linux.h:
+
 /usr/include/c++/v1/__cstddef/ptrdiff_t.h:
 
 /usr/include/c++/v1/__iterator/ostreambuf_iterator.h:
 
 /usr/include/c++/v1/__iterator/prev.h:
 
+/usr/include/strings.h:
+
+/usr/include/c++/v1/memory:
+
+/usr/include/c++/v1/__type_traits/is_unqualified.h:
+
 /usr/include/c++/v1/__fwd/tuple.h:
 
 /usr/include/c++/v1/__iterator/ranges_iterator_traits.h:
 
 /usr/include/c++/v1/__iterator/reverse_access.h:
-
-/usr/include/c++/v1/__utility/scope_guard.h:
-
-/usr/include/c++/v1/__vector/pmr.h:
 
 /usr/include/c++/v1/__iterator/size.h:
 
@@ -5597,9 +5794,27 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o:
 
 /usr/include/c++/v1/__tuple/tuple_element.h:
 
+/usr/include/c++/v1/__locale_dir/get_c_locale.h:
+
 /usr/include/c++/v1/__locale_dir/locale_base_api.h:
 
-/usr/include/c++/v1/__type_traits/is_empty.h:
+/usr/include/bits/mathcalls-narrow.h:
+
+/usr/include/c++/v1/__locale_dir/num.h:
+
+/usr/include/bits/setjmp.h:
+
+/usr/include/c++/v1/__locale_dir/time.h:
+
+/usr/include/c++/v1/stdio.h:
+
+/usr/include/c++/v1/__type_traits/is_nothrow_assignable.h:
+
+/home/klo/Work/Jams/MiniJam-Forge/spellforge/src/level/level.h:
+
+/usr/include/c++/v1/__locale_dir/wbuffer_convert.h:
+
+/usr/include/c++/v1/__random/log2.h:
 
 /usr/include/c++/v1/__math/abs.h:
 
@@ -5633,6 +5848,8 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o:
 
 /usr/include/c++/v1/__math/logarithms.h:
 
+/usr/lib/clang/21/include/float.h:
+
 /usr/include/c++/v1/__type_traits/is_pod.h:
 
 /usr/include/bits/cpu-set.h:
@@ -5650,8 +5867,6 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o:
 /usr/include/c++/v1/__math/rounding_functions.h:
 
 /usr/include/c++/v1/__ranges/dangling.h:
-
-/usr/include/c++/v1/__type_traits/is_signed_integer.h:
 
 /usr/include/c++/v1/__math/special_functions.h:
 
@@ -5679,11 +5894,19 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o:
 
 /usr/include/c++/v1/__memory/compressed_pair.h:
 
+/usr/include/c++/v1/__utility/pair.h:
+
+/usr/include/c++/v1/__type_traits/copy_cv.h:
+
 /usr/include/c++/v1/exception:
 
 /usr/include/c++/v1/__algorithm/includes.h:
 
 /usr/include/c++/v1/__type_traits/is_fundamental.h:
+
+/usr/include/c++/v1/__compare/compare_three_way.h:
+
+/usr/include/c++/v1/__memory/destroy.h:
 
 /usr/include/bits/endian.h:
 
@@ -5692,6 +5915,14 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o:
 /usr/include/c++/v1/__memory/destruct_n.h:
 
 /usr/include/c++/v1/__type_traits/is_enum.h:
+
+/usr/lib/libXext.so.6:
+
+/usr/include/c++/v1/__memory/is_sufficiently_aligned.h:
+
+/usr/include/c++/v1/__algorithm/comp.h:
+
+/usr/include/c++/v1/__mutex/lock_guard.h:
 
 /usr/include/c++/v1/__memory/noexcept_move_assign_container.h:
 
@@ -5721,17 +5952,7 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o:
 
 /usr/include/c++/v1/__memory_resource/memory_resource.h:
 
-/usr/lib/clang/20/include/__stddef_header_macro.h:
-
-/usr/lib/clang/20/include/__stdarg_va_copy.h:
-
 /usr/include/c++/v1/__ranges/data.h:
-
-/usr/include/c++/v1/__algorithm/comp.h:
-
-/usr/include/c++/v1/__mutex/lock_guard.h:
-
-/usr/include/c++/v1/__verbose_abort:
 
 /usr/lib64/crti.o:
 
@@ -5742,8 +5963,6 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o:
 /usr/include/c++/v1/__iterator/back_insert_iterator.h:
 
 /usr/include/c++/v1/__type_traits/is_callable.h:
-
-/usr/include/c++/v1/__locale_dir/locale_base_api/bsd_locale_fallbacks.h:
 
 /usr/include/c++/v1/__new/align_val_t.h:
 
@@ -5761,15 +5980,11 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o:
 
 /usr/include/c++/v1/__new/new_handler.h:
 
-/usr/lib/clang/20/include/limits.h:
-
 /usr/include/c++/v1/__type_traits/is_member_pointer.h:
 
 /usr/lib/libxcb.so.1:
 
 /usr/include/c++/v1/__random/is_valid.h:
-
-/usr/include/c++/v1/__random/log2.h:
 
 /usr/include/c++/v1/__type_traits/is_equality_comparable.h:
 
@@ -5797,8 +6012,6 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o:
 
 /usr/include/c++/v1/__ranges/size.h:
 
-/usr/include/c++/v1/__ranges/subrange.h:
-
 /usr/include/c++/v1/__std_mbstate_t.h:
 
 /usr/include/c++/v1/__string/constexpr_c_functions.h:
@@ -5810,6 +6023,8 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o:
 /usr/include/c++/v1/__ranges/access.h:
 
 /usr/include/c++/v1/__string/extern_template_lists.h:
+
+/usr/lib/clang/21/include/stdint.h:
 
 /usr/include/c++/v1/__system_error/error_category.h:
 
@@ -5835,11 +6050,9 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o:
 
 /usr/include/c++/v1/__type_traits/add_cv_quals.h:
 
-/usr/include/c++/v1/vector:
+/usr/include/c++/v1/__algorithm/lexicographical_compare.h:
 
-/usr/include/c++/v1/__type_traits/add_rvalue_reference.h:
-
-/usr/include/c++/v1/__utility/in_place.h:
+/usr/include/c++/v1/__type_traits/add_reference.h:
 
 /usr/include/c++/v1/__type_traits/alignment_of.h:
 
@@ -5850,8 +6063,6 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o:
 /usr/include/c++/v1/__memory/align.h:
 
 /usr/include/c++/v1/__type_traits/conjunction.h:
-
-/usr/lib/clang/20/share/asan_ignorelist.txt:
 
 /usr/include/c++/v1/__type_traits/decay.h:
 
@@ -5885,11 +6096,13 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o:
 
 /usr/include/c++/v1/__type_traits/is_array.h:
 
+/usr/include/c++/v1/__type_traits/integer_traits.h:
+
 /usr/include/c++/v1/__type_traits/is_assignable.h:
 
-/usr/include/c++/v1/__math/fdim.h:
-
 /usr/include/c++/v1/__tuple/find_index.h:
+
+/usr/include/c++/v1/__math/fdim.h:
 
 /usr/include/c++/v1/__type_traits/is_base_of.h:
 
@@ -5911,13 +6124,17 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o:
 
 /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/box2d/include/box2d/types.h:
 
-/usr/include/c++/v1/__type_traits/is_function.h:
-
 /usr/include/c++/v1/__type_traits/is_bounded_array.h:
+
+/usr/include/c++/v1/__type_traits/is_function.h:
 
 /usr/include/c++/v1/__type_traits/is_core_convertible.h:
 
+/usr/include/c++/v1/__type_traits/is_empty.h:
+
 /usr/include/bits/types/cookie_io_functions_t.h:
+
+/usr/include/c++/v1/__algorithm/for_each_n_segment.h:
 
 /usr/include/c++/v1/__type_traits/is_final.h:
 
@@ -5929,17 +6146,11 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o:
 
 /usr/include/c++/v1/__type_traits/is_implicitly_default_constructible.h:
 
-/usr/lib/clang/20/include/__stddef_null.h:
-
 /usr/include/c++/v1/__math/traits.h:
 
 /usr/include/c++/v1/__type_traits/is_reference.h:
 
 /usr/include/c++/v1/__type_traits/is_integral.h:
-
-/usr/include/c++/v1/stdio.h:
-
-/usr/include/c++/v1/__type_traits/is_nothrow_assignable.h:
 
 /usr/include/c++/v1/__type_traits/is_nothrow_constructible.h:
 
@@ -5963,13 +6174,17 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o:
 
 /usr/include/c++/v1/__type_traits/is_reference_wrapper.h:
 
+/usr/lib/clang/21/include/__stddef_nullptr_t.h:
+
+/usr/include/c++/v1/__type_traits/is_replaceable.h:
+
 /usr/include/c++/v1/__type_traits/is_same.h:
+
+/usr/include/c++/v1/__utility/no_destroy.h:
 
 /usr/include/c++/v1/__algorithm/lower_bound.h:
 
 /usr/include/c++/v1/__math/remainder.h:
-
-/usr/include/c++/v1/__utility/no_destroy.h:
 
 /usr/include/c++/v1/__type_traits/is_signed.h:
 
@@ -5982,8 +6197,6 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o:
 /usr/include/c++/v1/__type_traits/is_trivially_relocatable.h:
 
 /usr/include/c++/v1/__type_traits/enable_if.h:
-
-/usr/include/c++/v1/__type_traits/add_lvalue_reference.h:
 
 /usr/include/c++/v1/__type_traits/is_unbounded_array.h:
 
@@ -6009,7 +6222,7 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o:
 
 /usr/include/c++/v1/__type_traits/promote.h:
 
-/usr/include/c++/v1/__type_traits/rank.h:
+/usr/include/c++/v1/__type_traits/reference_constructs_from_temporary.h:
 
 /usr/include/bits/types/struct_sched_param.h:
 
@@ -6033,6 +6246,10 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o:
 
 /usr/include/c++/v1/__type_traits/remove_pointer.h:
 
+/usr/include/c++/v1/__utility/move.h:
+
+/usr/include/c++/v1/__type_traits/result_of.h:
+
 /usr/lib/libGLX.so.0:
 
 /usr/include/c++/v1/__algorithm/min.h:
@@ -6045,8 +6262,6 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o:
 
 /usr/include/c++/v1/__utility/convert_to_integral.h:
 
-/usr/lib/clang/20/include/stdbool.h:
-
 /usr/include/c++/v1/__algorithm/copy.h:
 
 /usr/include/c++/v1/__utility/declval.h:
@@ -6057,30 +6272,4 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o:
 
 /usr/include/c++/v1/__utility/forward_like.h:
 
-/usr/include/c++/v1/__type_traits/result_of.h:
-
-/usr/include/c++/v1/__utility/move.h:
-
-/usr/include/c++/v1/__type_traits/copy_cv.h:
-
-/usr/include/c++/v1/__utility/pair.h:
-
-/usr/include/c++/v1/__utility/piecewise_construct.h:
-
-/usr/include/c++/v1/__utility/private_constructor_tag.h:
-
-/usr/include/c++/v1/__utility/swap.h:
-
-/usr/include/c++/v1/__utility/unreachable.h:
-
-/usr/include/c++/v1/__variant/monostate.h:
-
-/usr/include/c++/v1/__vector/container_traits.h:
-
-/usr/include/asm/posix_types_64.h:
-
-/usr/include/c++/v1/__iterator/iter_move.h:
-
-/usr/include/c++/v1/__vector/vector.h:
-
-/usr/include/c++/v1/__vector/vector_bool.h:
+/usr/include/c++/v1/__utility/in_place.h:

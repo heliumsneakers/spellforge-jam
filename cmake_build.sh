@@ -1,4 +1,14 @@
 rm -rf build
-cmake -S . -B build -D CMAKE_C_COMPILER=clang -D CMAKE_CXX_COMPILER=clang++
-cmake --build build -j
 
+cmake -S . -B build \
+  -D CMAKE_C_COMPILER=clang \
+  -D CMAKE_CXX_COMPILER=clang++ \
+  -D USE_WAYLAND=OFF \
+  -D GLFW_USE_WAYLAND=OFF \
+  -D RAYLIB_SUPPORT_MODULE_RSHAPES=ON \
+  -D RAYLIB_SUPPORT_MODULE_RTEXTURES=ON \
+  -D RAYLIB_SUPPORT_MODULE_RTEXT=ON \
+  -D RAYLIB_SUPPORT_MODULE_RMODELS=ON \
+  -D RAYLIB_SUPPORT_MODULE_RAUDIO=ON
+
+cmake --build build -j$(nproc)
