@@ -1,6 +1,12 @@
 [
 {
   "directory": "/home/klo/Work/Jams/MiniJam-Forge/spellforge/build",
+  "command": "/usr/bin/clang++  -I/home/klo/Work/Jams/MiniJam-Forge/spellforge/include -I/home/klo/Work/Jams/MiniJam-Forge/spellforge/src/include -isystem /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/raylib/src -isystem /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/box2d/include -O2 -g -DNDEBUG -std=gnu++17 -stdlib=libc++ -fsanitize=address -fno-omit-frame-pointer -o CMakeFiles/SpellForge.dir/src/anims/animations.cpp.o -c /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/anims/animations.cpp",
+  "file": "/home/klo/Work/Jams/MiniJam-Forge/spellforge/src/anims/animations.cpp",
+  "output": "CMakeFiles/SpellForge.dir/src/anims/animations.cpp.o"
+},
+{
+  "directory": "/home/klo/Work/Jams/MiniJam-Forge/spellforge/build",
   "command": "/usr/bin/clang++  -I/home/klo/Work/Jams/MiniJam-Forge/spellforge/include -I/home/klo/Work/Jams/MiniJam-Forge/spellforge/src/include -isystem /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/raylib/src -isystem /home/klo/Work/Jams/MiniJam-Forge/spellforge/lib/box2d/include -O2 -g -DNDEBUG -std=gnu++17 -stdlib=libc++ -fsanitize=address -fno-omit-frame-pointer -o CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o -c /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/entity/enemies.cpp",
   "file": "/home/klo/Work/Jams/MiniJam-Forge/spellforge/src/entity/enemies.cpp",
   "output": "CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o"

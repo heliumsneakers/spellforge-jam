@@ -1,6 +1,7 @@
 #include "player.h"
 #include "../level/level.h"
 #include "../physics/physics.h"
+#include "../anims/animations.hpp"
 #include "projectile.h"
 #include <math.h>
 #include <raylib.h>
@@ -72,10 +73,27 @@ void Player_Init(Player* p, const Grid* level) {
     p->vel   = (Vector2){ 0, 0 };
     p->halfw = 12.0f;
     p->halfh = 12.0f;
-    p->speed = 180.0f;
+    p->speed = 25.0f;
+
+    // Setup animations
+    p->facingRight = true;
+    p->idleAnim = Animation_Load("../../assets/player/player_idle.png", 4, 0.5f);
+    p->runAnim  = Animation_Load("../../assets/player/player_run.png", 4, 0.25f);
+
+    TraceLog(LOG_INFO, "Idle texture ID: %d (%dx%d)",
+             p->idleAnim.texture.id,
+             p->idleAnim.texture.width,
+             p->idleAnim.texture.height);
+
+    TraceLog(LOG_INFO, "Run texture ID: %d (%dx%d)",
+             p->runAnim.texture.id,
+             p->runAnim.texture.width,
+             p->runAnim.texture.height);
+
+    p->currentAnim = &p->idleAnim;
 
     // Camera setup
-    p->camZoom   = 1.0f;
+    p->camZoom   = 2.0f;
     p->camSmooth = 8.0f;
 
     p->cam.target   = p->pos;   // follow player (world coords)
@@ -193,27 +211,56 @@ void Telekinesis_Fire(Vector2 playerPos, float orbitRadius, float launchForce, E
     }
 }
 
-void UpdatePlayer(b2BodyId playerId, float dt, Vector2 inputDir, float speedPixelsPerSec) {
-    // normalize input so diagonals aren’t faster
-    float len = sqrt(inputDir.x*inputDir.x + inputDir.y*inputDir.y);
+
+
+void UpdatePlayer(Player* p, b2BodyId playerId, float dt, Vector2 inputDir, float speedPixelsPerSec)
+{
+    // Normalize input
+    float len = sqrtf(inputDir.x * inputDir.x + inputDir.y * inputDir.y);
     if (len > 0.0001f) {
         inputDir.x /= len;
         inputDir.y /= len;
     } else {
-        inputDir = {0,0};
+        inputDir = { 0, 0 };
     }
 
+    // Apply velocity to Box2D body
     b2Vec2 vel = { PxToM(inputDir.x * speedPixelsPerSec),
                    PxToM(inputDir.y * speedPixelsPerSec) };
-
     b2Body_SetLinearVelocity(playerId, vel);
+
+    // Read back position
+    b2Vec2 posM = b2Body_GetPosition(playerId);
+    p->pos = { MToPx(posM.x), MToPx(posM.y) };
+
+    // --- Handle facing once ---
+    // Use actual *key state*, not velocity, and only flip if user changes it
+    if (IsKeyDown(KEY_D)) {
+        p->facingRight = true;
+    } else if (IsKeyDown(KEY_A)) {
+        p->facingRight = false;
+    }
+
+    // --- Choose animation ---
+    bool isMoving = fabsf(vel.x) > 0.01f || fabsf(vel.y) > 0.01f;
+    p->currentAnim = isMoving ? &p->runAnim : &p->idleAnim;
+
+    // --- Update flip states ONCE ---
+    bool flip = !p->facingRight;
+    p->idleAnim.flipped = flip;
+    p->runAnim.flipped  = flip;
+
+    // --- Advance animation ---
+    Animation_Update(p->currentAnim, dt);
 }
 
+void Player_Draw(const Player* p)
+{
+    if (!p->currentAnim) return;
+    Animation_Draw(p->currentAnim, p->pos, 1.0f, WHITE);
+}
 
-void Player_Draw(const Player* p) {
-    DrawRectangleV(
-        (Vector2){ p->pos.x - p->halfw, p->pos.y - p->halfh },
-        (Vector2){ p->halfw * 2, p->halfh * 2 },
-        (Color){ 255, 220, 50, 255 }
-    );
+void Player_Unload(Player* p) {
+    Animation_Unload(&p->idleAnim);
+    Animation_Unload(&p->runAnim);
 }

@@ -16,7 +16,7 @@ void DrawScoreboard() {
     char text1[128];
     char text2[128];
     snprintf(text1, sizeof(text1), "Score: %d", g_enemiesKilled);
-    snprintf(text2, sizeof(text2), "Total Enemies: %d", g_enemies.size());
+    snprintf(text2, sizeof(text2), "Total Enemies: %d", (int)g_enemies.size());
     int textWidth1 = MeasureText(text1, fontSize);
     int textWidth2 = MeasureText(text2, fontSize);
     int x1 = GetScreenWidth() - textWidth1 - margin;
@@ -65,7 +65,7 @@ void RestartGame(Player* player, EntitySystem* es, Grid* level, b2WorldId* world
     g_projectiles.clear();
 
     player->cam.target = player->pos;
-    player->cam.zoom = 1.0f;
+    player->cam.zoom = 2.0f;
 
     g_gameOver = false;
 }
@@ -121,7 +121,7 @@ int main() {
         float dt = GetFrameTime();
 
         Vector2 dir = Build_Input();
-        UpdatePlayer(playerBody, tick, dir, 200.0f);
+        UpdatePlayer(&player, playerBody, tick, dir, 125.0f);
 
         if (IsKeyDown(KEY_SPACE)) {
             Telekinesis_Hold(player.pos, 50.0f, teleForce, &ents);
@@ -233,6 +233,7 @@ int main() {
     }
 
     grid_free(&g);
+    Player_Unload(&player);
     Enemies_Clear();
     Entities_Clear(&ents);
     CloseWindow();

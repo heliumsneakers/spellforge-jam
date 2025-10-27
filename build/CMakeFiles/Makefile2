@@ -85,12 +85,12 @@ clean: CMakeFiles/SpellForge.dir/clean
 CMakeFiles/SpellForge.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpellForge.dir/build.make CMakeFiles/SpellForge.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpellForge.dir/build.make CMakeFiles/SpellForge.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target SpellForge"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target SpellForge"
 .PHONY : CMakeFiles/SpellForge.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/SpellForge.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/SpellForge.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles 0
 .PHONY : CMakeFiles/SpellForge.dir/rule
@@ -102,7 +102,7 @@ SpellForge: CMakeFiles/SpellForge.dir/rule
 # codegen rule for target.
 CMakeFiles/SpellForge.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpellForge.dir/build.make CMakeFiles/SpellForge.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Finished codegen for target SpellForge"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Finished codegen for target SpellForge"
 .PHONY : CMakeFiles/SpellForge.dir/codegen
 
 # clean rule for target.

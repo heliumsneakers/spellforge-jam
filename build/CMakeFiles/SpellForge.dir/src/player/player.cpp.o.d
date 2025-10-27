@@ -665,6 +665,7 @@ CMakeFiles/SpellForge.dir/src/player/player.cpp.o: \
   /usr/bin/../include/c++/v1/float.h /usr/lib/clang/21/include/float.h \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../../lib/box2d/include/box2d/id.h \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../../lib/box2d/include/box2d/types.h \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../anims/animations.hpp \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../physics/physics.h \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../physics/../../lib/box2d/include/box2d/box2d.h \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/player/../physics/../level/level.h \

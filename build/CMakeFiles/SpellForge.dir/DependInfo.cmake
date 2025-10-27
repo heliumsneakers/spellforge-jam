@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/klo/Work/Jams/MiniJam-Forge/spellforge/src/anims/animations.cpp" "CMakeFiles/SpellForge.dir/src/anims/animations.cpp.o" "gcc" "CMakeFiles/SpellForge.dir/src/anims/animations.cpp.o.d"
   "/home/klo/Work/Jams/MiniJam-Forge/spellforge/src/entity/enemies.cpp" "CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o" "gcc" "CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o.d"
   "/home/klo/Work/Jams/MiniJam-Forge/spellforge/src/entity/entity.cpp" "CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o" "gcc" "CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o.d"
   "/home/klo/Work/Jams/MiniJam-Forge/spellforge/src/level/level.cpp" "CMakeFiles/SpellForge.dir/src/level/level.cpp.o" "gcc" "CMakeFiles/SpellForge.dir/src/level/level.cpp.o.d"

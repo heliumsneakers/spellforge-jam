@@ -129,6 +129,30 @@ SpellForge/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpellForge.dir/build.make CMakeFiles/SpellForge.dir/build
 .PHONY : SpellForge/fast
 
+src/anims/animations.o: src/anims/animations.cpp.o
+.PHONY : src/anims/animations.o
+
+# target to build an object file
+src/anims/animations.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpellForge.dir/build.make CMakeFiles/SpellForge.dir/src/anims/animations.cpp.o
+.PHONY : src/anims/animations.cpp.o
+
+src/anims/animations.i: src/anims/animations.cpp.i
+.PHONY : src/anims/animations.i
+
+# target to preprocess a source file
+src/anims/animations.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpellForge.dir/build.make CMakeFiles/SpellForge.dir/src/anims/animations.cpp.i
+.PHONY : src/anims/animations.cpp.i
+
+src/anims/animations.s: src/anims/animations.cpp.s
+.PHONY : src/anims/animations.s
+
+# target to generate assembly for a file
+src/anims/animations.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpellForge.dir/build.make CMakeFiles/SpellForge.dir/src/anims/animations.cpp.s
+.PHONY : src/anims/animations.cpp.s
+
 src/entity/enemies.o: src/entity/enemies.cpp.o
 .PHONY : src/entity/enemies.o
 
@@ -306,6 +330,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... SpellForge"
+	@echo "... src/anims/animations.o"
+	@echo "... src/anims/animations.i"
+	@echo "... src/anims/animations.s"
 	@echo "... src/entity/enemies.o"
 	@echo "... src/entity/enemies.i"
 	@echo "... src/entity/enemies.s"

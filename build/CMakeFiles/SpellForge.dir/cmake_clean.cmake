@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/SpellForge.dir/link.d"
+  "CMakeFiles/SpellForge.dir/src/anims/animations.cpp.o"
+  "CMakeFiles/SpellForge.dir/src/anims/animations.cpp.o.d"
   "CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o"
   "CMakeFiles/SpellForge.dir/src/entity/enemies.cpp.o.d"
   "CMakeFiles/SpellForge.dir/src/entity/entity.cpp.o"
