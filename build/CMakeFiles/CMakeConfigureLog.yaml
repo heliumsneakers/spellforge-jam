@@ -20,31 +20,26 @@ events:
     names:
       - "uname"
     candidate_directories:
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/opt/cuda/bin/"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/home/klo/.local/bin/"
-      - "/home/klo/.local/share/nvim/mason/bin/"
       - "/home/klo/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/bin/"
     searched_directories:
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/uname"
       - "/opt/cuda/bin/uname"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/uname"
       - "/home/klo/.local/bin/uname"
-      - "/home/klo/.local/share/nvim/mason/bin/uname"
       - "/home/klo/.local/share/omarchy/bin/uname"
       - "/usr/local/sbin/uname"
       - "/usr/local/bin/uname"
     found: "/usr/bin/uname"
     search_context:
       ENV{PATH}:
+        - "/opt/cuda/bin"
         - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin"
-        - "/opt/cuda/bin"
-        - "/home/klo/.local/bin"
-        - "/home/klo/.local/share/nvim/mason/bin"
-        - "/opt/cuda/bin"
         - "/home/klo/.local/bin"
         - "/home/klo/.local/share/omarchy/bin/"
         - "/usr/local/sbin"
@@ -78,38 +73,32 @@ events:
       - "make"
       - "smake"
     candidate_directories:
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/opt/cuda/bin/"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/home/klo/.local/bin/"
-      - "/home/klo/.local/share/nvim/mason/bin/"
       - "/home/klo/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
     searched_directories:
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/gmake"
       - "/opt/cuda/bin/gmake"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/gmake"
       - "/home/klo/.local/bin/gmake"
-      - "/home/klo/.local/share/nvim/mason/bin/gmake"
       - "/home/klo/.local/share/omarchy/bin/gmake"
       - "/usr/local/sbin/gmake"
       - "/usr/local/bin/gmake"
       - "/usr/bin/gmake"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/make"
       - "/opt/cuda/bin/make"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/make"
       - "/home/klo/.local/bin/make"
-      - "/home/klo/.local/share/nvim/mason/bin/make"
       - "/home/klo/.local/share/omarchy/bin/make"
       - "/usr/local/sbin/make"
       - "/usr/local/bin/make"
     found: "/usr/bin/make"
     search_context:
       ENV{PATH}:
+        - "/opt/cuda/bin"
         - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin"
-        - "/opt/cuda/bin"
-        - "/home/klo/.local/bin"
-        - "/home/klo/.local/share/nvim/mason/bin"
-        - "/opt/cuda/bin"
         - "/home/klo/.local/bin"
         - "/home/klo/.local/share/omarchy/bin/"
         - "/usr/local/sbin"
@@ -135,30 +124,25 @@ events:
     names:
       - "clang"
     candidate_directories:
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/opt/cuda/bin/"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/home/klo/.local/bin/"
-      - "/home/klo/.local/share/nvim/mason/bin/"
       - "/home/klo/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
     searched_directories:
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/clang"
       - "/opt/cuda/bin/clang"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/clang"
       - "/home/klo/.local/bin/clang"
-      - "/home/klo/.local/share/nvim/mason/bin/clang"
       - "/home/klo/.local/share/omarchy/bin/clang"
       - "/usr/local/sbin/clang"
       - "/usr/local/bin/clang"
     found: "/usr/bin/clang"
     search_context:
       ENV{PATH}:
+        - "/opt/cuda/bin"
         - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin"
-        - "/opt/cuda/bin"
-        - "/home/klo/.local/bin"
-        - "/home/klo/.local/share/nvim/mason/bin"
-        - "/opt/cuda/bin"
         - "/home/klo/.local/bin"
         - "/home/klo/.local/share/omarchy/bin/"
         - "/usr/local/sbin"
@@ -191,11 +175,8 @@ events:
     found: "/usr/share/cmake/Modules/CMakeCCompilerId.c.in"
     search_context:
       ENV{PATH}:
+        - "/opt/cuda/bin"
         - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin"
-        - "/opt/cuda/bin"
-        - "/home/klo/.local/bin"
-        - "/home/klo/.local/share/nvim/mason/bin"
-        - "/opt/cuda/bin"
         - "/home/klo/.local/bin"
         - "/home/klo/.local/share/omarchy/bin/"
         - "/usr/local/sbin"
@@ -245,21 +226,17 @@ events:
       - "ar"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/opt/cuda/bin/"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/home/klo/.local/bin/"
-      - "/home/klo/.local/share/nvim/mason/bin/"
       - "/home/klo/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
     found: "/usr/bin/llvm-ar"
     search_context:
       ENV{PATH}:
+        - "/opt/cuda/bin"
         - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin"
-        - "/opt/cuda/bin"
-        - "/home/klo/.local/bin"
-        - "/home/klo/.local/share/nvim/mason/bin"
-        - "/opt/cuda/bin"
         - "/home/klo/.local/bin"
         - "/home/klo/.local/share/omarchy/bin/"
         - "/usr/local/sbin"
@@ -287,21 +264,17 @@ events:
       - "ranlib"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/opt/cuda/bin/"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/home/klo/.local/bin/"
-      - "/home/klo/.local/share/nvim/mason/bin/"
       - "/home/klo/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
     found: "/usr/bin/llvm-ranlib"
     search_context:
       ENV{PATH}:
+        - "/opt/cuda/bin"
         - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin"
-        - "/opt/cuda/bin"
-        - "/home/klo/.local/bin"
-        - "/home/klo/.local/share/nvim/mason/bin"
-        - "/opt/cuda/bin"
         - "/home/klo/.local/bin"
         - "/home/klo/.local/share/omarchy/bin/"
         - "/usr/local/sbin"
@@ -329,21 +302,17 @@ events:
       - "strip"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/opt/cuda/bin/"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/home/klo/.local/bin/"
-      - "/home/klo/.local/share/nvim/mason/bin/"
       - "/home/klo/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
     found: "/usr/bin/llvm-strip"
     search_context:
       ENV{PATH}:
+        - "/opt/cuda/bin"
         - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin"
-        - "/opt/cuda/bin"
-        - "/home/klo/.local/bin"
-        - "/home/klo/.local/share/nvim/mason/bin"
-        - "/opt/cuda/bin"
         - "/home/klo/.local/bin"
         - "/home/klo/.local/share/omarchy/bin/"
         - "/usr/local/sbin"
@@ -371,21 +340,17 @@ events:
       - "ld"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/opt/cuda/bin/"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/home/klo/.local/bin/"
-      - "/home/klo/.local/share/nvim/mason/bin/"
       - "/home/klo/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
     found: "/usr/bin/ld.lld"
     search_context:
       ENV{PATH}:
+        - "/opt/cuda/bin"
         - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin"
-        - "/opt/cuda/bin"
-        - "/home/klo/.local/bin"
-        - "/home/klo/.local/share/nvim/mason/bin"
-        - "/opt/cuda/bin"
         - "/home/klo/.local/bin"
         - "/home/klo/.local/share/omarchy/bin/"
         - "/usr/local/sbin"
@@ -413,21 +378,17 @@ events:
       - "nm"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/opt/cuda/bin/"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/home/klo/.local/bin/"
-      - "/home/klo/.local/share/nvim/mason/bin/"
       - "/home/klo/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
     found: "/usr/bin/llvm-nm"
     search_context:
       ENV{PATH}:
+        - "/opt/cuda/bin"
         - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin"
-        - "/opt/cuda/bin"
-        - "/home/klo/.local/bin"
-        - "/home/klo/.local/share/nvim/mason/bin"
-        - "/opt/cuda/bin"
         - "/home/klo/.local/bin"
         - "/home/klo/.local/share/omarchy/bin/"
         - "/usr/local/sbin"
@@ -455,21 +416,17 @@ events:
       - "objdump"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/opt/cuda/bin/"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/home/klo/.local/bin/"
-      - "/home/klo/.local/share/nvim/mason/bin/"
       - "/home/klo/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
     found: "/usr/bin/llvm-objdump"
     search_context:
       ENV{PATH}:
+        - "/opt/cuda/bin"
         - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin"
-        - "/opt/cuda/bin"
-        - "/home/klo/.local/bin"
-        - "/home/klo/.local/share/nvim/mason/bin"
-        - "/opt/cuda/bin"
         - "/home/klo/.local/bin"
         - "/home/klo/.local/share/omarchy/bin/"
         - "/usr/local/sbin"
@@ -497,21 +454,17 @@ events:
       - "objcopy"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/opt/cuda/bin/"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/home/klo/.local/bin/"
-      - "/home/klo/.local/share/nvim/mason/bin/"
       - "/home/klo/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
     found: "/usr/bin/llvm-objcopy"
     search_context:
       ENV{PATH}:
+        - "/opt/cuda/bin"
         - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin"
-        - "/opt/cuda/bin"
-        - "/home/klo/.local/bin"
-        - "/home/klo/.local/share/nvim/mason/bin"
-        - "/opt/cuda/bin"
         - "/home/klo/.local/bin"
         - "/home/klo/.local/share/omarchy/bin/"
         - "/usr/local/sbin"
@@ -539,21 +492,17 @@ events:
       - "readelf"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/opt/cuda/bin/"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/home/klo/.local/bin/"
-      - "/home/klo/.local/share/nvim/mason/bin/"
       - "/home/klo/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
     found: "/usr/bin/llvm-readelf"
     search_context:
       ENV{PATH}:
+        - "/opt/cuda/bin"
         - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin"
-        - "/opt/cuda/bin"
-        - "/home/klo/.local/bin"
-        - "/home/klo/.local/share/nvim/mason/bin"
-        - "/opt/cuda/bin"
         - "/home/klo/.local/bin"
         - "/home/klo/.local/share/omarchy/bin/"
         - "/usr/local/sbin"
@@ -581,21 +530,17 @@ events:
       - "dlltool"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/opt/cuda/bin/"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/home/klo/.local/bin/"
-      - "/home/klo/.local/share/nvim/mason/bin/"
       - "/home/klo/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
     found: "/usr/bin/llvm-dlltool"
     search_context:
       ENV{PATH}:
+        - "/opt/cuda/bin"
         - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin"
-        - "/opt/cuda/bin"
-        - "/home/klo/.local/bin"
-        - "/home/klo/.local/share/nvim/mason/bin"
-        - "/opt/cuda/bin"
         - "/home/klo/.local/bin"
         - "/home/klo/.local/share/omarchy/bin/"
         - "/usr/local/sbin"
@@ -623,21 +568,17 @@ events:
       - "addr2line"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/opt/cuda/bin/"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/home/klo/.local/bin/"
-      - "/home/klo/.local/share/nvim/mason/bin/"
       - "/home/klo/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
     found: "/usr/bin/llvm-addr2line"
     search_context:
       ENV{PATH}:
+        - "/opt/cuda/bin"
         - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin"
-        - "/opt/cuda/bin"
-        - "/home/klo/.local/bin"
-        - "/home/klo/.local/share/nvim/mason/bin"
-        - "/opt/cuda/bin"
         - "/home/klo/.local/bin"
         - "/home/klo/.local/share/omarchy/bin/"
         - "/usr/local/sbin"
@@ -664,30 +605,25 @@ events:
       - "tapi"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/opt/cuda/bin/"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/home/klo/.local/bin/"
-      - "/home/klo/.local/share/nvim/mason/bin/"
       - "/home/klo/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
     searched_directories:
       - "/usr/bin/tapi"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/tapi"
       - "/opt/cuda/bin/tapi"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/tapi"
       - "/home/klo/.local/bin/tapi"
-      - "/home/klo/.local/share/nvim/mason/bin/tapi"
       - "/home/klo/.local/share/omarchy/bin/tapi"
       - "/usr/local/sbin/tapi"
       - "/usr/local/bin/tapi"
     found: false
     search_context:
       ENV{PATH}:
+        - "/opt/cuda/bin"
         - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin"
-        - "/opt/cuda/bin"
-        - "/home/klo/.local/bin"
-        - "/home/klo/.local/share/nvim/mason/bin"
-        - "/opt/cuda/bin"
         - "/home/klo/.local/bin"
         - "/home/klo/.local/share/omarchy/bin/"
         - "/usr/local/sbin"
@@ -717,46 +653,39 @@ events:
       - "llvm-ar"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/opt/cuda/bin/"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/home/klo/.local/bin/"
-      - "/home/klo/.local/share/nvim/mason/bin/"
       - "/home/klo/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
     searched_directories:
       - "/usr/bin/llvm-ar-21.1"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/llvm-ar-21.1"
       - "/opt/cuda/bin/llvm-ar-21.1"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/llvm-ar-21.1"
       - "/home/klo/.local/bin/llvm-ar-21.1"
-      - "/home/klo/.local/share/nvim/mason/bin/llvm-ar-21.1"
       - "/home/klo/.local/share/omarchy/bin/llvm-ar-21.1"
       - "/usr/local/sbin/llvm-ar-21.1"
       - "/usr/local/bin/llvm-ar-21.1"
       - "/usr/bin/llvm-ar-21"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/llvm-ar-21"
       - "/opt/cuda/bin/llvm-ar-21"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/llvm-ar-21"
       - "/home/klo/.local/bin/llvm-ar-21"
-      - "/home/klo/.local/share/nvim/mason/bin/llvm-ar-21"
       - "/home/klo/.local/share/omarchy/bin/llvm-ar-21"
       - "/usr/local/sbin/llvm-ar-21"
       - "/usr/local/bin/llvm-ar-21"
       - "/usr/bin/llvm-ar21"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/llvm-ar21"
       - "/opt/cuda/bin/llvm-ar21"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/llvm-ar21"
       - "/home/klo/.local/bin/llvm-ar21"
-      - "/home/klo/.local/share/nvim/mason/bin/llvm-ar21"
       - "/home/klo/.local/share/omarchy/bin/llvm-ar21"
       - "/usr/local/sbin/llvm-ar21"
       - "/usr/local/bin/llvm-ar21"
     found: "/usr/bin/llvm-ar"
     search_context:
       ENV{PATH}:
+        - "/opt/cuda/bin"
         - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin"
-        - "/opt/cuda/bin"
-        - "/home/klo/.local/bin"
-        - "/home/klo/.local/share/nvim/mason/bin"
-        - "/opt/cuda/bin"
         - "/home/klo/.local/bin"
         - "/home/klo/.local/share/omarchy/bin/"
         - "/usr/local/sbin"
@@ -786,46 +715,39 @@ events:
       - "llvm-ranlib"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/opt/cuda/bin/"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/home/klo/.local/bin/"
-      - "/home/klo/.local/share/nvim/mason/bin/"
       - "/home/klo/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
     searched_directories:
       - "/usr/bin/llvm-ranlib-21.1"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/llvm-ranlib-21.1"
       - "/opt/cuda/bin/llvm-ranlib-21.1"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/llvm-ranlib-21.1"
       - "/home/klo/.local/bin/llvm-ranlib-21.1"
-      - "/home/klo/.local/share/nvim/mason/bin/llvm-ranlib-21.1"
       - "/home/klo/.local/share/omarchy/bin/llvm-ranlib-21.1"
       - "/usr/local/sbin/llvm-ranlib-21.1"
       - "/usr/local/bin/llvm-ranlib-21.1"
       - "/usr/bin/llvm-ranlib-21"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/llvm-ranlib-21"
       - "/opt/cuda/bin/llvm-ranlib-21"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/llvm-ranlib-21"
       - "/home/klo/.local/bin/llvm-ranlib-21"
-      - "/home/klo/.local/share/nvim/mason/bin/llvm-ranlib-21"
       - "/home/klo/.local/share/omarchy/bin/llvm-ranlib-21"
       - "/usr/local/sbin/llvm-ranlib-21"
       - "/usr/local/bin/llvm-ranlib-21"
       - "/usr/bin/llvm-ranlib21"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/llvm-ranlib21"
       - "/opt/cuda/bin/llvm-ranlib21"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/llvm-ranlib21"
       - "/home/klo/.local/bin/llvm-ranlib21"
-      - "/home/klo/.local/share/nvim/mason/bin/llvm-ranlib21"
       - "/home/klo/.local/share/omarchy/bin/llvm-ranlib21"
       - "/usr/local/sbin/llvm-ranlib21"
       - "/usr/local/bin/llvm-ranlib21"
     found: "/usr/bin/llvm-ranlib"
     search_context:
       ENV{PATH}:
+        - "/opt/cuda/bin"
         - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin"
-        - "/opt/cuda/bin"
-        - "/home/klo/.local/bin"
-        - "/home/klo/.local/share/nvim/mason/bin"
-        - "/opt/cuda/bin"
         - "/home/klo/.local/bin"
         - "/home/klo/.local/share/omarchy/bin/"
         - "/usr/local/sbin"
@@ -855,46 +777,39 @@ events:
       - "clang-scan-deps"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/opt/cuda/bin/"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/home/klo/.local/bin/"
-      - "/home/klo/.local/share/nvim/mason/bin/"
       - "/home/klo/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
     searched_directories:
       - "/usr/bin/clang-scan-deps-21.1"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/clang-scan-deps-21.1"
       - "/opt/cuda/bin/clang-scan-deps-21.1"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/clang-scan-deps-21.1"
       - "/home/klo/.local/bin/clang-scan-deps-21.1"
-      - "/home/klo/.local/share/nvim/mason/bin/clang-scan-deps-21.1"
       - "/home/klo/.local/share/omarchy/bin/clang-scan-deps-21.1"
       - "/usr/local/sbin/clang-scan-deps-21.1"
       - "/usr/local/bin/clang-scan-deps-21.1"
       - "/usr/bin/clang-scan-deps-21"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/clang-scan-deps-21"
       - "/opt/cuda/bin/clang-scan-deps-21"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/clang-scan-deps-21"
       - "/home/klo/.local/bin/clang-scan-deps-21"
-      - "/home/klo/.local/share/nvim/mason/bin/clang-scan-deps-21"
       - "/home/klo/.local/share/omarchy/bin/clang-scan-deps-21"
       - "/usr/local/sbin/clang-scan-deps-21"
       - "/usr/local/bin/clang-scan-deps-21"
       - "/usr/bin/clang-scan-deps21"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/clang-scan-deps21"
       - "/opt/cuda/bin/clang-scan-deps21"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/clang-scan-deps21"
       - "/home/klo/.local/bin/clang-scan-deps21"
-      - "/home/klo/.local/share/nvim/mason/bin/clang-scan-deps21"
       - "/home/klo/.local/share/omarchy/bin/clang-scan-deps21"
       - "/usr/local/sbin/clang-scan-deps21"
       - "/usr/local/bin/clang-scan-deps21"
     found: "/usr/bin/clang-scan-deps"
     search_context:
       ENV{PATH}:
+        - "/opt/cuda/bin"
         - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin"
-        - "/opt/cuda/bin"
-        - "/home/klo/.local/bin"
-        - "/home/klo/.local/share/nvim/mason/bin"
-        - "/opt/cuda/bin"
         - "/home/klo/.local/bin"
         - "/home/klo/.local/share/omarchy/bin/"
         - "/usr/local/sbin"
@@ -920,30 +835,25 @@ events:
     names:
       - "clang++"
     candidate_directories:
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/opt/cuda/bin/"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/home/klo/.local/bin/"
-      - "/home/klo/.local/share/nvim/mason/bin/"
       - "/home/klo/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
     searched_directories:
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/clang++"
       - "/opt/cuda/bin/clang++"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/clang++"
       - "/home/klo/.local/bin/clang++"
-      - "/home/klo/.local/share/nvim/mason/bin/clang++"
       - "/home/klo/.local/share/omarchy/bin/clang++"
       - "/usr/local/sbin/clang++"
       - "/usr/local/bin/clang++"
     found: "/usr/bin/clang++"
     search_context:
       ENV{PATH}:
+        - "/opt/cuda/bin"
         - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin"
-        - "/opt/cuda/bin"
-        - "/home/klo/.local/bin"
-        - "/home/klo/.local/share/nvim/mason/bin"
-        - "/opt/cuda/bin"
         - "/home/klo/.local/bin"
         - "/home/klo/.local/share/omarchy/bin/"
         - "/usr/local/sbin"
@@ -976,11 +886,8 @@ events:
     found: "/usr/share/cmake/Modules/CMakeCXXCompilerId.cpp.in"
     search_context:
       ENV{PATH}:
+        - "/opt/cuda/bin"
         - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin"
-        - "/opt/cuda/bin"
-        - "/home/klo/.local/bin"
-        - "/home/klo/.local/share/nvim/mason/bin"
-        - "/opt/cuda/bin"
         - "/home/klo/.local/bin"
         - "/home/klo/.local/share/omarchy/bin/"
         - "/usr/local/sbin"
@@ -1032,46 +939,39 @@ events:
       - "llvm-ar"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/opt/cuda/bin/"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/home/klo/.local/bin/"
-      - "/home/klo/.local/share/nvim/mason/bin/"
       - "/home/klo/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
     searched_directories:
       - "/usr/bin/llvm-ar-21.1"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/llvm-ar-21.1"
       - "/opt/cuda/bin/llvm-ar-21.1"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/llvm-ar-21.1"
       - "/home/klo/.local/bin/llvm-ar-21.1"
-      - "/home/klo/.local/share/nvim/mason/bin/llvm-ar-21.1"
       - "/home/klo/.local/share/omarchy/bin/llvm-ar-21.1"
       - "/usr/local/sbin/llvm-ar-21.1"
       - "/usr/local/bin/llvm-ar-21.1"
       - "/usr/bin/llvm-ar-21"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/llvm-ar-21"
       - "/opt/cuda/bin/llvm-ar-21"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/llvm-ar-21"
       - "/home/klo/.local/bin/llvm-ar-21"
-      - "/home/klo/.local/share/nvim/mason/bin/llvm-ar-21"
       - "/home/klo/.local/share/omarchy/bin/llvm-ar-21"
       - "/usr/local/sbin/llvm-ar-21"
       - "/usr/local/bin/llvm-ar-21"
       - "/usr/bin/llvm-ar21"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/llvm-ar21"
       - "/opt/cuda/bin/llvm-ar21"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/llvm-ar21"
       - "/home/klo/.local/bin/llvm-ar21"
-      - "/home/klo/.local/share/nvim/mason/bin/llvm-ar21"
       - "/home/klo/.local/share/omarchy/bin/llvm-ar21"
       - "/usr/local/sbin/llvm-ar21"
       - "/usr/local/bin/llvm-ar21"
     found: "/usr/bin/llvm-ar"
     search_context:
       ENV{PATH}:
+        - "/opt/cuda/bin"
         - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin"
-        - "/opt/cuda/bin"
-        - "/home/klo/.local/bin"
-        - "/home/klo/.local/share/nvim/mason/bin"
-        - "/opt/cuda/bin"
         - "/home/klo/.local/bin"
         - "/home/klo/.local/share/omarchy/bin/"
         - "/usr/local/sbin"
@@ -1101,46 +1001,39 @@ events:
       - "llvm-ranlib"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/opt/cuda/bin/"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/home/klo/.local/bin/"
-      - "/home/klo/.local/share/nvim/mason/bin/"
       - "/home/klo/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
     searched_directories:
       - "/usr/bin/llvm-ranlib-21.1"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/llvm-ranlib-21.1"
       - "/opt/cuda/bin/llvm-ranlib-21.1"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/llvm-ranlib-21.1"
       - "/home/klo/.local/bin/llvm-ranlib-21.1"
-      - "/home/klo/.local/share/nvim/mason/bin/llvm-ranlib-21.1"
       - "/home/klo/.local/share/omarchy/bin/llvm-ranlib-21.1"
       - "/usr/local/sbin/llvm-ranlib-21.1"
       - "/usr/local/bin/llvm-ranlib-21.1"
       - "/usr/bin/llvm-ranlib-21"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/llvm-ranlib-21"
       - "/opt/cuda/bin/llvm-ranlib-21"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/llvm-ranlib-21"
       - "/home/klo/.local/bin/llvm-ranlib-21"
-      - "/home/klo/.local/share/nvim/mason/bin/llvm-ranlib-21"
       - "/home/klo/.local/share/omarchy/bin/llvm-ranlib-21"
       - "/usr/local/sbin/llvm-ranlib-21"
       - "/usr/local/bin/llvm-ranlib-21"
       - "/usr/bin/llvm-ranlib21"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/llvm-ranlib21"
       - "/opt/cuda/bin/llvm-ranlib21"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/llvm-ranlib21"
       - "/home/klo/.local/bin/llvm-ranlib21"
-      - "/home/klo/.local/share/nvim/mason/bin/llvm-ranlib21"
       - "/home/klo/.local/share/omarchy/bin/llvm-ranlib21"
       - "/usr/local/sbin/llvm-ranlib21"
       - "/usr/local/bin/llvm-ranlib21"
     found: "/usr/bin/llvm-ranlib"
     search_context:
       ENV{PATH}:
+        - "/opt/cuda/bin"
         - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin"
-        - "/opt/cuda/bin"
-        - "/home/klo/.local/bin"
-        - "/home/klo/.local/share/nvim/mason/bin"
-        - "/opt/cuda/bin"
         - "/home/klo/.local/bin"
         - "/home/klo/.local/share/omarchy/bin/"
         - "/usr/local/sbin"
@@ -1170,46 +1063,39 @@ events:
       - "clang-scan-deps"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/opt/cuda/bin/"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/"
       - "/home/klo/.local/bin/"
-      - "/home/klo/.local/share/nvim/mason/bin/"
       - "/home/klo/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
     searched_directories:
       - "/usr/bin/clang-scan-deps-21.1"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/clang-scan-deps-21.1"
       - "/opt/cuda/bin/clang-scan-deps-21.1"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/clang-scan-deps-21.1"
       - "/home/klo/.local/bin/clang-scan-deps-21.1"
-      - "/home/klo/.local/share/nvim/mason/bin/clang-scan-deps-21.1"
       - "/home/klo/.local/share/omarchy/bin/clang-scan-deps-21.1"
       - "/usr/local/sbin/clang-scan-deps-21.1"
       - "/usr/local/bin/clang-scan-deps-21.1"
       - "/usr/bin/clang-scan-deps-21"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/clang-scan-deps-21"
       - "/opt/cuda/bin/clang-scan-deps-21"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/clang-scan-deps-21"
       - "/home/klo/.local/bin/clang-scan-deps-21"
-      - "/home/klo/.local/share/nvim/mason/bin/clang-scan-deps-21"
       - "/home/klo/.local/share/omarchy/bin/clang-scan-deps-21"
       - "/usr/local/sbin/clang-scan-deps-21"
       - "/usr/local/bin/clang-scan-deps-21"
       - "/usr/bin/clang-scan-deps21"
-      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/clang-scan-deps21"
       - "/opt/cuda/bin/clang-scan-deps21"
+      - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin/clang-scan-deps21"
       - "/home/klo/.local/bin/clang-scan-deps21"
-      - "/home/klo/.local/share/nvim/mason/bin/clang-scan-deps21"
       - "/home/klo/.local/share/omarchy/bin/clang-scan-deps21"
       - "/usr/local/sbin/clang-scan-deps21"
       - "/usr/local/bin/clang-scan-deps21"
     found: "/usr/bin/clang-scan-deps"
     search_context:
       ENV{PATH}:
+        - "/opt/cuda/bin"
         - "/home/klo/Work/Jams/MiniJam-Forge/spellforge/bin"
-        - "/opt/cuda/bin"
-        - "/home/klo/.local/bin"
-        - "/home/klo/.local/share/nvim/mason/bin"
-        - "/opt/cuda/bin"
         - "/home/klo/.local/bin"
         - "/home/klo/.local/share/omarchy/bin/"
         - "/usr/local/sbin"
@@ -1224,8 +1110,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-LUDYBh"
-      binary: "/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-LUDYBh"
+      source: "/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-R9vYp4"
+      binary: "/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-R9vYp4"
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps"
       CMAKE_C_FLAGS: ""
@@ -1235,13 +1121,13 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-LUDYBh'
+        Change Dir: '/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-R9vYp4'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_508d7/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_508d7.dir/build.make CMakeFiles/cmTC_508d7.dir/build
-        make[1]: Entering directory '/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-LUDYBh'
-        Building C object CMakeFiles/cmTC_508d7.dir/CMakeCCompilerABI.c.o
-        /usr/bin/clang   -v -MD -MT CMakeFiles/cmTC_508d7.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_508d7.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_508d7.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_acea8/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_acea8.dir/build.make CMakeFiles/cmTC_acea8.dir/build
+        make[1]: Entering directory '/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-R9vYp4'
+        Building C object CMakeFiles/cmTC_acea8.dir/CMakeCCompilerABI.c.o
+        /usr/bin/clang   -v -MD -MT CMakeFiles/cmTC_acea8.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_acea8.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_acea8.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
         clang version 21.1.4
         Target: x86_64-pc-linux-gnu
         Thread model: posix
@@ -1254,7 +1140,7 @@ events:
         Selected multilib: .;@m64
         Found CUDA installation: /opt/cuda, version 
          (in-process)
-         "/usr/bin/clang-21" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-LUDYBh -v -fcoverage-compilation-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-LUDYBh -resource-dir /usr/lib/clang/21 -dependency-file CMakeFiles/cmTC_508d7.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_508d7.dir/CMakeCCompilerABI.c.o -sys-header-deps -internal-isystem /usr/lib/clang/21/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/include -internal-externc-isystem /include -internal-externc-isystem /usr/include -ferror-limit 19 -stack-protector 2 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_508d7.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+         "/usr/bin/clang-21" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-R9vYp4 -v -fcoverage-compilation-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-R9vYp4 -resource-dir /usr/lib/clang/21 -dependency-file CMakeFiles/cmTC_acea8.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_acea8.dir/CMakeCCompilerABI.c.o -sys-header-deps -internal-isystem /usr/lib/clang/21/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/include -internal-externc-isystem /include -internal-externc-isystem /usr/include -ferror-limit 19 -stack-protector 2 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_acea8.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake/Modules/CMakeCCompilerABI.c
         clang -cc1 version 21.1.4 based upon LLVM 21.1.4 default target x86_64-pc-linux-gnu
         ignoring nonexistent directory "/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/include"
         ignoring nonexistent directory "/include"
@@ -1264,8 +1150,8 @@ events:
          /usr/local/include
          /usr/include
         End of search list.
-        Linking C executable cmTC_508d7
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_508d7.dir/link.txt --verbose=1
+        Linking C executable cmTC_acea8
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_acea8.dir/link.txt --verbose=1
         clang version 21.1.4
         Target: x86_64-pc-linux-gnu
         Thread model: posix
@@ -1277,10 +1163,10 @@ events:
         Candidate multilib: 32;@m32
         Selected multilib: .;@m64
         Found CUDA installation: /opt/cuda, version 
-         "/usr/bin/ld" --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_508d7 /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/Scrt1.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crti.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib64 -L/lib -L/usr/lib -v CMakeFiles/cmTC_508d7.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crtn.o
+         "/usr/bin/ld" --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_acea8 /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/Scrt1.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crti.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib64 -L/lib -L/usr/lib -v CMakeFiles/cmTC_acea8.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crtn.o
         GNU ld (GNU Binutils) 2.45.0
-        /usr/bin/clang  -v -Wl,-v CMakeFiles/cmTC_508d7.dir/CMakeCCompilerABI.c.o -o cmTC_508d7
-        make[1]: Leaving directory '/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-LUDYBh'
+        /usr/bin/clang  -v -Wl,-v CMakeFiles/cmTC_acea8.dir/CMakeCCompilerABI.c.o -o cmTC_acea8
+        make[1]: Leaving directory '/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-R9vYp4'
         
       exitCode: 0
   -
@@ -1313,13 +1199,13 @@ events:
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-LUDYBh']
+        ignore line: [Change Dir: '/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-R9vYp4']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_508d7/fast]
-        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_508d7.dir/build.make CMakeFiles/cmTC_508d7.dir/build]
-        ignore line: [make[1]: Entering directory '/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-LUDYBh']
-        ignore line: [Building C object CMakeFiles/cmTC_508d7.dir/CMakeCCompilerABI.c.o]
-        ignore line: [/usr/bin/clang   -v -MD -MT CMakeFiles/cmTC_508d7.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_508d7.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_508d7.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_acea8/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_acea8.dir/build.make CMakeFiles/cmTC_acea8.dir/build]
+        ignore line: [make[1]: Entering directory '/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-R9vYp4']
+        ignore line: [Building C object CMakeFiles/cmTC_acea8.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/clang   -v -MD -MT CMakeFiles/cmTC_acea8.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_acea8.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_acea8.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
         ignore line: [clang version 21.1.4]
         ignore line: [Target: x86_64-pc-linux-gnu]
         ignore line: [Thread model: posix]
@@ -1335,7 +1221,7 @@ events:
         ignore line: [@m64]
         ignore line: [Found CUDA installation: /opt/cuda  version ]
         ignore line: [ (in-process)]
-        ignore line: [ "/usr/bin/clang-21" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-LUDYBh -v -fcoverage-compilation-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-LUDYBh -resource-dir /usr/lib/clang/21 -dependency-file CMakeFiles/cmTC_508d7.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_508d7.dir/CMakeCCompilerABI.c.o -sys-header-deps -internal-isystem /usr/lib/clang/21/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/include -internal-externc-isystem /include -internal-externc-isystem /usr/include -ferror-limit 19 -stack-protector 2 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_508d7.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [ "/usr/bin/clang-21" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-R9vYp4 -v -fcoverage-compilation-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-R9vYp4 -resource-dir /usr/lib/clang/21 -dependency-file CMakeFiles/cmTC_acea8.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_acea8.dir/CMakeCCompilerABI.c.o -sys-header-deps -internal-isystem /usr/lib/clang/21/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/include -internal-externc-isystem /include -internal-externc-isystem /usr/include -ferror-limit 19 -stack-protector 2 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_acea8.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
         ignore line: [clang -cc1 version 21.1.4 based upon LLVM 21.1.4 default target x86_64-pc-linux-gnu]
         ignore line: [ignoring nonexistent directory "/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/include"]
         ignore line: [ignoring nonexistent directory "/include"]
@@ -1345,8 +1231,8 @@ events:
         ignore line: [ /usr/local/include]
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
-        ignore line: [Linking C executable cmTC_508d7]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_508d7.dir/link.txt --verbose=1]
+        ignore line: [Linking C executable cmTC_acea8]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_acea8.dir/link.txt --verbose=1]
         ignore line: [clang version 21.1.4]
         ignore line: [Target: x86_64-pc-linux-gnu]
         ignore line: [Thread model: posix]
@@ -1361,7 +1247,7 @@ events:
         ignore line: [Selected multilib: .]
         ignore line: [@m64]
         ignore line: [Found CUDA installation: /opt/cuda  version ]
-        link line: [ "/usr/bin/ld" --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_508d7 /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/Scrt1.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crti.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib64 -L/lib -L/usr/lib -v CMakeFiles/cmTC_508d7.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crtn.o]
+        link line: [ "/usr/bin/ld" --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_acea8 /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/Scrt1.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crti.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib64 -L/lib -L/usr/lib -v CMakeFiles/cmTC_acea8.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crtn.o]
           arg [/usr/bin/ld] ==> ignore
           arg [--hash-style=gnu] ==> ignore
           arg [--build-id] ==> ignore
@@ -1372,7 +1258,7 @@ events:
           arg [-dynamic-linker] ==> ignore
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_508d7] ==> ignore
+          arg [cmTC_acea8] ==> ignore
           arg [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/Scrt1.o] ==> obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/Scrt1.o]
           arg [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crti.o] ==> obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crti.o]
           arg [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o] ==> obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o]
@@ -1383,7 +1269,7 @@ events:
           arg [-L/lib] ==> dir [/lib]
           arg [-L/usr/lib] ==> dir [/usr/lib]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_508d7.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [CMakeFiles/cmTC_acea8.dir/CMakeCCompilerABI.c.o] ==> ignore
           arg [-lgcc] ==> lib [gcc]
           arg [--as-needed] ==> ignore
           arg [-lgcc_s] ==> lib [gcc_s]
@@ -1432,8 +1318,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-aV7pET"
-      binary: "/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-aV7pET"
+      source: "/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-5zWv4r"
+      binary: "/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-5zWv4r"
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps"
       CMAKE_CXX_FLAGS: ""
@@ -1444,13 +1330,13 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-aV7pET'
+        Change Dir: '/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-5zWv4r'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3da2f/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_3da2f.dir/build.make CMakeFiles/cmTC_3da2f.dir/build
-        make[1]: Entering directory '/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-aV7pET'
-        Building CXX object CMakeFiles/cmTC_3da2f.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/clang++   -v -MD -MT CMakeFiles/cmTC_3da2f.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_3da2f.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_3da2f.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_fb6fa/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_fb6fa.dir/build.make CMakeFiles/cmTC_fb6fa.dir/build
+        make[1]: Entering directory '/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-5zWv4r'
+        Building CXX object CMakeFiles/cmTC_fb6fa.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/clang++   -v -MD -MT CMakeFiles/cmTC_fb6fa.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_fb6fa.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_fb6fa.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         clang version 21.1.4
         Target: x86_64-pc-linux-gnu
         Thread model: posix
@@ -1463,7 +1349,7 @@ events:
         Selected multilib: .;@m64
         Found CUDA installation: /opt/cuda, version 
          (in-process)
-         "/usr/bin/clang++" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-aV7pET -v -fcoverage-compilation-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-aV7pET -resource-dir /usr/lib/clang/21 -dependency-file CMakeFiles/cmTC_3da2f.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_3da2f.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1 -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/x86_64-pc-linux-gnu -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/backward -internal-isystem /usr/lib/clang/21/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/include -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -ferror-limit 19 -stack-protector 2 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_3da2f.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+         "/usr/bin/clang++" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-5zWv4r -v -fcoverage-compilation-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-5zWv4r -resource-dir /usr/lib/clang/21 -dependency-file CMakeFiles/cmTC_fb6fa.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_fb6fa.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1 -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/x86_64-pc-linux-gnu -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/backward -internal-isystem /usr/lib/clang/21/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/include -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -ferror-limit 19 -stack-protector 2 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_fb6fa.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         clang -cc1 version 21.1.4 based upon LLVM 21.1.4 default target x86_64-pc-linux-gnu
         ignoring nonexistent directory "/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/include"
         ignoring nonexistent directory "/include"
@@ -1476,8 +1362,8 @@ events:
          /usr/local/include
          /usr/include
         End of search list.
-        Linking CXX executable cmTC_3da2f
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3da2f.dir/link.txt --verbose=1
+        Linking CXX executable cmTC_fb6fa
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fb6fa.dir/link.txt --verbose=1
         clang version 21.1.4
         Target: x86_64-pc-linux-gnu
         Thread model: posix
@@ -1489,10 +1375,10 @@ events:
         Candidate multilib: 32;@m32
         Selected multilib: .;@m64
         Found CUDA installation: /opt/cuda, version 
-         "/usr/bin/ld" --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_3da2f /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/Scrt1.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crti.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib64 -L/lib -L/usr/lib -v CMakeFiles/cmTC_3da2f.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crtn.o
+         "/usr/bin/ld" --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_fb6fa /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/Scrt1.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crti.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib64 -L/lib -L/usr/lib -v CMakeFiles/cmTC_fb6fa.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crtn.o
         GNU ld (GNU Binutils) 2.45.0
-        /usr/bin/clang++  -v -Wl,-v CMakeFiles/cmTC_3da2f.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_3da2f
-        make[1]: Leaving directory '/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-aV7pET'
+        /usr/bin/clang++  -v -Wl,-v CMakeFiles/cmTC_fb6fa.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_fb6fa
+        make[1]: Leaving directory '/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-5zWv4r'
         
       exitCode: 0
   -
@@ -1531,13 +1417,13 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-aV7pET']
+        ignore line: [Change Dir: '/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-5zWv4r']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3da2f/fast]
-        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_3da2f.dir/build.make CMakeFiles/cmTC_3da2f.dir/build]
-        ignore line: [make[1]: Entering directory '/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-aV7pET']
-        ignore line: [Building CXX object CMakeFiles/cmTC_3da2f.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/clang++   -v -MD -MT CMakeFiles/cmTC_3da2f.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_3da2f.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_3da2f.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_fb6fa/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_fb6fa.dir/build.make CMakeFiles/cmTC_fb6fa.dir/build]
+        ignore line: [make[1]: Entering directory '/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-5zWv4r']
+        ignore line: [Building CXX object CMakeFiles/cmTC_fb6fa.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/clang++   -v -MD -MT CMakeFiles/cmTC_fb6fa.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_fb6fa.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_fb6fa.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [clang version 21.1.4]
         ignore line: [Target: x86_64-pc-linux-gnu]
         ignore line: [Thread model: posix]
@@ -1553,7 +1439,7 @@ events:
         ignore line: [@m64]
         ignore line: [Found CUDA installation: /opt/cuda  version ]
         ignore line: [ (in-process)]
-        ignore line: [ "/usr/bin/clang++" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-aV7pET -v -fcoverage-compilation-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-aV7pET -resource-dir /usr/lib/clang/21 -dependency-file CMakeFiles/cmTC_3da2f.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_3da2f.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1 -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/x86_64-pc-linux-gnu -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/backward -internal-isystem /usr/lib/clang/21/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/include -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -ferror-limit 19 -stack-protector 2 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_3da2f.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [ "/usr/bin/clang++" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-5zWv4r -v -fcoverage-compilation-dir=/home/klo/Work/Jams/MiniJam-Forge/spellforge/build/CMakeFiles/CMakeScratch/TryCompile-5zWv4r -resource-dir /usr/lib/clang/21 -dependency-file CMakeFiles/cmTC_fb6fa.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_fb6fa.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1 -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/x86_64-pc-linux-gnu -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/backward -internal-isystem /usr/lib/clang/21/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/include -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -ferror-limit 19 -stack-protector 2 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_fb6fa.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [clang -cc1 version 21.1.4 based upon LLVM 21.1.4 default target x86_64-pc-linux-gnu]
         ignore line: [ignoring nonexistent directory "/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/include"]
         ignore line: [ignoring nonexistent directory "/include"]
@@ -1566,8 +1452,8 @@ events:
         ignore line: [ /usr/local/include]
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
-        ignore line: [Linking CXX executable cmTC_3da2f]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3da2f.dir/link.txt --verbose=1]
+        ignore line: [Linking CXX executable cmTC_fb6fa]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fb6fa.dir/link.txt --verbose=1]
         ignore line: [clang version 21.1.4]
         ignore line: [Target: x86_64-pc-linux-gnu]
         ignore line: [Thread model: posix]
@@ -1582,7 +1468,7 @@ events:
         ignore line: [Selected multilib: .]
         ignore line: [@m64]
         ignore line: [Found CUDA installation: /opt/cuda  version ]
-        link line: [ "/usr/bin/ld" --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_3da2f /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/Scrt1.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crti.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib64 -L/lib -L/usr/lib -v CMakeFiles/cmTC_3da2f.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crtn.o]
+        link line: [ "/usr/bin/ld" --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_fb6fa /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/Scrt1.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crti.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib64 -L/lib -L/usr/lib -v CMakeFiles/cmTC_fb6fa.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crtn.o]
           arg [/usr/bin/ld] ==> ignore
           arg [--hash-style=gnu] ==> ignore
           arg [--build-id] ==> ignore
@@ -1593,7 +1479,7 @@ events:
           arg [-dynamic-linker] ==> ignore
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_3da2f] ==> ignore
+          arg [cmTC_fb6fa] ==> ignore
           arg [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/Scrt1.o] ==> obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/Scrt1.o]
           arg [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crti.o] ==> obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crti.o]
           arg [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o] ==> obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o]
@@ -1604,7 +1490,7 @@ events:
           arg [-L/lib] ==> dir [/lib]
           arg [-L/usr/lib] ==> dir [/usr/lib]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_3da2f.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_fb6fa.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc_s] ==> lib [gcc_s]
