@@ -79,21 +79,11 @@ void Player_Init(Player* p, const Grid* level) {
     p->facingRight = true;
     p->idleAnim = Animation_Load("../../assets/player/player_idle.png", 4, 0.5f);
     p->runAnim  = Animation_Load("../../assets/player/player_run.png", 4, 0.25f);
-
-    TraceLog(LOG_INFO, "Idle texture ID: %d (%dx%d)",
-             p->idleAnim.texture.id,
-             p->idleAnim.texture.width,
-             p->idleAnim.texture.height);
-
-    TraceLog(LOG_INFO, "Run texture ID: %d (%dx%d)",
-             p->runAnim.texture.id,
-             p->runAnim.texture.width,
-             p->runAnim.texture.height);
-
+ 
     p->currentAnim = &p->idleAnim;
 
     // Camera setup
-    p->camZoom   = 2.0f;
+    p->camZoom   = 3.0f;
     p->camSmooth = 8.0f;
 
     p->cam.target   = p->pos;   // follow player (world coords)

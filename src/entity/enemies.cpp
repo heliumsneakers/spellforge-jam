@@ -1,8 +1,10 @@
+#include "entity.hpp"
 #include "raylib.h"
 #include "raymath.h"
 #include "enemies.hpp"
 #include "../physics/physics.h"
 #include "../level/level.h"
+#include "../anims/animations.hpp"
 #include "../../lib/box2d/include/box2d/box2d.h"
 #include <cmath>
 #include <cstdlib>
@@ -10,8 +12,6 @@
 #include <vector>
 #include <unordered_map>
 #include <algorithm>
-
-// Define a collision filter for enemies
 
 std::vector<Enemy> g_enemies;
 std::unordered_map<int, size_t> g_enemyIndexByEntId;
@@ -45,6 +45,7 @@ Enemy* Enemy_FromEntityId(int entId) {
 }
 
 void Enemies_Clear() {
+    for (Enemy& e : g_enemies) Animation_Unload(&e.runAnim);
     g_enemies.clear();
     g_enemyIndexByEntId.clear();
 }
@@ -176,6 +177,11 @@ void Enemies_Spawn(EntitySystem* es, const Grid* g, Vector2 playerPos, int count
             en.health = 100.f;
             en.maxHealth = 100.f;
             en.slowTimer = 0.f;
+
+            en.runAnim = Animation_Load("../../assets/enemies/enemy_run.png", 4, 0.25f);
+            en.animState = EnemyAnimState::Run;
+            en.facingRight = true;
+
             g_enemyIndexByEntId[e.id] = g_enemies.size();
             g_enemies.push_back(en);
 
@@ -282,6 +288,7 @@ void Enemies_Update(EntitySystem* es, const Grid* g, b2BodyId playerBody, float 
 
         if (en.health <= 0.f)
         {
+            Animation_Unload(&en.runAnim);
             const int deadId = en.entId; // <-- capture before swap!
             Physics_QueueDeletion(0, e->pos, e->id, e->kind);
             g_enemiesKilled++;
@@ -367,7 +374,23 @@ void Enemies_Update(EntitySystem* es, const Grid* g, b2BodyId playerBody, float 
         }
 
         b2Body_ApplyForceToCenter(body, force, true);
+        // Set animation state
+        en.animState = EnemyAnimState::Run;
 
+        b2Vec2 vel = b2Body_GetLinearVelocity(body);
+
+        if(vel.x > 0.1f) en.facingRight = true;
+        else if(vel.x < -0.1f) en.facingRight = false;
+        
+        Animation* currentAnim = nullptr;
+        switch (en.animState) {
+            case EnemyAnimState::Run: currentAnim = &en.runAnim; break;
+        }
+        if(currentAnim) {
+            currentAnim->flipped = !en.facingRight;
+            Animation_Update(currentAnim, dt);
+        }
+        
         // sync position for renderer
         e->pos = posPx;
 
@@ -414,3 +437,15 @@ void Spawn_Corpse_Prop(EntitySystem* es, b2WorldId world, Vector2 pos)
              e.id, e.pos.x, e.pos.y);
 }
 
+void Enemies_Draw(const EntitySystem* es) {
+    for (const Enemy& en : g_enemies) {
+        const Entity* e = Entities_Get((EntitySystem*)es, en.entId);
+        if (!e || !e->active) continue;
+
+        const Animation* cur = nullptr;
+        switch (en.animState) {
+            case EnemyAnimState::Run: cur = &en.runAnim; break;
+        }
+        if (cur) Animation_Draw(cur, e->pos, 1.0f, WHITE);
+    }
+}

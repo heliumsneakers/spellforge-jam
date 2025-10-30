@@ -679,4 +679,5 @@ CMakeFiles/SpellForge.dir/src/physics/physics.cpp.o: \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/physics/../entity/enemies.hpp \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/physics/../entity/../entity/entity.hpp \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/physics/../entity/../physics/physics.h \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/physics/../entity/../anims/animations.hpp \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/physics/../entity/../../lib/box2d/include/box2d/box2d.h

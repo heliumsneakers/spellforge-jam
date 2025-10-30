@@ -65,7 +65,6 @@ void RestartGame(Player* player, EntitySystem* es, Grid* level, b2WorldId* world
     g_projectiles.clear();
 
     player->cam.target = player->pos;
-    player->cam.zoom = 2.0f;
 
     g_gameOver = false;
 }
@@ -182,6 +181,7 @@ int main() {
             }
 
         Entities_Draw(&ents);
+        Enemies_Draw(&ents);
         Projectile_Draw();
         Player_Draw(&player);
 

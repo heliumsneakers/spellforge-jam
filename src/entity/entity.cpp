@@ -77,6 +77,7 @@ const Entity* Entities_Get(const EntitySystem* es, int id){ return find_by_id(es
 void Entities_Draw(const EntitySystem* es){
     for (const auto& e : es->pool){
         if (!e.active) continue;
+        if (e.kind != EntityKind::Prop) continue;
         DrawRectangleV(
             v2(e.pos.x - e.half.x, e.pos.y - e.half.y),
             v2(e.half.x*2.f,       e.half.y*2.f),

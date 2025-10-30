@@ -1,5 +1,4 @@
 #include "animations.hpp"
-#include "raymath.h"
 
 Animation Animation_Load(const char* filepath, int frameCount, float frameTime, bool looping)
 {
@@ -49,11 +48,11 @@ void Animation_Draw(const Animation* anim, Vector2 position, float scale, Color 
     src.height = fh;
 
     if (anim->flipped) {
-        // Start at the RIGHT edge of the frame and read leftwards
+        // Start at the right-> edge of the frame and read <-left
         src.x = (anim->currentFrame + 1) * fw;
         src.width = -fw;
     } else {
-        // Normal: left-to-right
+        // Normal: left to right
         src.x = anim->currentFrame * fw;
         src.width = fw;
     }

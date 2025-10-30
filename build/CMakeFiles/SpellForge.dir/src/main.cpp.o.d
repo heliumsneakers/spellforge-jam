@@ -684,6 +684,7 @@ CMakeFiles/SpellForge.dir/src/main.cpp.o: \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/entity/enemies.hpp \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/entity/../entity/entity.hpp \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/entity/../physics/physics.h \
+  /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/entity/../anims/animations.hpp \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/entity/../../lib/box2d/include/box2d/box2d.h \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/../lib/box2d/include/box2d/box2d.h \
   /home/klo/Work/Jams/MiniJam-Forge/spellforge/src/state.h \
